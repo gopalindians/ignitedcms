@@ -12,7 +12,7 @@
        
         </div>
 
-        <div class="logo-text">Ignited CMS</div>
+        <div class="logo-text">Ignited CMS.</div>
       </div> <!-- end class head-->
   </div> <!-- end head-outer -->
 
