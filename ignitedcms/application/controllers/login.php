@@ -52,7 +52,7 @@ class Login extends CI_Controller {
                     
                       $array = array(
                         'name' => $name,
-                        'userid' => $userid,
+                        'userid' => 'test',
                         'isloggedin' => '1'
 
                       );
@@ -64,7 +64,7 @@ class Login extends CI_Controller {
                       
                       $this->session->set_userdata( $array );
                       //login successful
-                      //redirect('shortcodes/load_builder_page','refresh');
+                      redirect('shortcodes/load_builder_page','refresh');
               }
               else
               {
