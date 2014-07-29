@@ -13,6 +13,10 @@
         </div>
 
         <div class="logo-text">Ignited CMS</div>
+        <div class="menu-options pull-right" style="margin-top:10px;">
+          <i class="fa fa-user"> User profile</i>
+          <i class="fa fa-gear"> Options</i>
+        </div>
       </div> <!-- end class head-->
   </div> <!-- end head-outer -->
 
