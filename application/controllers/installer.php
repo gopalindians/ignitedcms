@@ -268,9 +268,30 @@ class Installer extends CI_Controller {
 		  PRIMARY KEY (`id`)
 		) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 
-      
+      	$sql5 = "
+      	CREATE TABLE `menu` (
+		`id` int(11) NOT NULL,
+		  `html` varchar(5000) NOT NULL,
+		  `array` varchar(5000) NOT NULL
+		) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+
+		$sql6 = "
+		CREATE TABLE `menu2` (
+		  `id` varchar(50) NOT NULL,
+		  `father` varchar(50) NOT NULL,
+		  `tag` varchar(50) NOT NULL,
+		  `innerhtml` varchar(500) NOT NULL
+		) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+		
+		$sql7 = "
+		INSERT INTO `menu` (`id`, `html`, `array`) VALUES
+		(1, '', '');";
+
 		$this->db->query($sql3);
 		$this->db->query($sql4);
+		$this->db->query($sql5);
+		$this->db->query($sql6);
+		$this->db->query($sql7);
 
 		$this->load->view('header');
 		$this->load->view('body');
