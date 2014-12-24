@@ -64,7 +64,7 @@ class Menu extends CI_Controller {
 			<div class='dd-handle dd3-handle'></div>
 			<div class='dd3-content'>$name</div>
 			<div class='url' style='display:none;'>$url</div>
-			<div class='dd-edit'><i class='fa fa-pencil'></i></div>
+			<div class='dd-edit' ><i id='remove' u_id='id$unique_id'class='fa fa-trash-o'></i></div>
 			</li>";
 			
 		}

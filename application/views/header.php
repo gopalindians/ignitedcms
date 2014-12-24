@@ -224,6 +224,9 @@
         .popover-content{
             color:#333;
         }
+        .pm-hidden{
+            display:none;
+        }
         
     </style>
 </head>
