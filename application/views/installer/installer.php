@@ -33,19 +33,22 @@
                         <input name="password" type="password" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="root password" value="">
                     </div>
                     <div class="form-group">
-                        <label>Database Name*</label>
+                        <label>Database Name*
+                        </label>
+                        <div class="btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="right" data-content="Please ensure your database name has no spaces or numbers! Gracias" title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i>  <strong></strong></div>
+
                         <input name="database" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="database name" value="">
                     </div>
                     <button type="submit" class="btn btn-purplet btn-s-xs " id="">Save</button>
                     <?php echo form_close(); ?>
 
                      <br/>
-                       <div class="form-group">
+                       <!-- <div class="form-group">
                            <label>*Database name requirements</label>
                            <br/>
                            Please ensure your database name <strong>only</strong> contains letters.
                            Gracias.
-                       </div>
+                       </div> -->
                 </div>
             </section>
         </div>

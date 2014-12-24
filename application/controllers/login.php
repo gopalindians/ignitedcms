@@ -152,7 +152,7 @@ class Login extends CI_Controller {
 
                    $this->load->view('header');
                    $this->load->view('body');
-                   $this->load->view('installer-3', $data);
+                   $this->load->view('installer/installer-3', $data);
                    $this->load->view('footer');
 
             }
@@ -186,8 +186,7 @@ class Login extends CI_Controller {
       {
         $this->session->sess_destroy();
 
-        $this->load->view('login/header-login');
-        $this->load->view('login/index-login');
+        redirect("installer/login", "refresh");
   
       }
 

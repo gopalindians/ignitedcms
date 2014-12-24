@@ -161,6 +161,13 @@
             background-color: #FA5842;
             border-color: #FA5842;
         }
+
+        .btn-black{
+            color: #fff !important;
+            background-color: #363636;
+            border-color: #363636;
+            
+        }
         /*page builder styles*/
         .handle {
             display: inline;
@@ -206,6 +213,15 @@
             display: inline;
             float: left;
             color: #ffffff;
+        }
+        .popover{
+            min-width: 150px;
+        }
+        .popover-title{
+            color:#333;
+        }
+        .popover-content{
+            color:#333;
         }
         
     </style>

@@ -42,10 +42,14 @@
                        <br/>
                        <div class="form-group">
                            <label>*Password requirements</label>
-                           <br/>
-                           Please ensure your password is at least 6 characters long and has at
-                            least one number and capital letter. Your username will be <strong>admin</strong> 
-                            and you will have <strong>full</strong> access to all areas! Lucky you.
+                           <div class="btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="right" data-content="Please ensure your password is at least 6 characters long and has at
+                            least one number. Your username will be <strong>admin</strong> 
+                            and you will have <strong>full</strong> access to all areas! Lucky you." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i>  <strong></strong></div>
+
+                            
+                          </div>
+                          
+                           
                        </div>
                    
                    

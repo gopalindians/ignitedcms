@@ -65,7 +65,7 @@ class Installer extends CI_Controller {
 
 			$this->load->view('header');
 			$this->load->view('body');
-			$this->load->view('installer');
+			$this->load->view('installer/installer');
 			$this->load->view('footer');
 		}	
 	}
@@ -180,7 +180,7 @@ class Installer extends CI_Controller {
 
 		  $this->load->view('header');
 		  $this->load->view('body');
-		  $this->load->view('installer', $data2);
+		  $this->load->view('installer/installer', $data2);
 		  $this->load->view('footer');
 		}
 		else
@@ -201,7 +201,7 @@ class Installer extends CI_Controller {
 
 					$this->load->view('header');
 					$this->load->view('body');
-					$this->load->view('installer-2',$data2);
+					$this->load->view('installer/installer-2',$data2);
 					$this->load->view('footer');
 					
 				}
@@ -213,7 +213,7 @@ class Installer extends CI_Controller {
 
 			  $this->load->view('header');
 			  $this->load->view('body');
-			  $this->load->view('installer', $data2);
+			  $this->load->view('installer/installer', $data2);
 			  $this->load->view('footer');
 
 
@@ -272,7 +272,7 @@ class Installer extends CI_Controller {
 
 		$this->load->view('header');
 		$this->load->view('body');
-		$this->load->view('installer-3');
+		$this->load->view('installer/installer-3');
 		$this->load->view('footer');
 
 	}
