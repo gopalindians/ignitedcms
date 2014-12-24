@@ -142,24 +142,24 @@
             min-width: 205px;
         }
         a {
-            color: #FA5842;
+            color: #E0604E;
             /*text-decoration: underline;*/
         }
         /*for the login button on menu*/
         a.stop:hover {
-            background-color: #FA5842;
+            background-color: #E0604E;
         }
         .purplet {
             /*color: #bc8dbe; */
-            color: #FA5842;
+            color: #E0604E;
         }
         .bg-purplet {
-            background-color: #FA5842;
+            background-color: #E0604E;
         }
         .btn-purplet {
             color: #fff !important;
-            background-color: #FA5842;
-            border-color: #FA5842;
+            background-color: #E0604E;
+            border-color: #E0604E;
         }
 
         .btn-black{

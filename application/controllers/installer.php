@@ -241,6 +241,8 @@ class Installer extends CI_Controller {
       CREATE TABLE IF NOT EXISTS `pages` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `shortcodes` varchar(5000) NOT NULL,
+        `name` varchar(50) NOT NULL,
+        `inactive` int(11) NOT NULL,
         PRIMARY KEY (`id`)
       ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
       ";
@@ -285,6 +287,8 @@ class Installer extends CI_Controller {
 	  */
 	public function login()
 	{
+
+
 		$this->load->view('header');
 		$this->load->view('body');
 		$this->load->view('login');

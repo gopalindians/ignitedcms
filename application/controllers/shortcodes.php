@@ -2,6 +2,22 @@
 
 class Shortcodes extends CI_Controller {
 
+	public function __construct()
+	{
+		  parent::__construct();
+		  {
+			  	if($this->session->userdata('isloggedin')=='1')
+			  	{
+			  		//allow access
+			  	}
+			  	else
+			  	{
+			  		redirect('installer','refresh');
+			  	}
+		  }
+	}
+
+
 	public function index()
 	{
 		

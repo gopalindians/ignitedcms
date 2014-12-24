@@ -64,7 +64,7 @@ class Login extends CI_Controller {
                       
                       $this->session->set_userdata( $array );
                       //login successful
-                      redirect('shortcodes/load_builder_page','refresh');
+                      redirect('dashboard','refresh');
               }
               else
               {
