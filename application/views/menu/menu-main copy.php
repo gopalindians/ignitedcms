@@ -16,8 +16,19 @@
             <section class="panel">
                 
                 <div class="panel-body">
-                
-                            <?php echo anchor('menu/pull_all_pages', 'pull all pages', 'attributs'); ?>
+                 <button type="submit" class="btn btn-purplet btn-s-xs "  id="add"> <i class="fa fa-plus"></i> Add another menu</button>
+                            <div class="form-group">
+                                <label>Menu Name</label>
+                                <input name="name" id="menuname" type="text" data-required="true" data-maxlength="length" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Enter menu name" value="">
+                            </div>
+                            <div class="form-group">
+                                <label>Menu Url</label>
+                                <input name="url" id="menuurl" type="text" data-required="true" data-maxlength="length" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Enter menu url" value="">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-purplet btn-s-xs "  id="save"> Save</button>
+                            </div>
+
                             <div class="form-group">
                                 <button type="submit" class="btn btn-danger btn-s-xs " id="remove"> <i class="fa fa-minus"></i> Remove</button>
                             </div>

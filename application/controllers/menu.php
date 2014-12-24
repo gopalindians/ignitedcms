@@ -2,7 +2,83 @@
 
 class Menu extends CI_Controller {
 
-	
+	public function __construct()
+	{
+		  parent::__construct();
+		  {
+			  	if($this->session->userdata('isloggedin')=='1')
+			  	{
+			  		//allow access
+			  	}
+			  	else
+			  	{
+			  		redirect('installer','refresh');
+			  	}
+		  }
+	}
+
+	 /**
+	  *  @Description: pull all the pages from the db
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function pull_all_pages()
+	{	
+		
+		//first empty menu2
+		$this->db->select('*');
+		$this->db->from('menu2');
+		$query = $this->db->get();
+		
+		foreach ($query->result() as $row) 
+		{
+			$this->db->where('id', $row->id);
+			$this->db->delete('menu2');
+		}
+		
+
+
+
+
+		$this->db->select('id,name');
+		$this->db->from('pages');
+
+		$query2 = $this->db->get();
+		
+		
+
+		$html_string = "";
+
+		foreach ($query2->result() as $row) 
+		{
+			$unique_id = random_string('alnum', 16);
+
+			$name = $row->name;
+			$url = $row->id;
+			$object = array('father' => 'null', 'innerhtml' => "$name|$url" );
+			$this->db->insert('menu2', $object);
+
+			$html_string = $html_string . 
+			"<li class='dd-item dd3-item' id='id$unique_id'>
+			<div class='dd-handle dd3-handle'></div>
+			<div class='dd3-content'>$name</div>
+			<div class='url' style='display:none;'>$url</div>
+			<div class='dd-edit'><i class='fa fa-pencil'></i></div>
+			</li>";
+			
+		}
+
+		//insert this into menu
+		$object2 = array('html' => $html_string );
+		$this->db->where('id', '1');
+		$this->db->update('menu', $object2);
+
+		redirect('menu/build_menu','refresh');
+		
+
+
+	}
 
 	public function index()
 	{
