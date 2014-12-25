@@ -1,7 +1,7 @@
 <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px; min-height:800px; ">
   <div class="row" style="margin-left:30px; margin-right:30px;">
         
-        <div class="row" style="margin-left:15px; margin-right:15px;">
+        <div class="row" style="margin-left:15px; margin-right:15px;" >
             <?php if($this->session->flashdata('msg')) {?>
                         
                 <?php if($this->session->flashdata('type') =='0') { ?>
@@ -9,7 +9,7 @@
                 <div class="alert alert-danger">
             
                 <?php } else {?>
-                <div class="alert alert-success">
+                <div class="animated fadeOut alert alert-success">
                     <?php } ?>
                     <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i>
                     </button> <i class="fa fa-ban-circle"></i>

@@ -28,16 +28,13 @@
             <section class="panel">
                 
                 <div class="panel-body">
-                
-                            <?php echo anchor('menu/pull_all_pages', 'Load all pages', 'attributs'); ?>
-                            <!-- <div class="form-group">
-                                <button type="submit" class="btn btn-danger btn-s-xs " id="remove"> <i class="fa fa-minus"></i> Remove</button>
-                            </div> -->
-                             <div class="form-group">
-                                <button type="submit" class="btn btn-purplet btn-s-xs "  id="savetodatabase"> Save </button>
+                            
+                            <div class="btn-group">
+                              
+                                <button type="submit" class="btn btn-white btn-s-xs " id="pullfromdatabase"><i class="fa fa-refresh"></i> Remove and add all pages?</button>
+                             
+                              <button type="submit" class="btn btn-white btn-s-xs " id="savetodatabase">Save</button>
                             </div>
-                            
-                            
 
                        <div class="my-results"></div>
                 </div>

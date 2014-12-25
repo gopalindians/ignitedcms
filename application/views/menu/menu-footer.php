@@ -57,6 +57,23 @@
 
         });
 
+        $('#pullfromdatabase').click(function (event) {
+          $.ajax({
+              type: "POST",
+              url: "<?php echo site_url('menu/pull_all_pages'); ?>",
+              
+              dataType: "html",
+              
+              success: function(result) {
+
+                  location.reload();
+
+              }
+            });
+
+
+        });
+
         
 
          /*important need to use on for dynamic dom!!!*/
