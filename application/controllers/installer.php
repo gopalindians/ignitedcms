@@ -287,11 +287,23 @@ class Installer extends CI_Controller {
 		INSERT INTO `menu` (`id`, `html`, `array`) VALUES
 		(1, '', '');";
 
+
+		$sql8 = "
+		CREATE TABLE `blog` (
+		`id` int(11) NOT NULL,
+		  `title` varchar(300) NOT NULL,
+		  `content` varchar(2000) NOT NULL,
+		  `blog_date` datetime NOT NULL,
+		  `userid` int(11) NOT NULL,
+		  `picture` varchar(500) NOT NULL
+		) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+
 		$this->db->query($sql3);
 		$this->db->query($sql4);
 		$this->db->query($sql5);
 		$this->db->query($sql6);
 		$this->db->query($sql7);
+		$this->db->query($sql8);
 
 		$this->load->view('header');
 		$this->load->view('body');

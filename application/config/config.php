@@ -34,7 +34,7 @@ if( ! ini_get('date.timezone') )
 */
 
 
-$config['base_url']	= 'http://localhost:8888/ignitedcms/';
+$config['base_url']	= 'http://localhost/ignitedcms/';
 
 
 
