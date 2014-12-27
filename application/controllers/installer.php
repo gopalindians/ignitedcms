@@ -290,13 +290,13 @@ class Installer extends CI_Controller {
 
 		$sql8 = "
 		CREATE TABLE `blog` (
-		`id` int(11) NOT NULL,
+		  `id` int(11) primary key NOT NULL AUTO_INCREMENT,
 		  `title` varchar(300) NOT NULL,
 		  `content` varchar(2000) NOT NULL,
 		  `blog_date` datetime NOT NULL,
 		  `userid` int(11) NOT NULL,
 		  `picture` varchar(500) NOT NULL
-		) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 
 		$this->db->query($sql3);
 		$this->db->query($sql4);
