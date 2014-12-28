@@ -160,44 +160,16 @@ class Menu extends CI_Controller {
 
 		$query = $this->db->get();
 
+
+		$menu2 = ('<div class="menu" ><div id="results">');
+
 		//convert query result to an array
 		$query_array = $query->result_array();
 
-
-
-		$menu = ('<div class="menu" >
-        
-        <nav> 
-
-        <ul class="sf-menu" id="example">
-       		
-           <li> <a href="#" >Home</a> </li>
-           <li> <a href="#" >Home</a>  </li>
-           <li> <a href="#" >Home <i class="fa fa-chevron-down"></i></a> 
-            <ul>
-              <li> <a href="#" >Home</a>  </li>
-              <li> <a href="#" >Home</a>  </li>
-            </ul>
-          </li>
-          <li> <a href="#" >Home</a> </li>
-          <li> <a href="#" >Home</a>  </li>
-         
-        </ul>
-            
-          </nav>
-        
-		</div>');
-
-		$menu2 = ('<div class="menu" >
-        
-        <div id="results"> 
-
-        ');
-
-
-		$menu3 = ('  </div></div>');
+		$menu3 = ('</div></div>');
 
 		$brap =  $this->make_tree($query_array,"null");	
+        
         $menu4 = $menu2 . $brap . $menu3;
        		
 
@@ -226,7 +198,7 @@ class Menu extends CI_Controller {
 	   {
 	       if ($i['father'] == $level ) 
 	       {
-	          $r = $r . "<li>" . "<a href='#' >". $i['innerhtml'] ." </a>" .  $this->make_tree( $a, $i['id'] ) . "</li>";
+	          $r = $r . "<li>" . $this->split($i['innerhtml']) .  $this->make_tree( $a, $i['id'] ) . "</li>";
 
 	       }
 	   }
@@ -234,6 +206,22 @@ class Menu extends CI_Controller {
   		 return ($r==''?'':"<ul>". $r . "</ul>");
   	}
 
+  	 /**
+  	  *  @Description: split the name and the url
+  	  *       @Params: string   name| url
+  	  *
+  	  *  	 @returns: <a href='url'> name </a>
+  	  */
+
+  	 public function split($element)
+  	 {
+
+  	 	$array = explode("|", $element);
+
+  	 	return "<a href='$array[1]'> $array[0]</a>";
+
+
+  	 }
 
 
 
