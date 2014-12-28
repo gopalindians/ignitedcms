@@ -9,7 +9,7 @@
 
       <div class="head" id="tidy">
         <div class="logo visible-lg visible-md">
-       
+           <img class="img-responsive" src="<?php echo base_url('img/ig2.png'); ?>" alt="image" />
         </div>
 
         

@@ -34,6 +34,22 @@ class Dashboard extends CI_Controller {
 		
 	}
 
+
+	 /**
+	  *  @Description: save site settings like logo and site name
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function site_settings()
+	{
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('sitesettings/main');
+		$this->load->view('footer');
+		
+	}
+
 }
 
 /* End of file dashboard.php */

@@ -1,5 +1,17 @@
 <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px; min-height:900px;  ">
-    
+    <!-- breadcrumb -->
+       <div class="row" style="margin-left:30px; margin-right:30px;">
+          <div class="col-sm-12">
+            <!-- .breadcrumb -->
+            <ul class="breadcrumb">
+              <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+              <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Menu');?></a></li>
+              
+            </ul>
+                  
+            </div>
+        </div> 
+        <!-- end breadcrumb -->
     <div class="row" style="margin-left:40px; margin-right:40px;">
      
           <div id="err-msg" class="alert alert-success pm-hidden" >
@@ -38,8 +50,8 @@
 
                        <div class="my-results"></div>
 
-
-                       <?php echo anchor('menu/preview', 'preview menu', 'attributs'); ?>
+                       <a target="_blank" href=" <?php echo site_url('menu/preview'); ?>">Preview Menu</a>
+                       
                 </div>
             </section>
 

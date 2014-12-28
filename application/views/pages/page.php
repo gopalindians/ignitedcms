@@ -1,4 +1,18 @@
 <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px; min-height:800px; ">
+	
+	<!-- breadcrumb -->
+	   <div class="row" style="margin-left:30px; margin-right:30px;">
+	      <div class="col-sm-12">
+	        <!-- .breadcrumb -->
+	        <ul class="breadcrumb">
+	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+	          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add page');?></a></li>
+	          
+	        </ul>
+	              
+	        </div>
+	    </div> 
+	    <!-- end breadcrumb -->
 	<div class="row" style="margin-left:30px; margin-right:30px;">
 		<div class="col-sm-12">
 		    <header class="panel-heading font-bold">Add a Page</header>

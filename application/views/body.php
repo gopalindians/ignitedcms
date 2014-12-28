@@ -18,9 +18,10 @@
           data-content='<?php echo anchor('login/logout', 'Logout', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Profile'> <i class="fa fa-user"></i>  <strong>Profile</strong></div>
 
           <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
-                    data-content='<?php echo anchor('dashboard', 'Dashboard', 'attributs'); ?> <br/>
+                    data-content='
+                    <?php echo anchor('dashboard', 'Dashboard', 'attributs'); ?> <br/>
+                    <?php echo anchor('dashboard/site_settings', 'Site Settings', 'attributs'); ?> <br/>
                     <?php echo anchor('menu/build_menu', 'Menu', 'attributs'); ?> <br/>
-                    <?php echo anchor('main', 'Site Settings', 'attributs'); ?> <br/>
                     <?php echo anchor('blog/blog_show', 'Blog', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Options'> <i class="fa fa-gear"></i>  <strong>Options</strong></div>
 
           

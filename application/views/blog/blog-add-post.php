@@ -2,7 +2,7 @@
 <!-- breadcrumb -->
    <div class="row" style="margin-left:30px; margin-right:30px;">
       <div class="col-sm-12">
-        <!-- .breadcrumb -->
+       
         <ul class="breadcrumb">
           <li><a href="<?php echo site_url('blog/blog_show'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add blog');?></a></li>
@@ -90,16 +90,7 @@
                               </div> 
 
 
-                              <!-- end rich text editor -->
-
-                             <!--  <div class="form-group">
-                                <label class="col-sm-2 control-label">Blog content:</label>
-
-                                <div class="col-sm-10">
-                                  
-                                  <textarea name="content"  id="inp-box" class="form-control" rows="12" data-maxlength="1500" data-required="true" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Enter Blog content here."></textarea>
-                                </div>
-                              </div> -->
+                            
 
                             
                             <div class="form-group"> <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet">Add</button> </div> </div>

@@ -26,7 +26,8 @@
 
                     <div class="row">
                         <div class="col-sm-10">
-                          <?php echo anchor('blog/preview', 'Preview Blog', 'attributs'); ?>
+                            <a target="_blank" href=" <?php echo site_url('blog/preview'); ?>">Preview Blog</a>
+                          
                         </div>
                         <div class="col-sm-2">
                             <a href="<?php echo site_url("blog/insert_blog_post"); ?>">

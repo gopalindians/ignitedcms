@@ -257,6 +257,78 @@ class Stuff_menu extends CI_Model {
 	    return $result;
 	}
 
+
+	 /**
+	  *  @Description: makes the menu
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function make_menu()
+	{
+
+		$this->db->select('*');
+		$this->db->from('menu2');
+		$this->db->order_by('id', 'asc');
+
+		$query = $this->db->get();
+
+
+		$menu2 = ('<div class="menu" ><div id="results">');
+
+		//convert query result to an array
+		$query_array = $query->result_array();
+
+		$menu3 = ('</div></div>');
+
+		$brap =  $this->make_tree($query_array,"null");	
+        
+        $menu4 = $menu2 . $brap . $menu3;
+
+        return $menu4;
+
+	}
+
+
+	/**
+	  *  @Description: make the tree from db result
+	  *       @Params: db select
+	  *
+	  *  	 @returns: html tree
+	  */
+	public function  make_tree( $a, $level) 
+	{
+	   $r = '' ;
+	   foreach ( $a as $i ) 
+	   {
+	       if ($i['father'] == $level ) 
+	       {
+	          $r = $r . "<li>" . $this->split($i['innerhtml']) .  $this->make_tree( $a, $i['id'] ) . "</li>";
+
+	       }
+	   }
+	     //avoid empty leafs
+  		 return ($r==''?'':"<ul>". $r . "</ul>");
+  	}
+
+  	 /**
+  	  *  @Description: split the name and the url
+  	  *       @Params: string   name| url
+  	  *
+  	  *  	 @returns: <a href='url'> name </a>
+  	  */
+
+  	 public function split($element)
+  	 {
+
+  	 	$array = explode("|", $element);
+
+  	 	return "<a href='$array[1]'> $array[0]</a>";
+
+
+  	 }
+
+
 	
 
 }

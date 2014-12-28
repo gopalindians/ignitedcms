@@ -57,11 +57,17 @@ class Blog extends CI_Controller {
 		$query = $this->Stuff_blog->get_blog_posts();
 
 		$data['blogs'] = $query;
+
+		//grab the menu send to view
+		$this->load->model('Stuff_menu');
+		$menu4 = $this->Stuff_menu->make_menu();
+
+		$data['menu'] = $menu4;
 		
-		$this->load->view('header');
-		$this->load->view('body');
+		$this->load->view('sitepreview/header');
+		$this->load->view('sitepreview/body',$data);
 		$this->load->view('blog/blog',$data); 
-		$this->load->view('footer');
+		$this->load->view('sitepreview/footer');
 
 	}
 

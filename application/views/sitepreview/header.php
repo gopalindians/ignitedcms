@@ -73,10 +73,13 @@
             /*display:none;*/
         }
         .pm-footer {
+            position: relative;
             bottom: 0px;
+            min-height: 200px;
+            background-color: #fff;
         }
         .footer-brand {
-            color: #fff;
+            /*color: #ccc;*/
         }
 
 
@@ -103,11 +106,11 @@
         {
           float:left;
           position:relative;
-          width: 210px;
-          height:50px;
-          /*background-color:#fa824f;*/
-          /*background-image:url(../../gallery/alpha.jpg);*/
-          top:15px;
+          /*width: 210px;
+          height:87px;*/
+          
+          
+          top:0px;
           left:5px;
 
         }
