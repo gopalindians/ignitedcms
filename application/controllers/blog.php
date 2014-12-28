@@ -50,8 +50,7 @@ class Blog extends CI_Controller {
 	  */
 	public function preview()
 	{
-		//to help format the date better
-		$this->load->helper('my_helper');
+		
 
 		$this->load->model('Stuff_blog');
 		$query = $this->Stuff_blog->get_blog_posts();

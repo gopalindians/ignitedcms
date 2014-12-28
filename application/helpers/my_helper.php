@@ -33,3 +33,56 @@ if ( ! function_exists('my_pretty_date'))
 
     }   
 }
+ /**
+  *  @Description: show the site logo
+  *       @Params: params
+  *
+  *     @returns: returns
+  */
+if ( ! function_exists('my_show_logo'))
+{
+    function my_show_logo()
+    {
+      $CI =& get_instance();
+      $CI->db->select('logo');
+      $CI->db->from('site');
+      $CI->db->where('id', '1');
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $logo = "";
+      foreach ($query->result() as $row) 
+      {
+        $logo = $row->logo;
+      }
+      return $logo;
+
+    }   
+}
+
+/**
+  *  @Description: show the site title
+  *       @Params: params
+  *
+  *     @returns: returns
+  */
+if ( ! function_exists('my_site_title'))
+{
+    function my_site_title()
+    {
+      $CI =& get_instance();
+      $CI->db->select('site');
+      $CI->db->from('site');
+      $CI->db->where('id', '1');
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $site = "";
+      foreach ($query->result() as $row) 
+      {
+        $site = $row->site;
+      }
+      return $site;
+
+    }   
+}

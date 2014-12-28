@@ -9,7 +9,8 @@
 
       <div class="head" id="tidy">
         <div class="logo visible-lg visible-md">
-           <img class="img-responsive" src="<?php echo base_url('img/ig2.png'); ?>" alt="image" />
+          <?php $logo = my_show_logo(); ?>
+           <img class="img-responsive" src="<?php echo base_url("img/uploads/$logo"); ?>" alt="image" />
         </div>
 
         

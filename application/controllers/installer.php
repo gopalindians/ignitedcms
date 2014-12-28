@@ -298,12 +298,25 @@ class Installer extends CI_Controller {
 		  `picture` varchar(500) NOT NULL
 		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
 
+		$sql9 = "
+		CREATE TABLE `site` (
+		`id` int(11) NOT NULL,
+		  `site` varchar(200) NOT NULL,
+		  `logo` varchar(200) NOT NULL
+		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+
+		$sql10 = "
+		INSERT INTO `site` (`id`, `site`, `logo`) VALUES
+		(1, '', '');";
+
 		$this->db->query($sql3);
 		$this->db->query($sql4);
 		$this->db->query($sql5);
 		$this->db->query($sql6);
 		$this->db->query($sql7);
 		$this->db->query($sql8);
+		$this->db->query($sql9);
+		$this->db->query($sql10);
 
 		$this->load->view('header');
 		$this->load->view('body');

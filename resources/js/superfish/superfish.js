@@ -14,7 +14,7 @@
 
 		var sf = $.fn.superfish,
 			c = sf.c,
-			$arrow = $('<span class="'+c.arrowClass+'"> &#x25BC; </span>'),
+			$arrow = $('<span class="'+c.arrowClass+'">  </span>'),
 			over = function(e){
 				var $$ = $(this), menu = getMenu($$);
 				clearTimeout(menu.sfTimer);

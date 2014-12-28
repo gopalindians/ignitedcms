@@ -166,6 +166,8 @@ class Menu extends CI_Controller {
       */
 	public function preview()
 	{
+		
+
 		//grab the menu and sent to view
 		$this->load->model('Stuff_menu');
 		$menu = $this->Stuff_menu->make_menu();
