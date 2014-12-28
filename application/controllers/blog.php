@@ -4,17 +4,17 @@ class Blog extends CI_Controller {
 
 	public function __construct()
 	{
-		  parent::__construct();
-		  {
-			  	if($this->session->userdata('isloggedin')=='1')
-			  	{
-			  		//allow access
-			  	}
-			  	else
-			  	{
-			  		redirect('installer','refresh');
-			  	}
-		  }
+		parent::__construct();
+		{
+		  	if($this->session->userdata('isloggedin')=='1')
+		  	{
+		  		//allow access
+		  	}
+		  	else
+		  	{
+		  		redirect('installer','refresh');
+		  	}
+		}
 	}
 	
 	public function index()
@@ -50,6 +50,8 @@ class Blog extends CI_Controller {
 	  */
 	public function preview()
 	{
+		//to help format the date better
+		$this->load->helper('my_helper');
 
 		$this->load->model('Stuff_blog');
 		$query = $this->Stuff_blog->get_blog_posts();
@@ -95,9 +97,7 @@ class Blog extends CI_Controller {
 
 
 		$this->load->view('header');
-        
         $this->load->view('body');
-
 
         $this->load->view('blog/blog-edit-post',$data); 
         $this->load->view('blog/footer-edit-blog');
@@ -130,8 +130,6 @@ class Blog extends CI_Controller {
 	      	$this->session->set_flashdata('msg', '<strong>Success</strong> Post edited');
 
 	      	redirect('blog/blog_show', 'refresh');
-
-
 
 	}
 
@@ -224,14 +222,8 @@ class Blog extends CI_Controller {
 			
 			
         }
-
-
-
 		
 	}
-
-
-
 }
 
 /* End of file blog.php */

@@ -17,6 +17,11 @@ class Menu extends CI_Controller {
 		  }
 	}
 
+	public function index()
+	{
+		//default index function	
+	}
+
 	 /**
 	  *  @Description: pull all the pages from the db
 	  *       @Params: params
@@ -36,9 +41,6 @@ class Menu extends CI_Controller {
 			$this->db->where('id', $row->id);
 			$this->db->delete('menu2');
 		}
-		
-
-
 
 
 		$this->db->select('id,name');
@@ -80,10 +82,14 @@ class Menu extends CI_Controller {
 
 	}
 
-	public function index()
-	{
-		
-	}
+	
+
+	 /**
+	  *  @Description: drag and drop for building menu
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
 
 	public function build_menu()
 	{
@@ -110,7 +116,12 @@ class Menu extends CI_Controller {
 
 	}
 
-
+	 /**
+	  *  @Description: save the menu order to database
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
 
 	public function save_to_database()
 	{
@@ -147,13 +158,17 @@ class Menu extends CI_Controller {
 
 
      /**
-      *  @Description: preview the superfish menu, need to add first class to be class="sf-menu"
+      *  @Description: preview the superfish menu, need to add first 
+      *                class to be class="sf-menu" done via jquery
       *       @Params: params
       *
       *  	 @returns: returns
       */
 	public function preview()
 	{
+
+
+
 		$this->db->select('*');
 		$this->db->from('menu2');
 		$this->db->order_by('id', 'asc');
@@ -178,10 +193,6 @@ class Menu extends CI_Controller {
 		$this->load->view('sitepreview/header');
 		$this->load->view('sitepreview/body',$data);
 		$this->load->view('sitepreview/footer');	
-		
-		
-		
-		
 
 	}
 

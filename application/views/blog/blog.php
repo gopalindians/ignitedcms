@@ -58,7 +58,7 @@
                     <div class="line line-lg"></div>
                     <div class="text-muted">
                       <i class="fa fa-user icon-muted"></i> by <?php echo 'Admin';?>
-                      <i class="fa fa-clock-o icon-muted"></i> <?php echo ($row->blog_date); ?>
+                      <i class="fa fa-clock-o icon-muted"></i> <?php echo(my_pretty_date($row->blog_date)); ?>
 
                      
 
