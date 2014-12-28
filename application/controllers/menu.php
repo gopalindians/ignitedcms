@@ -145,6 +145,74 @@ class Menu extends CI_Controller {
 
 	}
 
+
+     /**
+      *  @Description: preview the superfish menu, need to add first class to be class="sf-menu"
+      *       @Params: params
+      *
+      *  	 @returns: returns
+      */
+	public function preview()
+	{
+		$this->db->select('*');
+		$this->db->from('menu2');
+		$this->db->order_by('id', 'asc');
+
+		$query = $this->db->get();
+
+		//convert query result to an array
+		$query_array = $query->result_array();
+
+
+
+		$menu = ('<div class="menu" >
+        
+        <nav> 
+
+        <ul class="sf-menu" id="example">
+       		
+           <li> <a href="#" >Home</a> </li>
+           <li> <a href="#" >Home</a>  </li>
+           <li> <a href="#" >Home <i class="fa fa-chevron-down"></i></a> 
+            <ul>
+              <li> <a href="#" >Home</a>  </li>
+              <li> <a href="#" >Home</a>  </li>
+            </ul>
+          </li>
+          <li> <a href="#" >Home</a> </li>
+          <li> <a href="#" >Home</a>  </li>
+         
+        </ul>
+            
+          </nav>
+        
+		</div>');
+
+		$menu2 = ('<div class="menu" >
+        
+        <div id="results"> 
+
+        ');
+
+
+		$menu3 = ('  </div></div>');
+
+		$brap =  $this->make_tree($query_array,"null");	
+        $menu4 = $menu2 . $brap . $menu3;
+       		
+
+
+		$data['menu'] = $menu4;
+		$this->load->view('sitepreview/header');
+		$this->load->view('sitepreview/body',$data);
+		$this->load->view('sitepreview/footer');	
+		
+		
+		
+		
+
+	}
+
 	 /**
 	  *  @Description: make the tree from db result
 	  *       @Params: db select
@@ -158,12 +226,17 @@ class Menu extends CI_Controller {
 	   {
 	       if ($i['father'] == $level ) 
 	       {
-	          $r = $r . "<li>" . $i['innerhtml'] . $this->make_tree( $a, $i['id'] ) . "</li>";
+	          $r = $r . "<li>" . "<a href='#' >". $i['innerhtml'] ." </a>" .  $this->make_tree( $a, $i['id'] ) . "</li>";
+
 	       }
 	   }
 	     //avoid empty leafs
   		 return ($r==''?'':"<ul>". $r . "</ul>");
   	}
+
+
+
+
 }
 
 /* End of file menu.php */

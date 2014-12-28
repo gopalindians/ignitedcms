@@ -37,6 +37,9 @@
                             </div>
 
                        <div class="my-results"></div>
+
+
+                       <?php echo anchor('menu/preview', 'preview menu', 'attributs'); ?>
                 </div>
             </section>
 

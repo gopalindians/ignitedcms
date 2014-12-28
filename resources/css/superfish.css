@@ -115,8 +115,8 @@ ul.sf-menu li li li.sfHover ul {
 	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
 }
 .sf-sub-indicator {
-	position:		absolute;
-	display:		block;
+	/*position:		absolute;*/
+	/*display:		block;*/
 	right:			.75em;
 	top:			1.05em; /* IE6 only */
 	width:			10px;
