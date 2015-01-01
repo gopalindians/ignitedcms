@@ -22,22 +22,22 @@
                     <div class="form-group">All right champ, please type your database details here!</div>
                     <div class="form-group">
                         <label>Server Name</label>
-                        <input name="hostname" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Sever Details e.g localhost" value="">
+                        <input name="hostname" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Sever Details e.g localhost" value="localhost">
                     </div>
                     <div class="form-group">
-                        <label>MySQL root name</label>
-                        <input name="username" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="root name" value="">
+                        <label>MySQL Admin name</label>
+                        <input name="username" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="E.g root" value="root">
                     </div>
                     <div class="form-group">
-                        <label>MySQL root Password</label>
-                        <input name="password" type="password" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="root password" value="">
+                        <label>MySQL Admin Password</label>
+                        <input name="password" type="password" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="E.g root" value="root">
                     </div>
                     <div class="form-group">
                         <label>Database Name*
                         </label>
                         <div class="btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="right" data-content="Please ensure your database name has no spaces or numbers! Gracias" title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i>  <strong></strong></div>
 
-                        <input name="database" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="database name" value="">
+                        <input name="database" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="database name" value="ignitedcms">
                     </div>
                     <button type="submit" class="btn btn-purplet btn-s-xs " id="">Save</button>
                     <?php echo form_close(); ?>

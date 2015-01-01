@@ -43,13 +43,11 @@
     <script src="<?php echo (base_url()."resources")?>/js/ie/fix.js" cache="false"></script>
   <![endif]-->
     <style type="text/css">
-        @font-face {
-            font-family: 'MuseoSans-500';
-            src: url('<?php echo base_url(); ?>/resources/fonts/museo.woff');
-        }
+        
         .my-center {
             margin-left: auto;
             margin-right: auto;
+
         }
         #tidy {
             max-width: 1170px;
@@ -71,6 +69,7 @@
             /*display:none;*/
         }
         .pm-footer {
+            background-color: #363636;
             bottom: 0px;
         }
         .footer-brand {
@@ -227,6 +226,9 @@
         .pm-hidden{
             display:none;
         }
+        
+
+       
         
     </style>
 </head>
