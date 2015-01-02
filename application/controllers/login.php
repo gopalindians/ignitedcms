@@ -179,7 +179,7 @@ class Login extends CI_Controller {
             $this->db->update('site', $object);
 
 
-            redirect('installer/login','refresh'); 
+            redirect('installer/set_time_local','refresh'); 
           }
   
       }

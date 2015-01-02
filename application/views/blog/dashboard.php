@@ -9,7 +9,7 @@
                 <div class="alert alert-danger">
             
                 <?php } else {?>
-                <div class="animated fadeOut alert alert-success">
+                <div class="animated flash alert alert-success">
                     <?php } ?>
                     <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i>
                     </button> <i class="fa fa-ban-circle"></i>
@@ -41,14 +41,14 @@
 
                     <?php foreach ($query->result() as $row ):?>
                     <div class="line"></div>
-                    <div class="col-sm-2">
-                        <img src="<?php echo base_url('img/Folder.png'); ?>" alt="" />
+                    <div class="col-sm-1">
+                        <img src="<?php echo base_url('img/Folder.png'); ?>" style="max-width:60px;" alt="" />
                          
                     </div>
-                    <div class="col-sm-6" style="margin-top:30px;">
+                    <div class="col-sm-7" style="margin-top:20px;">
                         <strong><?php echo($row->title); ?></strong>
                     </div>
-                    <div class="col-sm-4" style="margin-top:30px;">
+                    <div class="col-sm-4" style="margin-top:20px;">
                         <div class="pull-right"> <?php echo anchor("blog/edit_blog_post/$row->id", "View/Edit", 'attributs'); ?></div>
                     </div>
                     <div class="clearfix"></div>

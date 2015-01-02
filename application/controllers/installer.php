@@ -335,6 +335,46 @@ class Installer extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: set time local
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+
+	 public function set_time_local()
+	 {
+
+
+	 	$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('installer/installer-4');
+		$this->load->view('footer');
+
+
+	 }
+
+
+	  /**
+	   *  @Description: save time local setting to config file
+	   *       @Params: _post time
+	   *
+	   *  	 @returns: returns
+	   */
+	  public function save_time_local()
+	  {
+
+	  	//To do: write over config file
+
+	  	redirect('installer/login', 'refresh');
+
+
+
+	  }
+
+
+
+
+	 /**
 	  *  @Description: general login function
 	  *       @Params: params
 	  *
