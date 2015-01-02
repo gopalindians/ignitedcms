@@ -89,7 +89,7 @@ class Installer extends CI_Controller {
 
 		  $this->load->view('header');
 		  $this->load->view('body');
-		  $this->load->view('installer', $data2);
+		  $this->load->view('installer/installer', $data2);
 		  $this->load->view('footer');
 		}
 		else{		
@@ -185,7 +185,7 @@ class Installer extends CI_Controller {
 		}
 		else
 		{
-			$sql="CREATE DATABASE IF NOT EXISTS $database";
+			$sql="CREATE DATABASE $database";
 			if (mysqli_query($con,$sql)) 
 			{
 			    //echo "Database my_db created successfully";
