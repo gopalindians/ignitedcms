@@ -71,9 +71,9 @@ class Assets extends CI_Controller {
         if ( ! $this->upload->do_upload())
         {
 
-
+        	$errors =  $this->upload->display_errors();
 			$this->session->set_flashdata('type', '0');
-			$this->session->set_flashdata('msg', '<strong>Failed</strong> Make sure the file type is OK');
+			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
 			redirect('assets/asset_view','refresh');
 

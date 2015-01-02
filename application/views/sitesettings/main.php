@@ -1,4 +1,4 @@
-<div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px;  min-height:700px;">
+<div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px;  min-height:800px;">
 	<div class="row" style="margin-left:40px; margin-right:40px;">
 		<?php if($this->session->flashdata('msg')) {?>
 		            
@@ -19,24 +19,28 @@
 	<div class="col-sm-12">
 	    <header class="panel-heading font-bold">Site Settings</header>
 	    <section class="panel">
-	        
+	        <?php foreach($query->result() as $row): ?>
 	        <div class="panel-body">
 	        	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('dashboard/save_site_settings',$atts); ?>
 	        	
 	        	<div class="form-group">
 	        	    <label>Site name</label>
-	        	    <input name="site" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site name" value="">
+	        	    <input name="site" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site name" value="<?php echo $row->site; ?>">
 	        	</div>
 	        	<div class="form-group">
-                              
-                    <label class="control-label">Upload Site Logo:</label>
-                   
-                  
+                             
+                    <label class="control-label">Upload Site Logo:</label> 
+
+                    <div class="btn btn-sm btn-rounded  btn-info" data-toggle="popover" data-html="true" data-placement="right" 
+                              data-content='<?php echo img("img/uploads/$row->logo"); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Existing Logo'> <i class="fa fa-question"></i> 
+                      </div>
+
                     <input type="file" name="userfile" size="20" data-toggle="tooltip" data-placement="bottom" title="Please make sure your Site logo is 200px wide" />
                   </div>
                 
                 <button type="submit" class="btn btn-purplet btn-s-xs " id="">Save</button>
                 <?php echo form_close(); ?>
+            <?php endforeach; ?>
 	        </div>
 	    </section>
 	</div>

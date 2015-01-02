@@ -30,7 +30,7 @@
                           <div class="panel-body"> 
                             <?php foreach ($query->result() as $row): ?>
                             <div class="form-group"> 
-                              <label class="col-sm-2 control-label">Blog Name:</label> 
+                              <label class="col-sm-2 control-label">Post Title:</label> 
                                <div class="col-sm-10"> 
                                 <input type="text" name="topicname" id="topicname" class="form-control"  data-required="true" placeholder="" value="<?php echo $row->title; ?>"> 
                                </div> 

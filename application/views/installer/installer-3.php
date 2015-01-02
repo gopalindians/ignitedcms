@@ -22,7 +22,7 @@
                     
                     <div class="form-group">
                         <label>Site Title</label>
-                        <input name="title" type="text" data-required="true" data-maxlength="40" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site title" value="">
+                        <input name="site" type="text" data-required="true" data-maxlength="40" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site title" value="">
                     </div>
                    <div class="form-group pull-in">
                           <div class="col-sm-6">

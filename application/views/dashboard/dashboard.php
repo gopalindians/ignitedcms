@@ -40,14 +40,14 @@
 
                     <?php foreach ($query->result() as $row ):?>
                     <div class="line"></div>
-                    <div class="col-sm-2">
-                        <img src="<?php echo base_url('img/Folder.png'); ?>" alt="" />
+                    <div class="col-sm-1">
+                        <img src="<?php echo base_url('img/Folder.png'); ?>" alt="" style="max-width:60px;"/>
                          
                     </div>
-                    <div class="col-sm-6" style="margin-top:30px;">
+                    <div class="col-sm-7" style="margin-top:20px;">
                         <strong><?php echo($row->name); ?></strong>
                     </div>
-                    <div class="col-sm-4" style="margin-top:30px;">
+                    <div class="col-sm-4" style="margin-top:20px;">
                         <div class="pull-right"> <?php echo anchor("pages/detail_view/$row->id", "View/Edit", 'attributs'); ?></div>
                     </div>
                     <div class="clearfix"></div>

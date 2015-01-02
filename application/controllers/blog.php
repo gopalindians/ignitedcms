@@ -180,8 +180,9 @@ class Blog extends CI_Controller {
 
 			$data['blogs'] = $query;
 			
+			$errors =  $this->upload->display_errors();
 			$this->session->set_flashdata('type', '0');
-			$this->session->set_flashdata('msg', '<strong>Failed</strong> Make sure the file type is OK');
+			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
 			redirect('blog/blog_show','refresh');
 

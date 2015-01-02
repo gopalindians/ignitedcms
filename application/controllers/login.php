@@ -26,6 +26,7 @@ class Login extends CI_Controller {
             //------------------------------
             //  POST vars
             //------------------------------
+
             $name = $this->input->post('name');
             $password = $this->input->post('password');
 
@@ -135,7 +136,7 @@ class Login extends CI_Controller {
             //-------------------------------
             //  POST vars
             //-------------------------------
-            //$name = $this->input->post('name');
+            $site = $this->input->post('site');
             $password = $this->input->post('password1');
             //$email = $this->input->post('email');
 
@@ -170,6 +171,14 @@ class Login extends CI_Controller {
 
             //insert into the db
             $this->db->insert('user', $data);
+
+            //update site title
+
+            $object = array('site' => $site );
+            $this->db->where('id', '1');
+            $this->db->update('site', $object);
+
+
             redirect('installer/login','refresh'); 
           }
   

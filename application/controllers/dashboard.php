@@ -43,9 +43,21 @@ class Dashboard extends CI_Controller {
 	  */
 	public function site_settings()
 	{
+		
+		$this->db->select('*');
+		$this->db->from('site');
+		$this->db->where('id', '1');
+		$this->db->limit(1);
+
+		$site = "";
+		$query = $this->db->get();
+		
+		$data['query'] = $query;
+
+
 		$this->load->view('header');
 		$this->load->view('body');
-		$this->load->view('sitesettings/main');
+		$this->load->view('sitesettings/main',$data);
 		$this->load->view('footer');
 		
 	}
