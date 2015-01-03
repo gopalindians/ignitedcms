@@ -1,6 +1,23 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
 class Shortcodes extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		{
+		  	if($this->session->userdata('isloggedin')=='1')
+		  	{
+		  		//allow access
+		  	}
+		  	else
+		  	{
+		  		redirect('installer','refresh');
+		  	}
+		}
+	}
 
 	public function index()
 	{
@@ -8,22 +25,6 @@ class Shortcodes extends CI_Controller {
 	}
 
 	
-
-	 /**
-	  *  @Description: test if file uploads work
-	  *                work with ajax!
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	public function ajax_test()
-	{
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('builder/ajax');
-		$this->load->view('footer');
-
-	}
 
 	 /**
 	  *  @Description: test resize library working independantly
@@ -100,23 +101,31 @@ class Shortcodes extends CI_Controller {
 
 	}
 
+	 /**
+	  *  @Description: save to pages
+	  *       @Params: _POST pageid
+	  *
+	  *  	 @returns: returns
+	  */
 	public function save_to_database()
 	{
-		
+		$pageid = $this->input->post('pageid');
 
 		$shorttag = $this->input->post('shorttag');
 
-		$object = array('shortcodes'=>$shorttag );
-		$this->db->insert('pages', $object);
+		$object = array('shortcodes' => $shorttag );
+
+		$this->db->where('id', $pageid);
+		$this->db->update('pages', $object);
 
 	}
 	 /**
 	  *  @Description: this previews and renders the page you have built
-	  *       @Params: params
+	  *       @Params: page id
 	  *
 	  *  	 @returns: returns
 	  */
-	public function preview_page()
+	public function preview_page($id)
 	{
 		include('./resources/shortcodes/my_codes_render.php');
 
@@ -124,6 +133,7 @@ class Shortcodes extends CI_Controller {
 
 		$this->db->select('shortcodes');
 		$this->db->from('pages');
+		$this->db->where('id', $id);
 
 		$query = $this->db->get();
 		

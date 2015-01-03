@@ -312,7 +312,7 @@ class Installer extends CI_Controller {
 
 		$sql11 = "
 		CREATE TABLE `assets` (
-		`id` int(11) NOT NULL,
+		`id` int(11) primary key NOT NULL AUTO_INCREMENT,
 		  `name` varchar(100) NOT NULL,
 		  `inactive` int(11) NOT NULL
 		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";

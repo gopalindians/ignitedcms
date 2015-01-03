@@ -59,10 +59,46 @@ class Pages extends CI_Controller {
 
 	}
 
-
+	 /**
+	  *  @Description: go to page builder
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
 	public function detail_view($id)
 	{
+		include('./resources/shortcodes/my_codes.php');
+		
+		$this->db->select('shortcodes');
+		$this->db->from('pages');
+		$this->db->where('id', $id);
 
+		$query = $this->db->get();
+		
+		$shorttag = "";
+		foreach ($query->result() as $row) 
+		{
+			$shorttag = $row->shortcodes;
+		}
+
+		//get all asset images
+		$this->db->select('*');
+		$this->db->from('assets');
+
+		$query2 = $this->db->get();
+		
+		$data['query2'] = $query2;
+		
+
+		
+		$data['content'] = do_shortcode($shorttag);
+
+		$data['id'] = $id;
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('builder/builder',$data);
+		$this->load->view('builder/footer',$data);
 
 	}
 
