@@ -59,8 +59,7 @@
         /*save to the shorttag div image*/
         $('#sortable').on("click", '.pp-img', function (event) {
             var tmp = $(this).attr("mid");
-            var tmp2 = ($('#pic-' + tmp).text());
-            
+            var tmp2 = ($('#inp-' + tmp).val());
             var tmp3 = ($('#' + tmp).attr('mwidth'));
             var tmp4 = "[col foo='" + tmp3 + "'][img src='"+tmp2+"'][/col]";
             
@@ -148,6 +147,23 @@
             //         }
             //     });
         });
+
+        $('.ig-click').click(function (event) {
+
+            $('#assets').slideUp();
+            var id = $(this).attr('id');
+
+            $.ajax({
+                    url: '<?php echo site_url("shortcodes/image"); ?>',
+                    type: 'post',
+                    data: {id:id},
+                    success: function (data) {
+                        $('#sortable').append(data);
+                    }
+                });
+        });
+
+
 
         $('#insert').click(function (event) {
            $('#assets').slideUp();

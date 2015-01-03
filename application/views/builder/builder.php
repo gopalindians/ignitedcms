@@ -36,9 +36,12 @@
                                     <td style="vertical-align:middle; position:relative; background-color:#f3f3f3;"> <img class="img-responsive" src="<?php echo base_url("img/uploads/$row->name"); ?>" alt="image" />
 
                                     <div class="box" >
-                                        <label >
-                                            <input type="checkbox" name="" value="" style="position:absolute; bottom:0px;"/>
-                                        </label>
+                                      <div class="ig-click" id="<?php echo $row->id; ?>" style="cursor:pointer;">
+                                        add
+                                      </div>
+                                        <!-- <label >
+                                            <input type="checkbox" name="" value="<?php echo $row->id; ?>" style="position:absolute; bottom:0px;"/>
+                                        </label> -->
                                     </div>
                                     </td>
 

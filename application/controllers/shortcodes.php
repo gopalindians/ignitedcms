@@ -169,8 +169,26 @@ class Shortcodes extends CI_Controller {
 	//add image block
 	public function image()
 	{
+		$id = $this->input->post('id');
+
+		//get the img url
+		$this->db->select('name');
+		$this->db->from('assets');
+		$this->db->where('id', $id);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		
+		$url = "";
+		foreach ($query->result() as $row) 
+		{
+			$url= $row->name;
+		}
+		
+		$url = base_url("img/uploads/$url");
+
 		include('./resources/shortcodes/my_codes.php');
-		echo do_shortcode('[img foo=4]Lorem ispsum[/img]');
+		echo do_shortcode("[img foo=4]".$url."[/img]");
 
 	}
 

@@ -61,13 +61,20 @@
 			<section class='panel'> 
 				<div class='panel-body'> 
 					<div class='form-group'> 
-						<label>Image</label>
-						<form method='post' action=' enctype='multipart/form-data'>
-							<label>File Input: </label>
-							<input type='file' name='file' class='demo1' id='$id' /></label>
-							<div id='pic-$id'>
+						<label>Content</label> 
+						<textarea name='content' 
+							id='inp-$id' 
+							class='form-control' 
+							rows='5' 
+							data-maxlength='500' 
+							data-required='true' 
+							placeholder='Type here' 
+							data-toggle='tooltip' 
+							data-placement='top' 
+							title='' 
+							data-original-title='content'>$content</textarea> 
 
-							</div>
+							
 						</form> 
 						<div class='image'></div>
 					</div> 
