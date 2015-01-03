@@ -23,37 +23,13 @@
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.min.js" type="text/javascript"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.extend.js" type="text/javascript"></script>
 
-  <!-- my upload with ajax -->
-  <script src="<?php echo(base_url()."resources") ?>/js/my_upload.js" type="text/javascript"></script>
+  
 
 
  <script type="text/javascript">
    
     $(document).ready(function (event) {
 
-        $('#sortable').on("click", '.demo1', function (event) {
-            var tmp = ($(this).attr('id'));
-            var tmp2 = "pic-" + tmp;
-            $(".demo1").AjaxFileUpload({
-
-
-                    onComplete: function(filename, response) {
-                        if(response.error===0)
-                        {
-                       
-                         $("#" + tmp2).append(
-                              response.name
-                         );
-                         tmp = "";
-                         tmp2 = "";
-                        }
-                        else
-                        {
-                            alert(response.error);
-                        }
-                    }
-                });
-        });
 
 
         /*save to the shorttag div image*/
@@ -138,14 +114,6 @@
 
             $('#assets').slideDown();
 
-            // $.ajax({
-            //         url: '<?php echo site_url("shortcodes/image"); ?>',
-            //         type: 'post',
-            //         data: {},
-            //         success: function (data) {
-            //             $('#sortable').append(data);
-            //         }
-            //     });
         });
 
         $('.ig-click').click(function (event) {

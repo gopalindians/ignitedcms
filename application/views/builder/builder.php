@@ -79,7 +79,8 @@
         </div>
         
         <div class="panel-body">
-            <?php echo anchor("shortcodes/preview_page/$id", 'Preview page'); ?>
+          <a target="_blank" href=" <?php echo site_url("shortcodes/preview_page/$id"); ?>">Preview Page</a>
+           
         </div>
     </div>
 

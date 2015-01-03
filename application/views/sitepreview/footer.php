@@ -22,8 +22,7 @@
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.min.js" type="text/javascript"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.extend.js" type="text/javascript"></script>
 
-  <!-- my upload with ajax -->
-  <script src="<?php echo(base_url()."resources") ?>/js/my_upload.js" type="text/javascript"></script>
+
 
 <!-- superfish menu -->
   <script src="<?php echo(base_url()."resources") ?>/js/superfish/hoverIntent.js"></script>

@@ -21,85 +21,11 @@ class Shortcodes extends CI_Controller {
 
 	public function index()
 	{
-		
+		//default route
 	}
 
 	
 
-	 /**
-	  *  @Description: test resize library working independantly
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	 public function resize($name)
-	 {
-	 	$config['image_library'] = 'gd2';
-		$config['source_image']	= "img/uploads/$name";
-		//$config['create_thumb'] = TRUE;
-		$id = random_string('alnum', 16);
-		$config['new_image'] = "img/uploads/$id.png";
-		$config['width']	 = 500;
-		$config['height']	= 300;
-
-		
-		$this->load->library('image_lib', $config); 
-
-		$this->image_lib->resize();
-		if ( ! $this->image_lib->resize())
-		{
-		    echo $this->image_lib->display_errors();
-		}
-		else{
-			return $config['new_image'];
-		}
-
-
-	 }
-
-
-	 /**
-	  *  @Description: function to process the ajax upload
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	public function upload()
-	{
-		$whitelist = array('jpg', 'jpeg', 'JPG','JPEG', 'PNG', 'png', 'gif');
-		$name      = null;
-		$error     = 'No file uploaded.';
-
-		if (isset($_FILES)) {
-			if (isset($_FILES['file'])) {
-				$tmp_name = $_FILES['file']['tmp_name'];
-				$name     = basename($_FILES['file']['name']);
-				$error    = $_FILES['file']['error'];
-				
-				if ($error === UPLOAD_ERR_OK) {
-					$extension = pathinfo($name, PATHINFO_EXTENSION);
-
-					if (!in_array($extension, $whitelist)) {
-						$error = 'Invalid file type uploaded.';
-					} else {
-						move_uploaded_file($tmp_name, "img/uploads/$name");
-						$path = $this->resize($name);
-
-						$file_path = base_url($path);
-
-					}
-				}
-			}
-		}
-
-		
-		echo json_encode(array(
-			'name'  => $file_path,
-			'error' => $error,
-		));
-		die();
-
-	}
 
 	 /**
 	  *  @Description: save to pages
@@ -144,16 +70,18 @@ class Shortcodes extends CI_Controller {
 		}
 		
 
+		//grab the menu send to view
+		$this->load->model('Stuff_menu');
+		$menu = $this->Stuff_menu->make_menu();
+
+		$data['menu'] = $menu;
+
 		$data['content'] = do_shortcode($shorttag);
 
-
-
-		$this->load->view('header');
-		$this->load->view('body');
+		$this->load->view('sitepreview/header');
+		$this->load->view('sitepreview/body',$data);
 		$this->load->view('builder/page_preview',$data);
-		$this->load->view('footer');
-
-
+		$this->load->view('sitepreview/footer');
 
 	}
 
@@ -161,8 +89,15 @@ class Shortcodes extends CI_Controller {
 
 	public function box()
 	{
+		$lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
 		include('./resources/shortcodes/my_codes.php');
-		echo do_shortcode('[col foo=4]Lorem ispsum[/col]');
+		echo do_shortcode("[col foo=4]".$lorem."[/col]");
 
 	}
 
@@ -193,28 +128,7 @@ class Shortcodes extends CI_Controller {
 	}
 
 
-	public function load_builder_page()
-	{
-		include('./resources/shortcodes/my_codes.php');
-		
-		$this->db->select('shortcodes');
-		$this->db->from('pages');
 
-		$query = $this->db->get();
-		
-		$shorttag = "";
-		foreach ($query->result() as $row) 
-		{
-			$shorttag = $row->shortcodes;
-		}
-		
-		$data['content'] = do_shortcode($shorttag);
-
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('builder/builder',$data);
-		$this->load->view('footer');
-	}
 
 }
 
