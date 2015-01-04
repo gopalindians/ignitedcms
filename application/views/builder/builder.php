@@ -60,7 +60,9 @@
  
                       
                     </div>
-                    <button type="submit" class="btn btn-purplet btn-s-xs " id="insert">insert</button>
+                   <a target="_blank" href=" <?php echo site_url("assets/asset_view"); ?>" >
+                      <div class="btn btn-purplet btn-s-xs">Upload more images</div>
+                   </a>
                    
                 </div>
             </section>
