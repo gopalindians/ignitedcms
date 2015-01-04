@@ -89,13 +89,8 @@ class Shortcodes extends CI_Controller {
 
 	public function box()
 	{
-		$lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
+		$lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+		
 		include('./resources/shortcodes/my_codes.php');
 		echo do_shortcode("[col foo=4]".$lorem."[/col]");
 
@@ -107,7 +102,7 @@ class Shortcodes extends CI_Controller {
 		$id = $this->input->post('id');
 
 		//get the img url
-		$this->db->select('name');
+		$this->db->select('fullsize');
 		$this->db->from('assets');
 		$this->db->where('id', $id);
 		$this->db->limit(1);
@@ -117,7 +112,7 @@ class Shortcodes extends CI_Controller {
 		$url = "";
 		foreach ($query->result() as $row) 
 		{
-			$url= $row->name;
+			$url= $row->fullsize;
 		}
 		
 		$url = base_url("img/uploads/$url");

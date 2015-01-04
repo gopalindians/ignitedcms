@@ -99,8 +99,12 @@ class Assets extends CI_Controller {
 
 			//insert this bad boy into the database
 			$thumb = $mytry['raw_name'] . '_thumb' . $mytry['file_ext'];
+			$fullsize = $mytry['raw_name'] .  $mytry['file_ext'];
 
-			$object = array('name' => $thumb );
+			$object = array(
+				'name' => $thumb,
+				'fullsize' =>$fullsize
+				);
 			$this->db->insert('assets', $object);
 
 

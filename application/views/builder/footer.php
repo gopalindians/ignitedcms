@@ -35,7 +35,7 @@
         /*save to the shorttag div image*/
         $('#sortable').on("click", '.pp-img', function (event) {
             var tmp = $(this).attr("mid");
-            var tmp2 = ($('#inp-' + tmp).val());
+            var tmp2 = $(this).attr("mpath");
             var tmp3 = ($('#' + tmp).attr('mwidth'));
             var tmp4 = "[col foo='" + tmp3 + "'][img src='"+tmp2+"'][/col]";
             
@@ -84,6 +84,10 @@
                 $('#' + id).attr("class", f);
                 $('#' + id).attr("mwidth", tmp);
             }
+
+
+
+
         });
         $('#sortable').on("click", '.grow', function (event) {
             var id = $(this).parent("header").parent("div").attr("id");
@@ -98,6 +102,9 @@
                 $('#' + id).attr("class", f);
                 $('#' + id).attr("mwidth", tmp);
             }
+
+            
+
         });
         $('#add-block').click(function (event) {
             $.ajax({

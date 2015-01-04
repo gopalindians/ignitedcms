@@ -33,7 +33,7 @@
 							title='' 
 							data-original-title='content'>$content</textarea> 
 					</div> 
-					<div class='shorttag' id='shorttag-$id' style='display:none;'>[col foo='{$atts['foo']}']$content{$sd}</div> 
+					<div class='shorttag' id='shorttag-$id'>[col foo='{$atts['foo']}']$content{$sd}</div> 
 				<button type='submit' class='btn btn-info btn-s-xs pp-text ' mid='$id'>Save</button> 
 				</div> 
 
@@ -68,7 +68,7 @@
 						</form> 
 						<div class='image'></div>
 					</div> 
-					<div class='shorttag' id='shorttag-$id' style='display:none;'>[col foo='{$atts['foo']}'][img src='$content'][/img]{$sd}</div> 
+					<div class='shorttag' id='shorttag-$id'>[col foo='{$atts['foo']}'][img src='$content'][/img]{$sd}</div> 
 				<button type='submit' class='btn btn-info btn-s-xs pp-img' mid='$id' mpath='$content'>Save</button> 
 				</div> 
 

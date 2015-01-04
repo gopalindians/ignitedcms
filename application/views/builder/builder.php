@@ -96,7 +96,7 @@
 </div>
 <div class="row" style="margin-left:30px; margin-right:30px;">
     <div class="col-sm-12">
-        <button type="submit" class="btn btn-purplet btn-s-xs " id="save-db">Save to database!</button>
+        <button type="submit" class="btn btn-purplet btn-s-xs " id="save-db">Save All</button>
     </div>
 </div>
 <div class="gap"></div>
