@@ -223,117 +223,51 @@ class Installer extends CI_Controller {
 
 			
 			
-		}
+			}
 		}
 
 	}
 
 	 /**
-	  *  @Description: if db file written test db connection!
-	  *       @Params: params
+	  *  @Description: A more elegant way to create our tables
+	  *       @Params: none but needs ignitedcsm.sql file
 	  *
-	  *  	 @returns: returns
+	  *  	 @returns: none
 	  */
 	public function create_tables()
 	{
-		
-		$sql3 = "
-      CREATE TABLE IF NOT EXISTS `pages` (
-        `id` int(11) NOT NULL AUTO_INCREMENT,
-        `shortcodes` varchar(5000) NOT NULL,
-        `name` varchar(50) NOT NULL,
-        `inactive` int(11) NOT NULL,
-        PRIMARY KEY (`id`)
-      ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-      ";
+		$file = file_get_contents("ignitedcms.sql");
 
-      $sql4 = "
-		CREATE TABLE IF NOT EXISTS `user` (
-		  `id` int(11) NOT NULL AUTO_INCREMENT,
-		  `name` varchar(100) NOT NULL,
-		  `password` varchar(500) NOT NULL,
-		  `joindate` date NOT NULL,
-		  `logins` int(11) NOT NULL,
-		  `is_logged_in` int(11) NOT NULL,
-		  `isadmin` int(11) NOT NULL,
-		  `companyid` int(11) NOT NULL,
-		  `company` varchar(100) NOT NULL,
-		  `email` varchar(50) NOT NULL,
-		  `number` varchar(15) NOT NULL,
-		  `activ_status` int(11) NOT NULL,
-		  `activ_key` varchar(1000) NOT NULL,
-		  `logo` varchar(500) NOT NULL,
-		  `about` varchar(1000) NOT NULL,
-		  `credits` int(11) NOT NULL,
-		  PRIMARY KEY (`id`)
-		) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
+		//explode it into an array
+		$file_array = explode(';', $file);
 
-      	$sql5 = "
-      	CREATE TABLE `menu` (
-		`id` int(11) NOT NULL,
-		  `html` varchar(5000) NOT NULL,
-		  `array` varchar(5000) NOT NULL
-		) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+		//execute the exploded text content 
+		foreach($file_array as $query) 
+		{
+			$this->db->query($query);
+			
+		}
 
-		$sql6 = "
-		CREATE TABLE `menu2` (
-		  `id` varchar(50) NOT NULL,
-		  `father` varchar(50) NOT NULL,
-		  `tag` varchar(50) NOT NULL,
-		  `innerhtml` varchar(500) NOT NULL
-		) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-		
 		$sql7 = "
 		INSERT INTO `menu` (`id`, `html`, `array`) VALUES
 		(1, '', '');";
 
-
-		$sql8 = "
-		CREATE TABLE `blog` (
-		  `id` int(11) primary key NOT NULL AUTO_INCREMENT,
-		  `title` varchar(300) NOT NULL,
-		  `content` varchar(2000) NOT NULL,
-		  `blog_date` datetime NOT NULL,
-		  `userid` int(11) NOT NULL,
-		  `picture` varchar(500) NOT NULL
-		) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;";
-
-		$sql9 = "
-		CREATE TABLE `site` (
-		`id` int(11) NOT NULL,
-		  `site` varchar(200) NOT NULL,
-		  `logo` varchar(200) NOT NULL
-		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
-
 		$sql10 = "
-		INSERT INTO `site` (`id`, `site`, `logo`) VALUES
-		(1, '', 'ig2.png');";
+		INSERT INTO `site` (`id`, `site`, `logo`,`color`) VALUES
+		(1, '', 'ig2.png','');";
 
-
-		$sql11 = "
-		CREATE TABLE `assets` (
-		`id` int(11) primary key NOT NULL AUTO_INCREMENT,
-		  `name` varchar(300) NOT NULL,
-		  `fullsize` varchar(300) NOT NULL,
-		  `inactive` int(11) NOT NULL
-		) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
-
-		$this->db->query($sql3);
-		$this->db->query($sql4);
-		$this->db->query($sql5);
-		$this->db->query($sql6);
 		$this->db->query($sql7);
-		$this->db->query($sql8);
-		$this->db->query($sql9);
 		$this->db->query($sql10);
-		$this->db->query($sql11);
 
 		$this->load->view('header');
 		$this->load->view('body');
 		$this->load->view('installer/installer-3');
 		$this->load->view('footer');
-
+		
 	}
+
+
+	 
 
 	 /**
 	  *  @Description: set time local

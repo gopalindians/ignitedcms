@@ -30,6 +30,10 @@
         }
     </style>
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/bootstrap.css" type="text/css">
+
+    
+
+
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/animate.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font.css" type="text/css" cache="false">
@@ -37,12 +41,16 @@
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/js/nestable/nestable.css" type="text/css" cache="false" />
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/plugin.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/app.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/superfish.css" media="screen">
     <!--[if lt IE 9]>
     <script src="<?php echo (base_url()."resources")?>/js/ie/respond.min.js" cache="false"></script>
     <script src="<?php echo (base_url()."resources")?>/js/ie/html5.js" cache="false"></script>
     <script src="<?php echo (base_url()."resources")?>/js/ie/fix.js" cache="false"></script>
   <![endif]-->
     <style type="text/css">
+
+    
+
         
         .my-center {
             margin-left: auto;
@@ -149,6 +157,11 @@
         a.stop:hover {
             background-color: #E0604E;
         }
+        .red{
+            color:#811607;
+        }
+
+
         .purplet {
             /*color: #bc8dbe; */
             color: #E0604E;

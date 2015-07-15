@@ -30,6 +30,9 @@
         }
     </style>
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/bootstrap.css" type="text/css">
+
+    
+
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/animate.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font.css" type="text/css" cache="false">
@@ -45,10 +48,26 @@
 
    <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/superfish.css" media="screen">
     <style type="text/css">
-        @font-face {
-            font-family: 'MuseoSans-500';
-            src: url('<?php echo base_url(); ?>/resources/fonts/museo.woff');
-        }
+       
+    /*menu styles*/
+    .sf-menu li:hover, .sf-menu li.sfHover,
+    .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+    
+    
+    /*changes the hover color*/
+    background-color:#b70e0e;
+    color:#fff;
+    /*changes the font color*/
+
+
+    outline:        0;
+    
+    }
+
+
+    
+
+
         .my-center {
             margin-left: auto;
             margin-right: auto;
@@ -63,9 +82,9 @@
         body {
             background-color: #f2f2f2;
             font-family: 'Open sans', sans-serif;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 24px;
-            color: #777;
+            color: #333;
             -webkit-font-smoothing: antialiased;
             /* Fix for webkit rendering */
         }
@@ -73,13 +92,14 @@
             /*display:none;*/
         }
         .pm-footer {
+            
             position: relative;
             bottom: 0px;
-            min-height: 200px;
+            min-height: 300px;
             background-color: #fff;
         }
         .footer-brand {
-            /*color: #ccc;*/
+            color: #000;
         }
 
 
@@ -114,6 +134,11 @@
           left:5px;
 
         }
+
+        .really-small{
+            font-size: 12px;
+        }
+        
 
 
         .head-outer
@@ -172,6 +197,12 @@
         .tab-content {
             background-color: #f2f2f2;
         }
+
+        .panel-heading .nav {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
         .pm-container {
             position: relative;
             background-color: #ccc;
@@ -194,6 +225,9 @@
         a.stop:hover {
             background-color: #E0604E;
         }
+
+       
+
         .purplet {
             /*color: #bc8dbe; */
             color: #E0604E;
@@ -270,6 +304,23 @@
         }
         .pm-hidden{
             display:none;
+        }
+
+        nav select 
+        {
+          float:left;
+          position:relative;
+          display: none;
+          max-width: 180px;
+          /*top:50px;*/
+          right:130px;
+          
+        }
+
+        @media (max-width: 960px) 
+        {
+          nav ul     { display: none; }
+          nav select { display: inline-block; }
         }
         
     </style>

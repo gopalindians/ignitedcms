@@ -42,33 +42,7 @@ class Blog extends CI_Controller {
 
 	}
 
-	 /**
-	  *  @Description: preview the blogs on the actual site
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	public function preview()
-	{
-		
-
-		$this->load->model('Stuff_blog');
-		$query = $this->Stuff_blog->get_blog_posts();
-
-		$data['blogs'] = $query;
-
-		//grab the menu send to view
-		$this->load->model('Stuff_menu');
-		$menu4 = $this->Stuff_menu->make_menu();
-
-		$data['menu'] = $menu4;
-		
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('blog/blog',$data); 
-		$this->load->view('sitepreview/footer');
-
-	}
+	
 
 	
 	public function insert_blog_post()

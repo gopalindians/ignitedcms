@@ -25,6 +25,7 @@ class Shortcodes extends CI_Controller {
 	}
 
 	
+	
 
 
 	 /**
@@ -45,45 +46,7 @@ class Shortcodes extends CI_Controller {
 		$this->db->update('pages', $object);
 
 	}
-	 /**
-	  *  @Description: this previews and renders the page you have built
-	  *       @Params: page id
-	  *
-	  *  	 @returns: returns
-	  */
-	public function preview_page($id)
-	{
-		include('./resources/shortcodes/my_codes_render.php');
-
-		
-
-		$this->db->select('shortcodes');
-		$this->db->from('pages');
-		$this->db->where('id', $id);
-
-		$query = $this->db->get();
-		
-		$shorttag = "";
-		foreach ($query->result() as $row) 
-		{
-			$shorttag = $row->shortcodes;
-		}
-		
-
-		//grab the menu send to view
-		$this->load->model('Stuff_menu');
-		$menu = $this->Stuff_menu->make_menu();
-
-		$data['menu'] = $menu;
-
-		$data['content'] = do_shortcode($shorttag);
-
-		$this->load->view('sitepreview/header');
-		$this->load->view('sitepreview/body',$data);
-		$this->load->view('builder/page_preview',$data);
-		$this->load->view('sitepreview/footer');
-
-	}
+	 
 
 	//add text box
 

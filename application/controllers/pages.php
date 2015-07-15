@@ -23,6 +23,22 @@ class Pages extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: description
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function delete_page($id)
+	{
+		
+		$this->db->where('id', $id);
+		$this->db->delete('pages');
+
+
+		redirect('dashboard','refresh');
+	}
+
+	 /**
 	  *  @Description: page view
 	  *       @Params: 
 	  *

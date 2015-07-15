@@ -21,6 +21,7 @@
                     data-content='
                     <?php echo anchor('dashboard/site_settings', 'Site Settings', 'attributs'); ?> <br/>
                     <?php echo anchor('dashboard', 'Pages', 'attributs'); ?> <br/>
+                    <?php echo anchor('product_admin', 'Products', 'attributs'); ?> <br/>
                     
                     <?php echo anchor('menu/build_menu', 'Menu', 'attributs'); ?> <br/>
                     <?php echo anchor('assets/asset_view', 'Assets', 'attributs'); ?> <br/>

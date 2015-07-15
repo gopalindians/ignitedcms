@@ -289,6 +289,30 @@ class Stuff_menu extends CI_Model {
 
 	}
 
+	 /**
+	  *  @Description: make the menu for iphones
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function make_small_menu()
+	{
+		$this->db->select('innerhtml');
+		$this->db->from('menu2');
+		$this->db->order_by('id', 'asc');
+
+		$query = $this->db->get();
+		
+		$string = "";
+		foreach ($query->result() as $row) 
+		{
+			 $string = $string . $this->small_split($row->innerhtml);
+		}
+
+		return $string;
+
+	}
+
 
 	/**
 	  *  @Description: make the tree from db result
@@ -322,8 +346,74 @@ class Stuff_menu extends CI_Model {
   	 {
 
   	 	$array = explode("|", $element);
+  	 	$id = trim($array[1]);
+  	 	//store site url
 
-  	 	return "<a href='$array[1]'> $array[0]</a>";
+  	 	//check to see if it is using codeigniter custom controller
+
+  	 	$t_url = $this->get_url($id);
+  	 	$tmp_url = site_url($t_url);
+
+  	 	return "<a href='$tmp_url'> $array[0]</a>";
+
+  	 }
+
+  	  /**
+  	   *  @Description: split for iphone menu
+  	   *       @Params: name |  url
+  	   *
+  	   *  	 @returns: returns
+  	   */
+  	 public function small_split($element)
+  	 {
+  	 	$array = explode("|", $element);
+  	 	$id = trim($array[1]);
+  	 	//store site url
+
+
+  	 	//check to see if it is using codeigniter custom controller
+
+
+  	 	$t_url = $this->get_url($id);
+  	 	$tmp_url = site_url($t_url);
+
+  	 	return "<option value='$tmp_url'>$array[0]</option>";
+  	 	
+
+  	 }
+
+  	  /**
+  	   *  @Description: returns the site url
+  	   *       @Params: pageid
+  	   *
+  	   *  	 @returns: url
+  	   */
+  	 public function get_url($pageid)
+  	 {
+  	 	$this->db->select('*');
+  	 	$this->db->from('pages');
+  	 	$this->db->where('id', $pageid);
+  	 	$this->db->limit(1);
+
+  	 	$query = $this->db->get();
+  	 	
+  	 	$controller = 0;
+  	 	$url = "";
+  	 	foreach ($query->result() as $row) 
+  	 	{
+  	 		$controller = $row->controller;
+  	 		$url = $row->path;
+
+  	 	}
+
+  	 	if($controller == 0)
+  	 	{
+  	 		return "site_preview/preview_page/$pageid";
+  	 	}
+  	 	else{
+  	 		return "$url";
+  	 	}
+  	 	
 
 
   	 }

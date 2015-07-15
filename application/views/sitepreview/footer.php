@@ -28,16 +28,21 @@
   <script src="<?php echo(base_url()."resources") ?>/js/superfish/hoverIntent.js"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/superfish/superfish.js"></script>
 
+  
 
  <script type="text/javascript">
    
     $(document).ready(function (event) {
 
-        $('.menu').superfish({
+      
+
        
-    });
 
         $('#results ul:first').addClass('sf-menu');
+
+         $('.menu').superfish({
+       
+        });
         
     });
 </script>

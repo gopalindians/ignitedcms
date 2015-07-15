@@ -81,7 +81,7 @@
         </div>
         
         <div class="panel-body">
-          <a target="_blank" href=" <?php echo site_url("shortcodes/preview_page/$id"); ?>">Preview Page</a>
+          <a target="_blank" href=" <?php echo site_url("site_preview/preview_page/$id"); ?>">Preview Page</a>
            
         </div>
     </div>

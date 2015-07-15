@@ -6,16 +6,30 @@
 
   <div class="head-outer">
       
+        <?php $logo = my_show_logo(); ?>
+        <a href="<?php echo site_url('shortcodes/preview_page/1'); ?>"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center visible-xs" style="position:relative; margin-top:0px;"></a>
 
-      <div class="head" id="tidy">
+        <div class="head" id="tidy">
         <div class="logo visible-lg visible-md">
-          <?php $logo = my_show_logo(); ?>
-           <img class="img-responsive" src="<?php echo base_url("img/uploads/$logo"); ?>" alt="image" />
+
+          <a href="<?php echo site_url('shortcodes/preview_page/1'); ?>"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center" style="position:relative; "></a>
         </div>
 
+      
+
         
-          
+          <nav>
           <?php echo $menu; ?>
+
+          <div class="clear-fix"></div>
+
+          <div class="small-menu" style="float:right; position:relative;">
+            <select onchange="location = this.options[this.selectedIndex].value;">
+                <option selected="selected" value="">Go to...</option>
+                <?php echo $small_menu; ?>
+            </select>
+          </div>
+        </nav>
 
           </div>
       </div> <!-- end class head-->

@@ -69,14 +69,16 @@ ul.sf-menu li li li.sfHover ul {
 	text-decoration:none;
 }
 .sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
-	/*my stuff font color*/
-	color:			#777;
+	
+	/*Changes the menu font weight*/
+	font-weight: bold;
+	color:			#333;
 	
 }
 .sf-menu li {
     
-	 
-    
+	 color: #fff;
+    background:		#fff;
 }
 .sf-menu li li {
 	/*my stuff*/
@@ -95,8 +97,13 @@ ul.sf-menu li li li.sfHover ul {
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
 	/*border-bottom: dashed 1px #ffffff; */
-	background-color:#F7F7F7;
 	
+	/*changes the hover color*/
+	background-color:#b70e0e;
+	color:#fff;
+	/*changes the font color*/
+
+
 	outline:		0;
     
 }
@@ -115,8 +122,8 @@ ul.sf-menu li li li.sfHover ul {
 	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
 }
 .sf-sub-indicator {
-	/*position:		absolute;*/
-	/*display:		block;*/
+	position:		absolute;
+	display:		block;
 	right:			.75em;
 	top:			1.05em; /* IE6 only */
 	width:			10px;

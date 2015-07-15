@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "installer";
+//$route['default_controller'] = "site_preview/preview_page/1";
 $route['404_override'] = 'error';
 
 

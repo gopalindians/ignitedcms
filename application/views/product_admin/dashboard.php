@@ -9,7 +9,7 @@
                 <div class="alert alert-danger">
             
                 <?php } else {?>
-                <div class="animated fadeOut alert alert-success">
+                <div class="animated flash alert alert-success">
                     <?php } ?>
                     <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i>
                     </button> <i class="fa fa-ban-circle"></i>
@@ -19,19 +19,20 @@
         </div>
 
         <div class="col-sm-12">
-            <header class="panel-heading font-bold">Pages</header>
+            <header class="panel-heading font-bold">Products</header>
             <section class="panel">
 
                 <div class="panel-body">
 
                     <div class="row">
                         <div class="col-sm-10">
-                        
+                           <!--  <a target="_blank" href=" <?php echo site_url('blog/preview'); ?>">Preview Blog</a> -->
+                          
                         </div>
                         <div class="col-sm-2">
-                            <a href="<?php echo site_url("pages/page_view"); ?>">
+                            <a href="<?php echo site_url("product_admin/insert_product"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
-                                <i class="fa fa-plus"></i> Add page</button>
+                                <i class="fa fa-plus"></i> Add Product</button>
                             </a>
                         </div>
                     </div>
@@ -39,17 +40,23 @@
                     <div class="row">
 
                     <?php foreach ($query->result() as $row ):?>
+                    <?php $id = $row->id; ?>
                     <div class="line"></div>
                     <div class="col-sm-1">
-                        <img src="<?php echo base_url('img/Folder.png'); ?>" alt="" style="max-width:60px;"/>
+                        <img src="<?php echo base_url("img/uploads/$row->img"); ?>" style="max-width:60px;" alt="" />
                          
                     </div>
-                    <div class="col-sm-7" style="margin-top:20px;">
+                    <div class="col-sm-5" style="margin-top:20px;">
                         <strong><?php echo($row->name); ?></strong>
                     </div>
-                    <div class="col-sm-4" style="margin-top:20px;">
-                        <div class="pull-right"> <?php echo anchor("pages/detail_view/$row->id", "View/Edit", 'attributs'); ?></div>
-                        <div class="pull-right"> <?php echo anchor("pages/delete_page/$row->id", "Delete---", 'attributs'); ?></div>
+                    <div class="col-sm-2" style="margin-top:20px;">
+                        <div class="pull-right"> <?php echo anchor("product_admin/spec_view/$id", "Upload spec", 'attributs'); ?></div>
+                    </div>
+                    <div class="col-sm-2" style="margin-top:20px;">
+                        <div class="pull-right"> <?php echo anchor("product_admin/img_view/$id", "Upload image", 'attributs'); ?></div>
+                    </div>
+                    <div class="col-sm-2" style="margin-top:20px;">
+                        <div class="pull-right"> <?php echo anchor("product_admin/edit_product/$id", "View/Edit", 'attributs'); ?></div>
                     </div>
                     <div class="clearfix"></div>
                    
@@ -58,9 +65,5 @@
                 </div>
             </section>
         </div>
-        
-
-        
-    
   </div>
 </div>
