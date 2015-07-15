@@ -55,6 +55,17 @@ class Dashboard extends CI_Controller {
 		$data['query'] = $query;
 
 
+		$this->db->select('*');
+		$this->db->from('email');
+		$this->db->where('id', 1);
+		$this->db->limit(1);
+
+		$query2 = $this->db->get();
+		$data['query2'] = $query2;
+		
+		
+
+
 		$this->load->view('header');
 		$this->load->view('body');
 		$this->load->view('sitesettings/main',$data);
@@ -76,7 +87,7 @@ class Dashboard extends CI_Controller {
         $config['allowed_types'] = 'gif|jpg|png';
         $config['encrypt_name'] = TRUE;
         // $config['max_size'] = '1048';
-        $config['max_width'] = '200';
+        //$config['max_width'] = '200';
         // $config['max_height'] = '120';
 
         $this->load->library('upload', $config);

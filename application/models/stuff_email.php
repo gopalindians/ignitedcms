@@ -30,11 +30,11 @@ class Stuff_email extends CI_Model {
 
       foreach ($query->result() as $row) 
       {
-		$protocol  = $row->protocol; 
-		$smtp_host = $row->smtp_host;
-		$smtp_port = $row->smtp_port;
-		$smtp_user = $row->smtp_user;
-		$smtp_pass = $row->smtp_pass;
+    		$protocol  = $row->protocol; 
+    		$smtp_host = $row->smtp_host;
+    		$smtp_port = $row->smtp_port;
+    		$smtp_user = $row->smtp_user;
+    		$smtp_pass = $row->smtp_pass;
       }
       
       /* E.g Settings

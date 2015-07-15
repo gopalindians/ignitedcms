@@ -248,16 +248,22 @@ class Installer extends CI_Controller {
 			
 		}
 
-		$sql7 = "
+		$sql1 = "
 		INSERT INTO `menu` (`id`, `html`, `array`) VALUES
 		(1, '', '');";
 
-		$sql10 = "
+		$sql2 = "
 		INSERT INTO `site` (`id`, `site`, `logo`,`color`) VALUES
 		(1, '', 'ig2.png','');";
+		
+		$sql3 = "
+		INSERT INTO `email`(`id`, `protocol`, `smtp_host`, `smtp_port`, `smtp_user`, `smtp_pass`) VALUES (1,'','','','','');";
 
-		$this->db->query($sql7);
-		$this->db->query($sql10);
+
+
+		$this->db->query($sql1);
+		$this->db->query($sql2);
+		$this->db->query($sql3);
 
 		$this->load->view('header');
 		$this->load->view('body');
