@@ -27,6 +27,11 @@
 	        	    <label>Site name</label>
 	        	    <input name="site" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site name" value="<?php echo $row->site; ?>">
 	        	</div>
+
+	        	<div class="form-group">
+	        	    <label>Site Color in hex code starting #</label>
+	        	    <input name="color" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="#" data-toggle="tooltip" data-placement="top" title="Site color" value="<?php echo $row->color; ?>">
+	        	</div>
 	        	<div class="form-group">
                              
                     <label class="control-label">Upload Site Logo:</label> 

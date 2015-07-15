@@ -91,6 +91,16 @@ class Dashboard extends CI_Controller {
 			
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $err");
+
+			$site = $this->input->post('site');
+            $color = $this->input->post('color');
+
+
+           
+
+            $object = array('site' => $site, 'color' => $color );
+            $this->db->where('id', '1');
+            $this->db->update('site', $object);
 			
 			redirect('dashboard/site_settings','refresh');
 
@@ -103,9 +113,12 @@ class Dashboard extends CI_Controller {
 
             
             $site = $this->input->post('site');
+            $color = $this->input->post('color');
+
+
             $logo = $filename;
 
-            $object = array('site' => $site, 'logo' => $logo );
+            $object = array('site' => $site, 'logo' => $logo, 'color' => $color );
             $this->db->where('id', '1');
             $this->db->update('site', $object);
             

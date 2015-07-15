@@ -55,7 +55,7 @@
     
     
     /*changes the hover color*/
-    background-color:#b70e0e;
+    background-color:<?php echo my_theme_color(); ?>;
     color:#fff;
     /*changes the font color*/
 
@@ -218,27 +218,27 @@
         }
         
         a {
-            color: #E0604E;
+            color: <?php echo my_theme_color(); ?>;;
             /*text-decoration: underline;*/
         }
         /*for the login button on menu*/
         a.stop:hover {
-            background-color: #E0604E;
+            background-color: <?php echo my_theme_color(); ?>;;
         }
 
        
 
         .purplet {
             /*color: #bc8dbe; */
-            color: #E0604E;
+            color: <?php echo my_theme_color(); ?>;;
         }
         .bg-purplet {
-            background-color: #E0604E;
+            background-color: <?php echo my_theme_color(); ?>;;
         }
         .btn-purplet {
             color: #fff !important;
-            background-color: #E0604E;
-            border-color: #E0604E;
+            background-color: <?php echo my_theme_color(); ?>;;
+            border-color: <?php echo my_theme_color(); ?>;;
         }
 
         .btn-black{

@@ -4,7 +4,7 @@
   *  @Description: A better html entities handles £ sign
   *       @Params: $var
   *
-  *  	 @returns: Escaped string containing pound signs
+  *    @returns: Escaped string containing pound signs
   */
 if ( ! function_exists('my_html_escape'))
 {
@@ -33,6 +33,40 @@ if ( ! function_exists('my_pretty_date'))
 
     }   
 }
+
+/**
+  *  @Description: get theme color
+  *       @Params: none
+  *
+  *     @returns: hex val of color
+  */
+
+
+if ( ! function_exists('my_theme_color'))
+{
+    function my_theme_color()
+    {
+      $CI =& get_instance();
+      $CI->db->select('color');
+      $CI->db->from('site');
+      $CI->db->where('id', '1');
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $color = "";
+      foreach ($query->result() as $row) 
+      {
+        $color = $row->color;
+      }
+      return $color;
+
+    }   
+}
+
+
+
+
+
  /**
   *  @Description: show the site logo
   *       @Params: params
