@@ -7,12 +7,12 @@
   <div class="head-outer">
       
         <?php $logo = my_show_logo(); ?>
-        <a href="<?php echo site_url('shortcodes/preview_page/1'); ?>"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center visible-xs" style="position:relative; margin-top:0px;"></a>
+        <a href="#"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center visible-xs" style="position:relative; margin-top:0px;"></a>
 
         <div class="head" id="tidy">
         <div class="logo visible-lg visible-md">
 
-          <a href="<?php echo site_url('shortcodes/preview_page/1'); ?>"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center" style="position:relative; "></a>
+          <a href="#"><img src="<?php echo base_url("img/uploads/$logo"); ?>" class="img-responsive my-center" style="position:relative; "></a>
         </div>
 
       

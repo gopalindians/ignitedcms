@@ -117,6 +117,17 @@
                 });
         });
 
+        $('#add-slider').click(function (event) {
+            $.ajax({
+                    url: '<?php echo site_url("shortcodes/slider"); ?>',
+                    type: 'post',
+                    data: {},
+                    success: function (data) {
+                        $('#sortable').append(data);
+                    }
+                });
+        });
+
         $('#add-image').click(function (event) {
 
             $('#assets').slideDown();

@@ -17,10 +17,19 @@
   <script src="<?php echo(base_url()."resources") ?>/js/app.data.js" type="text/javascript"></script>
   <!-- fuelux -->
   <script src="<?php echo(base_url()."resources") ?>/js/fuelux/fuelux.js" type="text/javascript"></script>
- 
+  <!-- datepicker -->
+  <script src="<?php echo(base_url()."resources") ?>/js/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+  <!-- combodate -->
+  <script src="<?php echo(base_url()."resources") ?>/js/libs/moment.min.js" type="text/javascript"></script>
+  <script src="<?php echo(base_url()."resources") ?>/js/combodate/combodate.js" type="text/javascript"></script>
+
   <!-- parsley -->
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.min.js" type="text/javascript"></script>
   <script src="<?php echo(base_url()."resources") ?>/js/parsley/parsley.extend.js" type="text/javascript"></script>
+
+  
+  <script src="<?php echo(base_url()."resources") ?>/js/jscolor/jscolor.js" type="text/javascript"></script>
+  
 
   
 
@@ -29,6 +38,7 @@
    
     $(document).ready(function (event) {
 
+     
         
     });
 </script>

@@ -47,6 +47,9 @@
   <![endif]-->
 
    <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/superfish.css" media="screen">
+
+   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
     <style type="text/css">
        
     /*menu styles*/
@@ -63,7 +66,12 @@
     outline:        0;
     
     }
-
+        .carousel-indicators .active {
+          background: <?php echo my_theme_color(); ?>;
+          width: 10px;
+          height: 10px;
+          margin: 1px;
+        }
 
     
 
@@ -81,7 +89,7 @@
         }
         body {
             background-color: #f2f2f2;
-            font-family: 'Open sans', sans-serif;
+            font-family: '<?php echo my_body_font(); ?>', sans-serif;
             font-size: 16px;
             line-height: 24px;
             color: #333;
@@ -96,10 +104,10 @@
             position: relative;
             bottom: 0px;
             min-height: 300px;
-            background-color: #fff;
+            background-color: <?php echo my_footer_color(); ?>;
         }
         .footer-brand {
-            color: #000;
+            color: <?php echo my_footer_font_color(); ?>;
         }
 
 
@@ -130,7 +138,7 @@
           height:87px;*/
           
           
-          top:0px;
+          top:10px;
           left:5px;
 
         }

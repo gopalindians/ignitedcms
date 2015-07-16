@@ -85,6 +85,46 @@ class Shortcodes extends CI_Controller {
 
 	}
 
+	 /**
+	  *  @Description: add slider block
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function slider()
+	{
+		$url = base_url("img/uploads/ig2.png");
+		$cont = '<section class="panel"> 
+           <div class="carousel slide auto panel-body" id="c-slide" style="min-height:80px;">
+            <ol class="carousel-indicators out">
+              <li data-target="#c-slide" data-slide-to="0" class=""></li>
+              <li data-target="#c-slide" data-slide-to="1" class=""></li>
+            
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active left">
+                
+                  <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
+                
+              </div>
+              <div class="item next left">
+                 
+                 <img src="'.$url.'" class="img-responsive my-center" style="position:relative;">
+                
+              </div>
+              
+            </div>
+            <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="fa fa-angle-left"></i> 
+            </a>
+            <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="fa fa-angle-right"></i> 
+            </a>
+          </div>
+        </section>';
+		include('./resources/shortcodes/my_codes.php');
+		echo do_shortcode("[col foo=4]".$cont."[/col]");
+
+	}
+
 
 
 

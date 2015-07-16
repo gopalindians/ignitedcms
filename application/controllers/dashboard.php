@@ -105,11 +105,28 @@ class Dashboard extends CI_Controller {
 
 			$site = $this->input->post('site');
             $color = $this->input->post('color');
+            $font = $this->input->post('font');
+            $footer1 = $this->input->post('footer1');
+            $footer2 = $this->input->post('footer2');
+            $footer3 = $this->input->post('footer3');
+            $footercolor = $this->input->post('footercolor');
+            $footerfontcolor = $this->input->post('footerfontcolor');
 
 
            
 
-            $object = array('site' => $site, 'color' => $color );
+            $object = array(
+            	'site' => $site,  
+            	'color' => $color,
+            	'font'  => $font,
+            	'footer1' => $footer1,
+            	'footer2' => $footer2,
+            	'footer3' => $footer3,
+            	'footercolor' => $footercolor,
+            	'footerfontcolor' => $footerfontcolor  
+            	);
+
+
             $this->db->where('id', '1');
             $this->db->update('site', $object);
 			
@@ -122,14 +139,31 @@ class Dashboard extends CI_Controller {
         	$mytry = $this->upload->data();
             $filename = $mytry['raw_name'].$mytry['file_ext'];
 
-            
+            $logo = $filename;
             $site = $this->input->post('site');
             $color = $this->input->post('color');
+            $font = $this->input->post('font');
+            $footer1 = $this->input->post('footer1');
+            $footer2 = $this->input->post('footer2');
+            $footer3 = $this->input->post('footer3');
+            $footercolor = $this->input->post('footercolor');
+            $footerfontcolor = $this->input->post('footerfontcolor');
+
+            
+
+            $object = array(
+            	'site' => $site, 
+            	'logo' => $logo, 
+            	'color' => $color,
+            	'font'  => $font,
+            	'footer1' => $footer1,
+            	'footer2' => $footer2,
+            	'footer3' => $footer3,
+            	'footercolor' => $footercolor,
+            	'footerfontcolor' => $footerfontcolor      
+            	);
 
 
-            $logo = $filename;
-
-            $object = array('site' => $site, 'logo' => $logo, 'color' => $color );
             $this->db->where('id', '1');
             $this->db->update('site', $object);
             

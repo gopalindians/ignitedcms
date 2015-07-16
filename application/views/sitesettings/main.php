@@ -29,9 +29,52 @@
 	        	</div>
 
 	        	<div class="form-group">
-	        	    <label>Site Color in hex code starting #</label>
-	        	    <input name="color" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="#" data-toggle="tooltip" data-placement="top" title="Site color" value="<?php echo $row->color; ?>">
+	        	    <label>Site Color in hex code</label>
+	        	    <input class="color" name="color" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="#" data-toggle="tooltip" data-placement="top" title="Site color" value="<?php echo $row->color; ?>">
 	        	</div>
+
+
+	        	
+
+
+	        	<div class="form-group">
+	        	    <label>Site Body Font</label>
+	        	    <input name="font" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Body font" value="<?php echo $row->font; ?>">
+	        	</div>
+
+	        	<div class="form-group">
+	        	    <label>Footer Color</label>
+	        	    <input class="color" name="footercolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="tooltip" value="<?php echo $row->footercolor; ?>">
+	        	</div>
+
+	        	<div class="form-group">
+	        	    <label>Footer font color</label>
+	        	    <input class="color" name="footerfontcolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="tooltip" value="<?php echo $row->footerfontcolor; ?>">
+	        	</div>
+
+
+	        	<div class="form-group">
+	        	    <label>Footer 1</label>
+	        	    <textarea name="footer1"  id="inp-box" class="form-control" rows="5" data-maxlength="1000"  placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Footer 1"><?php echo $row->footer1; ?></textarea>
+	        	
+	        	</div>
+	        	<div class="form-group">
+	        	    <label>Footer 2</label>
+	        	    <textarea name="footer2"  id="inp-box" class="form-control" rows="5" data-maxlength="1000"  placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Footer 1"><?php echo $row->footer2; ?></textarea>
+	        	
+	        	</div>
+	        	<div class="form-group">
+	        	    <label>Footer 3</label>
+	        	    <textarea name="footer3"  id="inp-box" class="form-control" rows="5" data-maxlength="1000"  placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Footer 1"><?php echo $row->footer3; ?></textarea>
+	        	
+	        	</div>
+	        	
+	        	
+	        	
+	        	
+
+
+
 	        	<div class="form-group">
                              
                     <label class="control-label">Upload Site Logo:</label> 

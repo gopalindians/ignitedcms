@@ -77,6 +77,8 @@
        
             <button type="submit" class="btn btn-white btn-s-xs " id="add-image">Add Image</button>
 
+            <button type="submit" class="btn btn-white btn-s-xs " id="add-slider">Add Slider Block</button>
+
             
         </div>
         

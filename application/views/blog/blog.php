@@ -29,7 +29,7 @@
                         <?php $my_image=$row->picture; ?> <img src="<?php echo base_url("img/uploads/$my_image"); ?>" class="img-responsive my-center"> 
                     </div>
                     <div class="caption wrapper-lg">
-                        <h3 class="post-title red"><?php echo $row->title; ?></h3>
+                        <h3 class="post-title purplet"><?php echo $row->title; ?></h3>
                         <div class="post-sum">
                             <p>
                                 <?php echo ($row->content); ?>

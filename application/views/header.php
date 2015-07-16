@@ -38,10 +38,13 @@
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/font.css" type="text/css" cache="false">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/js/fuelux/fuelux.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/js/datepicker/datepicker.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/js/nestable/nestable.css" type="text/css" cache="false" />
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/plugin.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/app.css" type="text/css">
     <link rel="stylesheet" href="<?php echo (base_url()."resources")?>/css/superfish.css" media="screen">
+    
+
     <!--[if lt IE 9]>
     <script src="<?php echo (base_url()."resources")?>/js/ie/respond.min.js" cache="false"></script>
     <script src="<?php echo (base_url()."resources")?>/js/ie/html5.js" cache="false"></script>
