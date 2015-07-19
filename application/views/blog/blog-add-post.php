@@ -93,7 +93,7 @@
                             
 
                             
-                            <div class="form-group"> <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet">Add</button> </div> </div>
+                            <div class="form-group"> <div class="col-sm-4 col-sm-offset-2">  <button type="submit" id="create-topic"class="btn btn-purplet"><strong>Add</strong></button> </div> </div>
 
                           </div>
                       </form>
@@ -107,3 +107,4 @@
       </div>
 </div>
 </div>
+<div class="gap"></div>

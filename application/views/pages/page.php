@@ -5,7 +5,7 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
 	          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add page');?></a></li>
 	          
 	        </ul>
@@ -25,7 +25,7 @@
 		        	    <label>Page Name</label>
 		        	    <input name="name" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Page name" value="">
 		        	</div>
-		        	<button type="submit" class="btn btn-purplet btn-s-xs " id="">Save</button>
+		        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Save</strong></button>
 		        	
 
 		        	<?php echo form_close(); ?>

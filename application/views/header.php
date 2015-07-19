@@ -68,7 +68,7 @@
             margin-top: 50px;
         }
         body {
-            background-color: #f2f2f2;
+            background-color: #ebedef;
             font-family: 'Open sans', sans-serif;
             font-size: 14px;
             line-height: 24px;
@@ -108,14 +108,11 @@
             margin-top: 5px;
         }
         .tab-content {
-            background-color: #f2f2f2;
+            background-color: #ebedef;
         }
-        .pm-container {
+        .pmf-container {
             position: relative;
-            background-color: #ccc;
-            /* background-color: #fff;*/
-            font-size: 14px;
-            line-height: 24px;
+            max-width: 1170px;
         }
         .pm-header {
             min-height: 150px;
@@ -142,7 +139,7 @@
         .head-outer {
             position: relative;
             background-color: #363636;
-            box-shadow: 0 4px 4px rgba(0, 0, 0, .11);
+            /*box-shadow: 0 4px 4px rgba(0, 0, 0, .11);*/
             min-height: 90px;
             z-index: 999;
         }

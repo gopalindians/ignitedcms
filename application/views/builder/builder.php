@@ -1,5 +1,20 @@
 
 <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px; min-height:900px;  ">
+    
+      <!-- breadcrumb -->
+         <div class="row" style="margin-left:30px; margin-right:30px;">
+            <div class="col-sm-12">
+              <!-- .breadcrumb -->
+              <ul class="breadcrumb">
+                <li><a href="<?php echo site_url('pages/show_pages'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+                <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Page');?></a></li>
+                
+              </ul>
+                    
+              </div>
+          </div> 
+          <!-- end breadcrumb -->
+    
 
     <div class="row" style="margin-left:30px; margin-right:30px; display:none;" id="assets" >
         <div class="col-sm-12">
@@ -61,7 +76,7 @@
                       
                     </div>
                    <a target="_blank" href=" <?php echo site_url("assets/asset_view"); ?>" >
-                      <div class="btn btn-purplet btn-s-xs">Upload more images</div>
+                      <div class="btn btn-purplet btn-s-xs"><strong>Upload more images</strong></div>
                    </a>
                    
                 </div>
@@ -100,7 +115,7 @@
 </div>
 <div class="row" style="margin-left:30px; margin-right:30px;">
     <div class="col-sm-12">
-        <button type="submit" class="btn btn-purplet btn-s-xs " id="save-db">Save All</button>
+        <button type="submit" class="btn btn-purplet btn-s-xs " id="save-db"><strong>Save All</strong></button>
     </div>
 </div>
 <div class="gap"></div>

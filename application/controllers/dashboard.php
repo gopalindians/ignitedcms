@@ -19,17 +19,9 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$this->db->select('*');
-		$this->db->from('pages');
-		$query = $this->db->get();
-		
-		$data['query'] = $query;
-		
-
-
 		$this->load->view('header');
 		$this->load->view('body');
-		$this->load->view('dashboard/dashboard',$data);
+		$this->load->view('dashboard/dashboard_view');
 		$this->load->view('footer');
 		
 	}

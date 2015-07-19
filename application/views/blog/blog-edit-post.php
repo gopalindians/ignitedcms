@@ -96,7 +96,7 @@
                               <?php endforeach;?>
                             <div class="form-group"> 
                               <div class="col-sm-4 col-sm-offset-2">  
-                                <button type="submit" id="create-topic"class="btn btn-purplet">Edit Post</button> 
+                                <button type="submit" id="create-topic"class="btn btn-purplet"><strong>Edit Post</strong></button> 
                                  <?php echo form_close(); ?>
                                   <a href="<?php echo site_url("blog/delete_blog_post/$id"); ?>">
                                     <div type="btn btn-small" id="create-topic"class="btn btn-danger"><strong>Delete</strong></div> 
@@ -120,3 +120,4 @@
       </div>
 </div>
 </div>
+<div class="gap"></div>

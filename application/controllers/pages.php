@@ -23,6 +23,31 @@ class Pages extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: list all current pages
+	  *       @Params: none
+	  *
+	  *  	 @returns: none
+	  */
+
+	public function show_pages()
+	{
+		$this->db->select('*');
+		$this->db->from('pages');
+		$query = $this->db->get();
+		
+		$data['query'] = $query;
+		
+
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('pages/all-pages',$data);
+		$this->load->view('footer');
+
+
+	}
+
+	 /**
 	  *  @Description: description
 	  *       @Params: params
 	  *

@@ -9,7 +9,7 @@
                 <div class="alert alert-danger">
             
                 <?php } else {?>
-                <div class="animated flash alert alert-success">
+                <div class="alert alert-success">
                     <?php } ?>
                     <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i>
                     </button> <i class="fa fa-ban-circle"></i>
@@ -17,6 +17,20 @@
                 </div>
             <?php } ?>
         </div>
+
+        <!-- breadcrumb -->
+           
+              <div class="col-sm-12">
+                <!-- .breadcrumb -->
+                <ul class="breadcrumb">
+                  <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo "Dashboard"; ?></a></li>
+                  <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Products');?></a></li>
+                  
+                </ul>
+                      
+                </div>
+             
+            <!-- end breadcrumb -->
 
         <div class="col-sm-12">
             <header class="panel-heading font-bold">Products</header>
@@ -32,7 +46,7 @@
                         <div class="col-sm-2">
                             <a href="<?php echo site_url("product_admin/insert_product"); ?>">
                                 <button  type="submit" class="btn btn-purplet btn-s-xs pull-right" id="">
-                                <i class="fa fa-plus"></i> Add Product</button>
+                                <i class="fa fa-plus"></i> <strong>Add Product</strong></button>
                             </a>
                         </div>
                     </div>
