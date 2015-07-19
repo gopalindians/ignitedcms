@@ -100,8 +100,8 @@ class Dashboard extends CI_Controller {
         {
         	$err = $this->upload->display_errors();
 			
-			$this->session->set_flashdata('type', '0');
-			$this->session->set_flashdata('msg', "<strong>Failed</strong> $err");
+			$this->session->set_flashdata('type', '1');
+			$this->session->set_flashdata('msg', "<strong>Success</strong> $err");
 
 			$site = $this->input->post('site');
             $color = $this->input->post('color');

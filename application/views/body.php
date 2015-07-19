@@ -18,6 +18,9 @@
           data-content='<?php echo anchor('login/logout', 'Logout', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Profile'> <i class="fa fa-user"></i>  <strong>Profile</strong></div>
 
           <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
+          data-content='<?php echo anchor('site_preview/blog_preview', 'Site Preview', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Site'> <i class="fa fa-eye"></i>  <strong>Site Preview</strong></div>
+
+          <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
                     data-content='
                     <?php echo anchor('dashboard/site_settings', 'Site Settings', 'attributs'); ?> <br/>
                     <?php echo anchor('dashboard', 'Pages', 'attributs'); ?> <br/>
@@ -39,6 +42,12 @@
   <section class="scrollable " > 
     <section class="tab-content" 
       <section class="tab-pane active" id="basic">
+        
+      
+        
+            
+            
+        
               
   
  

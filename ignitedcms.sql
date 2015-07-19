@@ -11,7 +11,7 @@ CREATE TABLE `assets` (
 CREATE TABLE `blog` (
 `id` int(11) NOT NULL,
   `title` varchar(300) NOT NULL,
-  `content` varchar(2000) NOT NULL,
+  `content` varchar(50000) NOT NULL,
   `blog_date` datetime NOT NULL,
   `userid` int(11) NOT NULL,
   `picture` varchar(500) NOT NULL
@@ -55,7 +55,7 @@ CREATE TABLE `pages` (
   `inactive` int(11) NOT NULL,
   `path` varchar(200) NOT NULL,
   `controller` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
 
@@ -135,7 +135,9 @@ ALTER TABLE `pages`
 
 ALTER TABLE `products`
  ADD PRIMARY KEY (`id`);
-
+--
+-- fds
+--
 
 ALTER TABLE `user`
  ADD PRIMARY KEY (`id`);

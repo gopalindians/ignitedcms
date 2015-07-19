@@ -162,7 +162,7 @@
 
         .head
         {
-          height:80px;
+          height:100px;
           background-color:#fff;
           min-width: 205px;
           

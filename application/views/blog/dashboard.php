@@ -26,7 +26,7 @@
 
                     <div class="row">
                         <div class="col-sm-10">
-                            <a target="_blank" href=" <?php echo site_url('blog/preview'); ?>">Preview Blog</a>
+                            <a target="_blank" href=" <?php echo site_url('site_preview/blog_preview'); ?>">Preview Blog</a>
                           
                         </div>
                         <div class="col-sm-2">
