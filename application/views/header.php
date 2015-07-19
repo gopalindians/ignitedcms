@@ -52,8 +52,29 @@
   <![endif]-->
     <style type="text/css">
 
-    
+        /*For the big icons on dashboard*/
+        .big{
+            font-size: 30px;
+            
+        }
 
+        .my-pad{
+            padding:20px;
+        }
+        .my-blk{
+            
+            padding:10px;
+            max-width: 200px;
+
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+        .my-info{
+            display:inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
         
         .my-center {
             margin-left: auto;
