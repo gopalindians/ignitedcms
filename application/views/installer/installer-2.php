@@ -25,7 +25,7 @@
                         fun.
 
                     </div>
-                    <button type="submit" class="btn btn-purplet btn-s-xs " id="">I'm ready!</button>
+                    <button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>I'm Ready!</strong></button>
                     <?php echo form_close(); ?>
                 </div>
             </section>

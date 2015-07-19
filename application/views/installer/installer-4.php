@@ -25,15 +25,7 @@
                             
                            </div>
                            <div class="col-sm-6">
-                                 <!-- <div class="form-group">
-                                     <label>Site Name:</label>
-                                     <input name="sitename" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site Name" value="">
-                                 </div>
-                               
-                                 <div class="form-group">
-                                     <label>Site Url:</label>
-                                     <input name="siteurl" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Site url" value="E.g http://www.mysite.com/">
-                                 </div> -->
+                                 
                                  <div class="form-group">
                                   <label>Time Local:</label>
                                    <select name="time" class="form-control m-b">
@@ -153,7 +145,7 @@
                                   </select>
                                 </div>
 
-                                <button type="submit" class="btn btn-purplet btn-s-xs " id="">Save</button>
+                                <button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Save</strong></button>
                                 <?php echo form_close();  ?>
                            </div>   
                            

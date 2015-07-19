@@ -35,7 +35,7 @@
                           </div>   
                         </div>
                         
-                         <button type="submit" class="btn btn-purplet btn-s-xs " style="margin-top:20px;">ok</button>
+                         <button type="submit" class="btn btn-purplet btn-s-xs " style="margin-top:20px;"><strong>OK</strong></button>
                         
                        <?php echo form_close(); ?> 
 

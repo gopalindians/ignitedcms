@@ -60,7 +60,7 @@ class Pages extends CI_Controller {
 		$this->db->delete('pages');
 
 
-		redirect('dashboard','refresh');
+		redirect('pages/show_pages','refresh');
 	}
 
 	 /**
@@ -96,7 +96,7 @@ class Pages extends CI_Controller {
 		$object = array('name' => $name );
 		$this->db->insert('pages', $object);
 
-		redirect('dashboard','refresh');
+		redirect('pages/show_pages','refresh');
 
 	}
 
