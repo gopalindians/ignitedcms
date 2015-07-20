@@ -159,6 +159,26 @@
            $('#assets').slideUp();
         });
 
+         $('#cust-controller').click(function (event) {
+           $('#path').toggle();
+        });
+
+         /*make checkboxes behave like radio control
+         $(".b-box").click(function() {
+            selectedBox = this.id;
+
+            $(".b-box").each(function() {
+                if ( this.id == selectedBox )
+                {
+                    this.checked = true;
+                }
+                else
+                {
+                    this.checked = false;
+                };        
+            });
+        }); */   
+
 
         $('#save-db').click(function (event) {
             

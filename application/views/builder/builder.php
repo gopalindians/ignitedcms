@@ -7,7 +7,7 @@
               <!-- .breadcrumb -->
               <ul class="breadcrumb">
                 <li><a href="<?php echo site_url('pages/show_pages'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
-                <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Page');?></a></li>
+                <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo(my_page_name($this->uri->segment(3, 0)));?></a></li>
                 
               </ul>
                     
@@ -15,6 +15,44 @@
           </div> 
           <!-- end breadcrumb -->
     
+    <!-- page options, add controller, make blog -->
+    <div class="row" style="margin-left:30px; margin-right:30px;">
+    <div class="col-sm-12">
+        
+        <section class="panel">
+            <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("pages/save_page_options/$id",$atts); ?>
+            
+            <div class="panel-body">
+
+               <!-- <label><input type="checkbox" name="controller" value="" id="cust-controller" class="b-box" <?php echo $ck1; ?>    /> Custom controller?
+               </label> 
+               <div class="btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="right" 
+                         data-content='For advanced developer controllers tick this box and add your own controllers and view files <?php echo anchor('login/logout', 'Read More', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Help'> <i class="fa fa-question"></i>  
+                </div>
+               <br/>
+
+               <div class="form-group"  id="path" >
+                   <label>Controller</label>
+                   <input name="path" type="text"  data-maxlength="500" class="form-control" placeholder="E.g your_controller_name/your_method" data-toggle="tooltip" data-placement="top" title="" value="<?php echo $path; ?>" >
+               </div> -->
+
+               <label><input type="checkbox" name="blog" value="" class="b-box" <?php echo $ck2; ?>/> Make this page the blog?
+               </label>
+               <br/>
+               <button type="submit" class="btn btn-purplet btn-s-xs pull-right" ><strong>Save</strong></button>
+               
+               <?php echo form_close(); ?>
+            </div>
+        </section>
+    </div>
+    
+    
+
+
+
+
+    </div>
+    <!-- end page options -->
 
     <div class="row" style="margin-left:30px; margin-right:30px; display:none;" id="assets" >
         <div class="col-sm-12">

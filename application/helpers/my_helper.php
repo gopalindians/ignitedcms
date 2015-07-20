@@ -295,3 +295,30 @@ if ( ! function_exists('my_site_title'))
 
     }   
 }
+
+/**
+  *  @Description: show the page name
+  *       @Params: params
+  *
+  *     @returns: returns
+  */
+if ( ! function_exists('my_page_name'))
+{
+    function my_page_name($id)
+    {
+      $CI =& get_instance();
+      $CI->db->select('name');
+      $CI->db->from('pages');
+      $CI->db->where('id', $id);
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $name = "";
+      foreach ($query->result() as $row) 
+      {
+        $name = $row->name;
+      }
+      return $name;
+
+    }   
+}

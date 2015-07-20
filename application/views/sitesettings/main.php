@@ -45,8 +45,8 @@
 	        	</div>
 
 	        	<div class="form-group">
-	        	    <label>Site Color in hex code</label>
-	        	    <input class="color" name="color" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="#" data-toggle="tooltip" data-placement="top" title="Site color" value="<?php echo $row->color; ?>">
+	        	    <label>Site Color in hex code</label> (For hyperlinks and menu hover colors) <br/>
+	        	    <input class="color" name="color" type="text" data-required="true" data-maxlength="10" class="form-control" placeholder="#" data-toggle="tooltip" data-placement="top" title="" value="<?php echo $row->color; ?>">
 	        	</div>
 
 
@@ -54,18 +54,18 @@
 
 
 	        	<div class="form-group">
-	        	    <label>Site Body Font</label>
+	        	    <label>Site Body Font</label> (E.g Raleway or Open Sans)
 	        	    <input name="font" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Body font" value="<?php echo $row->font; ?>">
 	        	</div>
 
 	        	<div class="form-group">
-	        	    <label>Footer Color</label>
-	        	    <input class="color" name="footercolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="tooltip" value="<?php echo $row->footercolor; ?>">
+	        	    <label>Footer Color</label> <br/>
+	        	    <input class="color" name="footercolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="" value="<?php echo $row->footercolor; ?>">
 	        	</div>
 
 	        	<div class="form-group">
-	        	    <label>Footer font color</label>
-	        	    <input class="color" name="footerfontcolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="tooltip" value="<?php echo $row->footerfontcolor; ?>">
+	        	    <label>Footer font color</label> <br/>
+	        	    <input class="color" name="footerfontcolor" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="" value="<?php echo $row->footerfontcolor; ?>">
 	        	</div>
 
 
@@ -110,76 +110,7 @@
 	</div>
 	</div>
 
-	<!-- add email test options -->
-	<div class="row" style="margin-left:30px; margin-right:30px;">
-		<div class="col-sm-12"> 
-		    <header class="panel-heading ">
-                <div class="inline font-bold">Email Settings</div>
-                <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Supported Email protocols are <strong>smtp</strong>, find out your smtp settings from your email provider, example uses google mail." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
-                </div>
-            </header>
-		    <section class="panel">
-		        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/save_email_settings',$atts); ?>
-		        
-		        <?php foreach($query2->result() as $row): ?>
-		        <div class="panel-body">
-		        	<div class="form-group">
-		        	    <label>Protocol</label>
-		        	    <input name="protocol" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="smtp" data-toggle="tooltip" data-placement="top" title="Protocol" value="<?php echo $row->protocol; ?>">
-		        	</div>
-		        	<div class="form-group">
-		        	    <label>Smtp Host</label>
-		        	    <input name="smtp_host" type="text" data-required="true" data-maxlength="200" class="form-control" placeholder="ssl://smtp.googlemail.com" data-toggle="tooltip" data-placement="top" title="smtp host" value="<?php echo $row->smtp_host; ?>">
-		        	</div>
-		        	<div class="form-group">
-		        	    <label>Smtp Port</label>
-		        	    <input name="smtp_port" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="465" data-toggle="tooltip" data-placement="top" title="port" value="<?php echo $row->smtp_port; ?>">
-		        	</div>
-		        	<div class="form-group">
-		        	    <label>Email</label>
-		        	    <input name="smtp_user" type="text" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $row->smtp_user; ?>">
-		        	</div>
-		        	<div class="form-group">
-		        	    <label>Password</label>
-		        	    <input name="smtp_pass" type="text" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Password" value="<?php echo $row->smtp_pass; ?>">
-		        	</div>
-
-		        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Save</strong></button>
-		        	
-		        	<?php echo form_close(); ?>
-		        <?php endforeach; ?>
-
-		        </div>
-		    </section>
-		</div>
-
-
-		
-	</div>
-	<div class="row" style="margin-left:30px; margin-right:30px;">
-			<div class="col-sm-12">
-			    <header class="panel-heading ">
-                <div class="inline font-bold">Test Email Settings</div>
-                <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="After you have filled in your email settings send a test email." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
-                </div>
-            </header>
-			    <section class="panel">
-			        <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/test_email',$atts); ?>
-			        
-			        <div class="panel-body">
-			        	<div class="form-group">
-			        	    <label>Email Test Account</label>
-			        	    <input name="email" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="">
-			        	</div>
-			        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Send test Email</strong></button>
-			        	
-
-			        </div>
-			        <?php echo form_close(); ?>
-			    </section>
-			</div>
-			
-		</div>
+	
 	<div class="gap"></div>
 
 </div>

@@ -47,16 +47,6 @@ class Dashboard extends CI_Controller {
 		$data['query'] = $query;
 
 
-		$this->db->select('*');
-		$this->db->from('email');
-		$this->db->where('id', 1);
-		$this->db->limit(1);
-
-		$query2 = $this->db->get();
-		$data['query2'] = $query2;
-		
-		
-
 
 		$this->load->view('header');
 		$this->load->view('body');

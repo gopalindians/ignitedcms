@@ -23,6 +23,29 @@ class Email extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: the view file to save email settings
+	  *       @Params: none
+	  *
+	  *  	 @returns: none
+	  */
+	public function email_view()
+	{
+		$this->db->select('*');
+		$this->db->from('email');
+		$this->db->where('id', 1);
+		$this->db->limit(1);
+
+		$query2 = $this->db->get();
+		$data['query2'] = $query2;
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('email/email-view',$data);
+		$this->load->view('footer');
+
+	}
+
+	 /**
 	  *  @Description: save smtp email settings to db
 	  *       @Params: _POST $protocol; 
 	  *				  $smtp_host;

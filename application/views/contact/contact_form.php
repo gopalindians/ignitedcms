@@ -31,7 +31,7 @@
   	        	
 
 
-  	        	<button type="submit" class="btn btn-red btn-s-xs " id=""><strong>ok</strong></button>
+  	        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>ok</strong></button>
   	        	
 
 

@@ -23,6 +23,58 @@ class Pages extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: saves it as blog or custom controller
+	  *       @Params: _POST check boxes
+	  *
+	  *  	 @returns: nothing
+	  */
+	public function save_page_options($id)
+	{
+		//update db with customer controller
+		// if(isset($_POST['controller']))
+		// {
+		// 	$path = $this->input->post('path');
+
+		// 	$object = array('path' => $path, 'controller' => '1' );
+		// 	$this->db->where('id', $id);
+		// 	$this->db->update('pages', $object);
+		// }
+
+		// if(isset($_POST['controller']))
+		// {
+		// 	$path = $this->input->post('path');
+		// 	if(strlen($path == 0))
+		// 	{
+		// 		$object = array('path' => $path, 'controller' => '0' );
+		// 		$this->db->where('id', $id);
+		// 		$this->db->update('pages', $object);
+
+		// 	}	
+		// }
+
+
+
+		//update db with blog controller
+		if(isset($_POST['blog']))
+		{
+			$path = "site_preview/blog_preview";
+
+			$object = array('path' => $path, 'controller' => '1' );
+			$this->db->where('id', $id);
+			$this->db->update('pages', $object);
+		}
+		else{
+			$object = array('path' => "", 'controller' => '0' );
+			$this->db->where('id', $id);
+			$this->db->update('pages', $object);
+
+		}
+
+		redirect("pages/detail_view/$id","refresh");
+
+	}
+
+	 /**
 	  *  @Description: list all current pages
 	  *       @Params: none
 	  *
@@ -129,7 +181,37 @@ class Pages extends CI_Controller {
 		$query2 = $this->db->get();
 		
 		$data['query2'] = $query2;
+
+
+		//check customer controllers!
+		$this->db->select('*');
+		$this->db->from('pages');
+		$this->db->where('id', $id);
+
+		$query3 = $this->db->get();
 		
+		$path = "";
+		foreach ($query3->result() as $row) 
+		{
+			$path = $row->path;
+		}
+
+		$ck2 = "";
+		$ck1 = "";
+		if($path == "site_preview/blog_preview")
+		{
+			$ck2 = "checked";
+		}
+		if(strlen($path) > 0)
+		{
+			if($path != "site_preview/blog_preview")
+			{
+				$ck1 = "checked";
+			}
+		}
+		$data['ck1'] = $ck1;
+		$data['ck2'] = $ck2;
+		$data['path'] = $path;
 
 		
 		$data['content'] = do_shortcode($shorttag);

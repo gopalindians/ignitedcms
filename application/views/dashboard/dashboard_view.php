@@ -32,7 +32,7 @@
 			        		   
 			        		</div>
 		        		</a>
-		        		<a href="<?php echo site_url('dashboard/site_settings'); ?>">
+		        		<a href="<?php echo site_url('email/email_view'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-envelope big "></i>
@@ -94,6 +94,16 @@
 			        			<div class="my-blk">
 			        				 <i class="fa fa-shopping-cart big "></i>
 			        				 <div class="my-info">Products</div>
+
+			        			</div>
+			        		   
+			        		</div>
+		        		</a>
+		        		<a href="<?php echo site_url('help'); ?>">
+			        		<div class="col-sm-4">
+			        			<div class="my-blk">
+			        				 <i class="fa fa-question big "></i>
+			        				 <div class="my-info">Help</div>
 
 			        			</div>
 			        		   
