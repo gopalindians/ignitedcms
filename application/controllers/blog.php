@@ -37,7 +37,7 @@ class Blog extends CI_Controller {
 
 		$this->load->view('header');
 		$this->load->view('body');
-		$this->load->view('blog/dashboard',$data); 
+		$this->load->view('blog/default',$data); 
 		$this->load->view('footer');
 
 	}
@@ -80,6 +80,32 @@ class Blog extends CI_Controller {
 
         $this->load->view('blog/blog-edit-post',$data); 
         $this->load->view('blog/footer-edit-blog');
+
+	}
+
+	public function search_blog()
+	{
+
+		$search_term = $this->input->post('search_term');
+
+		$this->db->select('*');
+		$this->db->from('blog');
+		$this->db->like('title', $search_term);
+
+		$query = $this->db->get();
+		
+		// foreach ($query->result() as $row) 
+		// {
+		// 	echo $row->name;
+		// }
+
+		$data['query'] = $query;
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('blog/default',$data); 
+		$this->load->view('footer');
+
 
 	}
 

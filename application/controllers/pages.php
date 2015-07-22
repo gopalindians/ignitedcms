@@ -93,7 +93,7 @@ class Pages extends CI_Controller {
 
 		$this->load->view('header');
 		$this->load->view('body');
-		$this->load->view('pages/all-pages',$data);
+		$this->load->view('template/default',$data);
 		$this->load->view('footer');
 
 
@@ -222,6 +222,40 @@ class Pages extends CI_Controller {
 		$this->load->view('body');
 		$this->load->view('builder/builder',$data);
 		$this->load->view('builder/footer',$data);
+
+	}
+
+	 /**
+	  *  @Description: search the database for pages
+	  *       @Params: _post search_term
+	  *
+	  *  	 @returns: returns
+	  */
+	public function search_pages()
+	{
+		$search_term = $this->input->post('search_term');
+
+		$this->db->select('*');
+		$this->db->from('pages');
+		$this->db->like('name', $search_term);
+
+		$query = $this->db->get();
+		
+		// foreach ($query->result() as $row) 
+		// {
+		// 	echo $row->name;
+		// }
+
+		$data['query'] = $query;
+		
+
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('template/default',$data);
+		$this->load->view('footer');
+		
+
 
 	}
 
