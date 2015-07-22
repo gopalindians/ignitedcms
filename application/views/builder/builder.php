@@ -1,5 +1,24 @@
 
 <div class="pmf-container" style="margin-left:auto; margin-right:auto; margin-top:30px; max-width:1170px; min-height:900px;  ">
+
+      <div class="row" style="margin-left:30px; margin-right:30px;">
+        <div class="col-sm-12">
+         <?php if($this->session->flashdata('msg')) {?>
+                     
+             <?php if($this->session->flashdata('type') =='0') { ?>
+         
+             <div class="alert alert-danger">
+         
+             <?php } else {?>
+             <div class="alert alert-success">
+                 <?php } ?>
+                 <button type="button" class="close" data-dismiss="alert"><i class="fa fa-times"></i>
+                 </button> <i class="fa fa-ban-circle"></i>
+                 <?php echo $this->session->flashdata('msg');?>
+             </div>
+         <?php } ?>
+       </div>
+      </div>
     
       <!-- breadcrumb -->
          <div class="row" style="margin-left:30px; margin-right:30px;">
@@ -109,13 +128,21 @@
                     </div>
                     <div class="clearfix"></div>
 
+
+                    <!-- asset upload form -->
+                    <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart("assets/do_upload_builder/$id",$atts); ?>
                     <div class="form-group">
- 
+                        <label >Upload Image:</label>
+                        
+                        
+                        <input type="file" name="userfile" size="20" data-toggle="tooltip" data-placement="right" title="Please make sure your image is in the suitable format"/>
+                        <br/>
+                        <button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>OK</strong></button>
+                    <?php echo form_close(); ?>
                       
                     </div>
-                   <a target="_blank" href=" <?php echo site_url("assets/asset_view"); ?>" >
-                      <div class="btn btn-purplet btn-s-xs"><strong>Upload more images</strong></div>
-                   </a>
+
+                   
                    
                 </div>
             </section>

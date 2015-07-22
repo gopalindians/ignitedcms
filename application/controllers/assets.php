@@ -117,6 +117,80 @@ class Assets extends CI_Controller {
 	}
 
 
+	 /**
+	  *  @Description: Special uploader for page builder
+	  *       @Params: pageid
+	  *
+	  *  	 @returns: returns
+	  */
+
+	 public function do_upload_builder($id)
+	 {
+	 	$config['upload_path'] = './img/uploads/';
+
+            
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
+        
+
+        $this->load->library('upload', $config);
+        /**
+             * @Description: unsuccessful
+             * @params     : params
+             * @returns    : return
+             */
+        if ( ! $this->upload->do_upload())
+        {
+
+        	$errors =  $this->upload->display_errors();
+			$this->session->set_flashdata('type', '0');
+			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
+			
+			redirect("pages/detail_view/$id",'refresh');
+
+        }
+        //successful
+        else
+        {
+        	$mytry = $this->upload->data();
+            $filename = $mytry['raw_name'].$mytry['file_ext'];
+
+            //create a thumbnail
+            $config['image_library'] = 'gd2';
+			$config['source_image']	= "./img/uploads/$filename";
+			$config['create_thumb'] = TRUE;
+			$config['maintain_ratio'] = TRUE;
+			$config['width']	= 200;
+			$config['height']	= 200;
+
+			$this->load->library('image_lib', $config); 
+
+			$this->image_lib->resize();
+
+
+			//insert this bad boy into the database
+			$thumb = $mytry['raw_name'] . '_thumb' . $mytry['file_ext'];
+			$fullsize = $mytry['raw_name'] .  $mytry['file_ext'];
+
+			$object = array(
+				'name' => $thumb,
+				'fullsize' =>$fullsize
+				);
+			$this->db->insert('assets', $object);
+
+
+			$this->session->set_flashdata('type', '1');
+			$this->session->set_flashdata('msg', '<strong>Success</strong> Image uploaded, click on the Add Image button again to use!');
+			
+			redirect("pages/detail_view/$id",'refresh');
+		}
+
+
+
+
+	 }
+
+
 }
 
 /* End of file assets.php */
