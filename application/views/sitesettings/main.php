@@ -37,7 +37,7 @@
 	    <section class="panel">
 	        <?php foreach($query->result() as $row): ?>
 	        <div class="panel-body">
-	        	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('dashboard/save_site_settings',$atts); ?>
+	        	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('site_settings/save_site_settings',$atts); ?>
 	        	
 	        	<div class="form-group">
 	        	    <label>Site name</label>

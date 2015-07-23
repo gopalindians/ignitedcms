@@ -116,7 +116,9 @@ INSERT INTO `permissions` (`permissionID`, `permission`) VALUES
 (4, 'menu'),
 (5, 'email'),
 (6, 'profile'),
-(7,'assets');
+(7,'assets'),
+(8,'site_settings');
+
 
 -- --------------------------------------------------------
 
@@ -147,7 +149,8 @@ INSERT INTO `permission_map`(`groupID`, `permissionID`) VALUES
 (1,4),
 (1,5),
 (1,6),
-(1,7);
+(1,7),
+(1,8);
 
 -- --------------------------------------------------------
 
