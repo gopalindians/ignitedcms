@@ -113,7 +113,7 @@ class Site_settings extends CI_Controller {
             $this->db->where('id', '1');
             $this->db->update('site', $object);
 			
-			redirect('dashboard/site_settings','refresh');
+			redirect('site_settings/the_site_settings','refresh');
 
         }
         //successful
@@ -154,7 +154,7 @@ class Site_settings extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Saved!');
 			
-			redirect('dashboard/site_settings','refresh');
+			redirect('site_settings/the_site_settings','refresh');
 			
 			
         }
