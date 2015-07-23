@@ -34,7 +34,7 @@ class Site_settings extends CI_Controller {
 	  *
 	  *  	 @returns: returns
 	  */
-	public function site_settings()
+	public function the_site_settings()
 	{
 		
 		$this->db->select('*');

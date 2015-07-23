@@ -27,7 +27,7 @@
 
           <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
                     data-content='
-                    <?php echo anchor('dashboard/site_settings', 'Site Settings', 'attributs'); ?> <br/>
+                    <?php echo anchor('site_settings/the_site_settings', 'Site Settings', 'attributs'); ?> <br/>
                     <?php echo anchor('pages/show_pages', 'Pages', 'attributs'); ?> <br/>
                     <?php echo anchor('product_admin', 'Products', 'attributs'); ?> <br/>
                     

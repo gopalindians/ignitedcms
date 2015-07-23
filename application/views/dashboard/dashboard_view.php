@@ -20,7 +20,7 @@
 			        		</div>
 		        		</a>
 
-		        		<a href="<?php echo site_url('dashboard/site_settings'); ?>">
+		        		<a href="<?php echo site_url('site_settings/the_site_settings'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-gear big "></i>
