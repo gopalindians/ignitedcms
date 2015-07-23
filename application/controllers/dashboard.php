@@ -19,6 +19,10 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
+		//test for permissions
+		
+
+
 		$this->load->view('header');
 		$this->load->view('body');
 		$this->load->view('dashboard/dashboard_view');

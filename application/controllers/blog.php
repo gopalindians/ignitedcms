@@ -8,7 +8,13 @@ class Blog extends CI_Controller {
 		{
 		  	if($this->session->userdata('isloggedin')=='1')
 		  	{
-		  		//allow access
+		  		$this->load->model('Stuff_permissions');
+				$pass = $this->Stuff_permissions->has_permission("blog");
+
+				if($pass != true)
+				{
+					redirect('dashboard','refresh');
+				}
 		  	}
 		  	else
 		  	{

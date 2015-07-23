@@ -4,8 +4,6 @@
 		    <header class="panel-heading font-bold">Dashboard</header>
 		    <section class="panel">
 		        
-		    	
-            
 
 		        <div class="panel-body">
 		        	<h3 class="" style="margin-left:50px;">System</h3>

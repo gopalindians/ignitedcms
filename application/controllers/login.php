@@ -40,9 +40,11 @@ class Login extends CI_Controller {
               $query = $this->db->get_where('user', array('name' => $name));
 
               $hashed_password = "";
+              $userid = "";
               foreach ($query->result() as $row)
               {
                   $hashed_password = crypt($password,$row->password);
+                  $userid = $row->id;
               }
 
               $query = $this->db->get_where('user', array('name' => $name, 'password' => $hashed_password));
@@ -50,11 +52,15 @@ class Login extends CI_Controller {
               //if passwords match then check actvation status
               if($query->num_rows() == 1)
               {
-                    
+                      //set the user's permissions
+                      $this->load->model('Stuff_permissions');
+                      $perms = $this->Stuff_permissions->get_permissions($userid);
+
                       $array = array(
                         'name' => $name,
-                        'userid' => 'test',
-                        'isloggedin' => '1'
+                        'userid' => $userid,
+                        'isloggedin' => '1',
+                        'permissions' => $perms
 
                       );
 
@@ -78,11 +84,11 @@ class Login extends CI_Controller {
             }
             else
             {
-               $data['errors'] = 'User Does not exist';
-               $this->load->view('header');
-              $this->load->view('body');
-              $this->load->view('login', $data);
-              $this->load->view('footer');
+                $data['errors'] = 'User Does not exist';
+                $this->load->view('header');
+                $this->load->view('body');
+                $this->load->view('login', $data);
+                $this->load->view('footer');
             
             }
  
@@ -166,6 +172,7 @@ class Login extends CI_Controller {
                'name' => 'admin' ,
                'password' => $hashed_password ,
                'isadmin' => '1',
+               'permissiongroup' => '1',
                'joindate'  => date("Y-m-d H:i:s")
             );
 
