@@ -7,14 +7,20 @@ class Permissions extends CI_Controller {
 	{
 		parent::__construct();
 		{
-			if($this->session->userdata('isloggedin')=='1')
-			{
-				//allow access
-			}
-			else
-			{
-				redirect('login','refresh');
-			}
+		  	if($this->session->userdata('isloggedin')=='1')
+		  	{
+		  		$this->load->model('Stuff_permissions');
+				$pass = $this->Stuff_permissions->has_permission("permissions");
+
+				if($pass != true)
+				{
+					redirect('dashboard','refresh');
+				}
+		  	}
+		  	else
+		  	{
+		  		redirect('installer','refresh');
+		  	}
 		}
 	}
 

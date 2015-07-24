@@ -117,7 +117,8 @@ INSERT INTO `permissions` (`permissionID`, `permission`) VALUES
 (5, 'permissions'),
 (6, 'profile'),
 (7,'assets'),
-(8,'site_settings');
+(8,'site_settings'),
+(9,'users');
 
 
 -- --------------------------------------------------------
