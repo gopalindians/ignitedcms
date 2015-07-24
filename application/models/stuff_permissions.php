@@ -72,6 +72,61 @@ class Stuff_permissions extends CI_Model {
 
 	}
 
+	 /**
+	  *  @Description: returns the icon for the controller name
+	  *       @Params: controller name
+	  *
+	  *  	 @returns: string icon
+	  */
+	public function get_icon($controller)
+	{
+
+		if($controller == "users")
+		{
+			return "fa fa-users big";
+		}
+		if($controller == "site_settings")
+		{
+			return "fa fa-gear big";
+		}
+		if($controller == "assets")
+		{
+			return "fa fa-picture-o big";
+		}
+		if($controller == "blog")
+		{
+			return "fa fa-pencil big";
+		}
+
+		if($controller == "permissions")
+		{
+			return "fa fa-lock big";
+		}
+		if($controller == "menu")
+		{
+			return "fa fa-tasks big";
+		}
+		if($controller == "profile")
+		{
+			return "fa fa-user big";
+		}
+		if($controller == "pages")
+		{
+			return "fa fa-book big";
+		}
+		if($controller == "email")
+		{
+			return "fa fa-envelope big";
+		}
+		if($controller == "help")
+		{
+			return "fa fa-question big";
+		}
+		
+
+
+	}
+
 }
 
 /* End of file stuff_permissions.php */

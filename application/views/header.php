@@ -66,6 +66,12 @@
         .my-pad{
             padding:20px;
         }
+
+        .my-pad-top{
+
+            padding:20px;
+        }
+
         .my-blk{
             
             padding:10px;

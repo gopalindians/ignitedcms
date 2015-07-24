@@ -75,6 +75,60 @@ if ( ! function_exists('my_username'))
 
 
 /**
+  *  @Description: renders user dashboard depending on permissions
+  *       @Params: none
+  *
+  *     @returns: 
+  */
+
+
+if ( ! function_exists('my_render_dashboard'))
+{
+    function my_render_dashboard()
+    {
+        //check if session is set
+        $CI =& get_instance();
+
+        //pretty up the output
+        $CI->load->helper('inflector');
+
+        $userid = $CI->session->userdata('userid');
+
+        $CI->load->model('Stuff_permissions');
+        $list = $CI->Stuff_permissions->get_permissions($userid);
+
+        //echo $list;
+        //strip the last comma
+        $list = trim($list,",");
+
+        $access = explode(",", $list);
+
+
+
+        foreach ($access as $key) {
+          //get the icon
+          $icon = $CI->Stuff_permissions->get_icon($key);
+
+          echo("<a href=". site_url($key).">
+                  <div class='col-sm-4 my-pad-top'>
+                    <div class='my-blk'>
+                       <i class='$icon'></i>
+                       <div class='my-info'>".humanize($key)."</div>
+
+                    </div>
+                     
+                  </div>
+                </a>");
+
+
+        }
+
+        
+    }   
+}
+
+
+/**
   *  @Description: get theme color
   *       @Params: none
   *

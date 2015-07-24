@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
  /**
-  *  @Description: helper methods for showing hiding dashboard depending on user perms
+  *  @Description: Deprecated moved to  helpers > my_helper.php
   *       @Params: 
   *
   *  	 @returns: 
@@ -10,7 +10,20 @@
 
 class Stuff_dashboard extends CI_Model {
 
-	
+
+	 /**
+	  *  @Description: dynamically show hide dashboard for end user
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+
+	public function dashboard_helper()
+	{
+
+
+
+	}
 	
 
 
