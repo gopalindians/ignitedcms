@@ -114,7 +114,7 @@ INSERT INTO `permissions` (`permissionID`, `permission`) VALUES
 (2, 'blog'),
 (3, 'email'),
 (4, 'menu'),
-(5, 'email'),
+(5, 'permissions'),
 (6, 'profile'),
 (7,'assets'),
 (8,'site_settings');

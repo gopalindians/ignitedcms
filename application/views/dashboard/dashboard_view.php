@@ -20,6 +20,17 @@
 			        		</div>
 		        		</a>
 
+		        		<a href="<?php echo site_url('permissions/group_permissions_view'); ?>">
+			        		<div class="col-sm-4">
+			        			<div class="my-blk">
+			        				 <i class="fa fa-lock big "></i>
+			        				 <div class="my-info">Permissions</div>
+
+			        			</div>
+			        		   
+			        		</div>
+		        		</a>
+
 		        		<a href="<?php echo site_url('site_settings/the_site_settings'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
@@ -30,6 +41,8 @@
 			        		   
 			        		</div>
 		        		</a>
+		        	</div>
+		        	<div class="row my-pad" >
 		        		<a href="<?php echo site_url('email/email_view'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
@@ -40,8 +53,9 @@
 			        		   
 			        		</div>
 		        		</a>
-		        		
 		        	</div>
+		        		
+		        	
 		        	<h3 class="" style="margin-left:50px;">Content</h3>
 		        	<div class="row my-pad" >
 		        		<a href="<?php echo site_url('pages/show_pages'); ?>">
