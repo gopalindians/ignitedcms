@@ -23,20 +23,14 @@ class Site_settings extends CI_Controller {
 		}
 	}
 
-	public function index()
-	{
-		
-	}
-
 	 /**
 	  *  @Description: save site settings like logo and site name
 	  *       @Params: params
 	  *
 	  *  	 @returns: returns
 	  */
-	public function the_site_settings()
+	public function index()
 	{
-		
 		$this->db->select('*');
 		$this->db->from('site');
 		$this->db->where('id', '1');
@@ -53,8 +47,10 @@ class Site_settings extends CI_Controller {
 		$this->load->view('body');
 		$this->load->view('sitesettings/main',$data);
 		$this->load->view('footer');
-		
 	}
+
+	
+	
 
 	 /**
 	  *  @Description: save site settings to database
@@ -113,7 +109,7 @@ class Site_settings extends CI_Controller {
             $this->db->where('id', '1');
             $this->db->update('site', $object);
 			
-			redirect('site_settings/the_site_settings','refresh');
+			redirect('site_settings','refresh');
 
         }
         //successful
@@ -154,7 +150,7 @@ class Site_settings extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Saved!');
 			
-			redirect('site_settings/the_site_settings','refresh');
+			redirect('site_settings','refresh');
 			
 			
         }

@@ -9,7 +9,7 @@
 		        	<h3 class="" style="margin-left:50px;">System</h3>
 		        	<div class="row my-pad" >
 		        		
-		        		<a href="<?php echo site_url('profile/my_profile_view'); ?>">
+		        		<a href="<?php echo site_url('profile'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-user big "></i>
@@ -20,7 +20,7 @@
 			        		</div>
 		        		</a>
 
-		        		<a href="<?php echo site_url('permissions/group_permissions_view'); ?>">
+		        		<a href="<?php echo site_url('permissions'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-lock big "></i>
@@ -31,7 +31,7 @@
 			        		</div>
 		        		</a>
 
-		        		<a href="<?php echo site_url('site_settings/the_site_settings'); ?>">
+		        		<a href="<?php echo site_url('site_settings'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-gear big "></i>
@@ -58,7 +58,7 @@
 			        		</div>
 		        		</a>
 
-		        		<a href="<?php echo site_url('email/email_view'); ?>">
+		        		<a href="<?php echo site_url('email'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-envelope big "></i>
@@ -73,7 +73,7 @@
 		        	
 		        	<h3 class="" style="margin-left:50px;">Content</h3>
 		        	<div class="row my-pad" >
-		        		<a href="<?php echo site_url('pages/show_pages'); ?>">
+		        		<a href="<?php echo site_url('pages'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-book big "></i>
@@ -83,7 +83,7 @@
 			        		   
 			        		</div>
 		        		</a>
-		        		<a href="<?php echo site_url('menu/build_menu'); ?>">
+		        		<a href="<?php echo site_url('menu'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-tasks big "></i>
@@ -93,7 +93,7 @@
 			        		   
 			        		</div>
 		        		</a>
-		        		<a href="<?php echo site_url('assets/asset_view'); ?>">
+		        		<a href="<?php echo site_url('assets'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-picture-o big "></i>
@@ -106,7 +106,7 @@
 		        		
 		        	</div>
 		        	<div class="row my-pad" >
-		        		<a href="<?php echo site_url('blog/blog_show'); ?>">
+		        		<a href="<?php echo site_url('blog'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">
 			        				 <i class="fa fa-pencil big "></i>

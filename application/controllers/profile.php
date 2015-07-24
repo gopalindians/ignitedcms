@@ -22,19 +22,14 @@ class Profile extends CI_Controller {
 		  }
 	}
 
-	public function index()
-	{
-		
-	}
-	 /**
+	/**
 	  *  @Description: Save first and last name and password reset
 	  *       @Params: params
 	  *
 	  *  	 @returns: returns
 	  */
-	public function my_profile_view()
+	public function index()
 	{
-
 		$userid = $this->session->userdata('userid');
 
 		$this->db->select('*');
@@ -52,6 +47,12 @@ class Profile extends CI_Controller {
 		$this->load->view('body');
 		$this->load->view('profile/profile-view', $data);
 		$this->load->view('footer');
+	}
+	 
+	public function my_profile_view()
+	{
+
+		
 
 	}
 
@@ -75,7 +76,7 @@ class Profile extends CI_Controller {
 			$this->db->where('id', $id);
 			$this->db->update('user', $object);
 
-			redirect("profile/my_profile_view","refresh");
+			redirect("profile","refresh");
 
 
 		}
@@ -93,7 +94,7 @@ class Profile extends CI_Controller {
 				$this->session->set_flashdata('type', '1');
 				$this->session->set_flashdata('msg', '<strong>Success</strong> Password updated!');
 
-				redirect("profile/my_profile_view","refresh");
+				redirect("profile","refresh");
 
 			}
 			else
@@ -109,7 +110,7 @@ class Profile extends CI_Controller {
 	               $this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 
 
-	               redirect("profile/my_profile_view","refresh");
+	               redirect("profile","refresh");
 			}
 		}
 

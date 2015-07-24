@@ -24,19 +24,13 @@ class Permissions extends CI_Controller {
 		}
 	}
 
-	public function index()
-	{
-		
-
-	}
-
-	 /**
+	/**
 	  *  @Description: the view file to assign permissions to groups
 	  *       @Params: none
 	  *
 	  *  	 @returns: returns
 	  */
-	public function group_permissions_view()
+	public function index()
 	{
 		$this->db->select('*');
 		$this->db->from('permission_groups');
@@ -51,8 +45,10 @@ class Permissions extends CI_Controller {
 		$this->load->view('permissions/group-perm',$data);
 		$this->load->view('footer');
 
-
 	}
+
+	 
+	
 
 	 /**
 	  *  @Description: the view file to create a new group
@@ -117,7 +113,7 @@ class Permissions extends CI_Controller {
     		}	
     	}
 
-    	redirect("permissions/group_permissions_view", "refresh");
+    	redirect("permissions", "refresh");
 	}
 
 

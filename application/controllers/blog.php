@@ -23,13 +23,9 @@ class Blog extends CI_Controller {
 		}
 	}
 	
-	public function index()
-	{
-		//main point of entry
-		
-	}
+	
 
-	public function blog_show()
+	public function index()
 	{
 		$data['title'] = 'Blog';
 		
@@ -140,7 +136,7 @@ class Blog extends CI_Controller {
 	      	$this->session->set_flashdata('type', '1');
 	      	$this->session->set_flashdata('msg', '<strong>Success</strong> Post edited');
 
-	      	redirect('blog/blog_show', 'refresh');
+	      	redirect('blog', 'refresh');
 
 	}
 
@@ -157,7 +153,7 @@ class Blog extends CI_Controller {
 
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Success</strong> Post Deleted');
-		redirect('blog/blog_show', 'refresh');
+		redirect('blog', 'refresh');
 		
 	}
 
@@ -190,7 +186,7 @@ class Blog extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('blog/blog_show','refresh');
+			redirect('blog','refresh');
 
         }
         //successful
@@ -230,7 +226,7 @@ class Blog extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Blog post has been added');
 			
-			redirect('blog/blog_show','refresh');
+			redirect('blog','refresh');
 			
 			
         }

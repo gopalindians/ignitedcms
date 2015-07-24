@@ -24,10 +24,6 @@ class Assets extends CI_Controller {
 		}
 	}
 
-	public function index()
-	{
-		
-	}
 
 	 /**
 	  *  @Description: the default view for asset management
@@ -35,7 +31,7 @@ class Assets extends CI_Controller {
 	  *
 	  *  	 @returns: returns
 	  */
-	public function asset_view()
+	public function index()
 	{
 		
 		$this->db->select('*');
@@ -81,7 +77,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '0');
 			$this->session->set_flashdata('msg', "<strong>Failed</strong> $errors");
 			
-			redirect('assets/asset_view','refresh');
+			redirect('assets','refresh');
 
         }
         //successful
@@ -117,7 +113,7 @@ class Assets extends CI_Controller {
 			$this->session->set_flashdata('type', '1');
 			$this->session->set_flashdata('msg', '<strong>Success</strong> Image uploaded');
 			
-			redirect('assets/asset_view','refresh');
+			redirect('assets','refresh');
 		}
 
 	}

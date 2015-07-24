@@ -22,19 +22,13 @@ class Email extends CI_Controller {
 		  }
 	}
 
-
-	public function index()
-	{
-		
-	}
-
-	 /**
+	/**
 	  *  @Description: the view file to save email settings
 	  *       @Params: none
 	  *
 	  *  	 @returns: none
 	  */
-	public function email_view()
+	public function index()
 	{
 		$this->db->select('*');
 		$this->db->from('email');
@@ -48,8 +42,10 @@ class Email extends CI_Controller {
 		$this->load->view('body');
 		$this->load->view('email/email-view',$data);
 		$this->load->view('footer');
-
 	}
+
+	 
+	
 
 	 /**
 	  *  @Description: save smtp email settings to db
@@ -82,8 +78,8 @@ class Email extends CI_Controller {
 		$this->db->update('email', $object);
 
 		$this->session->set_flashdata('type', '1');
-		$this->session->set_flashdata('msg', '<strong>Success</strong> ');
-		redirect("dashboard/site_settings", "refresh");
+		$this->session->set_flashdata('msg', '<strong>Success</strong> Email Settings Saved');
+		redirect("email", "refresh");
 	}
 
 	 /**

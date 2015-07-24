@@ -34,6 +34,46 @@ if ( ! function_exists('my_pretty_date'))
     }   
 }
 
+
+/**
+  *  @Description: get username
+  *       @Params: none
+  *
+  *     @returns: username or string "Profile" if none set
+  */
+
+
+if ( ! function_exists('my_username'))
+{
+    function my_username()
+    {
+        //check if session is set
+        $CI =& get_instance();
+        if($CI->session->userdata('userid') !== FALSE)
+        {
+          $userid = $CI->session->userdata('userid');
+
+          $CI =& get_instance();
+          $CI->db->select('name');
+          $CI->db->from('user');
+          $CI->db->where('id', $userid);
+          $CI->db->limit(1);
+
+          $query = $CI->db->get();
+          $name = "";
+          foreach ($query->result() as $row) 
+          {
+            $name = $row->name;
+          }
+          return $name;
+        }
+        else{
+          return "Profile";
+        }
+    }   
+}
+
+
 /**
   *  @Description: get theme color
   *       @Params: none

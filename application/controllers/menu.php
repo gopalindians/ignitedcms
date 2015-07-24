@@ -23,9 +23,34 @@ class Menu extends CI_Controller {
 		  }
 	}
 
+	 /**
+	  *  @Description: drag and drop for building menu
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
 	public function index()
 	{
-		//default index function	
+		//get previous menu
+		$this->db->select('html');
+		$this->db->from('menu');
+		$this->db->where('id', '1');
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+
+		$html = "";
+		foreach ($query->result() as $row) {
+			$html = $row->html;
+		}
+
+		$data['html'] = $html;
+		$data['title'] = 'Menu Builder';
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('menu/menu-main', $data);
+		$this->load->view('menu/menu-footer');	
 	}
 
 	 /**
@@ -82,7 +107,7 @@ class Menu extends CI_Controller {
 		$this->db->where('id', '1');
 		$this->db->update('menu', $object2);
 
-		redirect('menu/build_menu','refresh');
+		redirect('menu','refresh');
 		
 
 
@@ -90,37 +115,7 @@ class Menu extends CI_Controller {
 
 	
 
-	 /**
-	  *  @Description: drag and drop for building menu
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
 
-	public function build_menu()
-	{
-		//get previous menu
-		$this->db->select('html');
-		$this->db->from('menu');
-		$this->db->where('id', '1');
-		$this->db->limit(1);
-
-		$query = $this->db->get();
-
-		$html = "";
-		foreach ($query->result() as $row) {
-			$html = $row->html;
-		}
-
-		$data['html'] = $html;
-		$data['title'] = 'Menu Builder';
-
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('menu/menu-main', $data);
-		$this->load->view('menu/menu-footer');
-
-	}
 
 	 /**
 	  *  @Description: save the menu order to database

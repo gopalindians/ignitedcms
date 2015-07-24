@@ -20,20 +20,12 @@
           <?php echo anchor('login/logout', 'Logout', 'attributs'); ?>
           
 
-          ' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Profile'> <i class="fa fa-user"></i>  <strong>Profile</strong></div>
+          ' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Profile'> <i class="fa fa-user"></i>  <strong> <?php echo my_username(); ?></strong></div>
 
           <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
           data-content='<a target="_blank" href=" <?php echo site_url("site_preview/blog_preview"); ?>">Preview Page</a>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Site'> <i class="fa fa-eye"></i>  <strong>Site Preview</strong></div>
 
-          <div class="btn btn-sm  btn-black" data-toggle="popover" data-html="true" data-placement="bottom" 
-                    data-content='
-                    <?php echo anchor('site_settings/the_site_settings', 'Site Settings', 'attributs'); ?> <br/>
-                    <?php echo anchor('pages/show_pages', 'Pages', 'attributs'); ?> <br/>
-                    <?php echo anchor('product_admin', 'Products', 'attributs'); ?> <br/>
-                    
-                    <?php echo anchor('menu/build_menu', 'Menu', 'attributs'); ?> <br/>
-                    <?php echo anchor('assets/asset_view', 'Assets', 'attributs'); ?> <br/>
-                    <?php echo anchor('blog/blog_show', 'Blog', 'attributs'); ?>' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Options'> <i class="fa fa-gear"></i>  <strong>Options</strong></div>
+         <!-- deprecated options menu -->
 
           
           

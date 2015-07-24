@@ -23,9 +23,26 @@ class Pages extends CI_Controller {
 		  }
 	}
 
+	/**
+	  *  @Description: list all current pages
+	  *       @Params: none
+	  *
+	  *  	 @returns: none
+	  */
 	public function index()
 	{
+		$this->db->select('*');
+		$this->db->from('pages');
+		$query = $this->db->get();
 		
+		$data['query'] = $query;
+		
+
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('template/default',$data);
+		$this->load->view('footer');
 	}
 
 	 /**
@@ -80,30 +97,9 @@ class Pages extends CI_Controller {
 
 	}
 
-	 /**
-	  *  @Description: list all current pages
-	  *       @Params: none
-	  *
-	  *  	 @returns: none
-	  */
+	 
 
-	public function show_pages()
-	{
-		$this->db->select('*');
-		$this->db->from('pages');
-		$query = $this->db->get();
-		
-		$data['query'] = $query;
-		
-
-
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('template/default',$data);
-		$this->load->view('footer');
-
-
-	}
+	
 
 	 /**
 	  *  @Description: description
@@ -118,7 +114,7 @@ class Pages extends CI_Controller {
 		$this->db->delete('pages');
 
 
-		redirect('pages/show_pages','refresh');
+		redirect('pages','refresh');
 	}
 
 	 /**
@@ -154,7 +150,7 @@ class Pages extends CI_Controller {
 		$object = array('name' => $name );
 		$this->db->insert('pages', $object);
 
-		redirect('pages/show_pages','refresh');
+		redirect('pages','refresh');
 
 	}
 

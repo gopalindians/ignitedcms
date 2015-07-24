@@ -4,7 +4,7 @@
       <div class="col-sm-12">
        
         <ul class="breadcrumb">
-          <li><a href="<?php echo site_url('blog/blog_show'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+          <li><a href="<?php echo site_url('blog'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
           <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Add blog');?></a></li>
           
         </ul>
