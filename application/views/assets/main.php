@@ -41,7 +41,7 @@
         <div class="col-sm-12">
             <header class="panel-heading ">
                 <div class="inline font-bold">Asset Managment</div>
-                <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Here you can upload your images and then add them to your pages. You can <strong>only</strong> add your images here!" title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
+                <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Here you can upload your images and then add them to your pages. You can <strong>only</strong> add images for the time being." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
                 </div>
             </header>
             <section class="panel">

@@ -50,7 +50,11 @@
 
 	 <div class="row" style="margin-left:30px; margin-right:30px;">
 	   <div class="col-sm-12">
-	       <header class="panel-heading font-bold">Pages</header>
+	       <header class="panel-heading"><div class="inline font-bold">Pages</div>
+          <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Add the pages to your site, click on page link to go into page builder view" title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
+                          </div>
+
+         </header>
 	       <section class="panel">
 	           
 	           <div class="panel-body">

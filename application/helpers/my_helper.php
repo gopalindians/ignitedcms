@@ -391,6 +391,35 @@ if ( ! function_exists('my_site_title'))
 }
 
 /**
+  *  @Description: show the Group Permission name
+  *       @Params: role id
+  *
+  *     @returns: returns
+  */
+if ( ! function_exists('my_role'))
+{
+    function my_role($id)
+    {
+      $CI =& get_instance();
+      $CI->db->select('groupName');
+      $CI->db->from('permission_groups');
+      $CI->db->where('groupID', $id);
+      $CI->db->limit(1);
+
+      $query = $CI->db->get();
+      $groupName = "";
+      foreach ($query->result() as $row) 
+      {
+        $groupName = $row->groupName;
+      }
+      return $groupName;
+
+    }   
+}
+
+
+
+/**
   *  @Description: show the page name
   *       @Params: params
   *

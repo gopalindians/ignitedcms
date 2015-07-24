@@ -39,7 +39,11 @@
 		    	<div class="col-sm-12">
 		    		<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('profile/save_profile',$atts); ?>
 		    		
-				    <header class="panel-heading font-bold">Profile</header>
+				    <header class="panel-heading"> <div class="inline font-bold">Profile</div>
+				    	<div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Fill in your profile details here." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
+				    	                </div>
+
+				    </header>
 				    <section class="panel">
 				        
 				        <?php foreach ($query->result() as $row) { ?>

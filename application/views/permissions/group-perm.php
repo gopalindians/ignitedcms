@@ -38,7 +38,11 @@
 	    
 	    <div class="row" style="margin-left:30px; margin-right:30px;">
 	   <div class="col-sm-12">
-	       <header class="panel-heading font-bold">User Group Permissions</header>
+	       <header class="panel-heading"><div class="inline font-bold">User Group Permissions</div>
+	       	<div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="Create different Roles so users are limited to different aspects of the admin panel" title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
+	       	                </div>
+
+	       </header>
 	       <section class="panel">
 	           
 	           <div class="panel-body">

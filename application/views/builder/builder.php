@@ -20,13 +20,16 @@
        </div>
       </div>
     
+      
+
       <!-- breadcrumb -->
          <div class="row" style="margin-left:30px; margin-right:30px;">
             <div class="col-sm-12">
               <!-- .breadcrumb -->
               <ul class="breadcrumb">
-                <li><a href="<?php echo site_url('pages'); ?>"><i class="fa fa-home"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
-                <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo(my_page_name($this->uri->segment(3, 0)));?></a></li>
+                <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+                <li><a href="<?php echo site_url('pages'); ?>"><i class="fa fa-list-ul"></i> <?php echo $this->uri->segment(1, 0); ?></a></li>
+                <li class='active'><a href="#"><i class="fa fa-book"></i> <?php echo(my_page_name($this->uri->segment(3, 0)));?></a></li>
                 
               </ul>
                     
