@@ -132,7 +132,7 @@ CREATE TABLE `permission_groups` (
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 INSERT INTO `permission_groups`(`groupID`, `groupName`) VALUES 
-(1,'Administrators')
+(1,'Administrators');
 
 --
 -- Table structure for table `permission_map`
