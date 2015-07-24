@@ -42,7 +42,22 @@
 			        		</div>
 		        		</a>
 		        	</div>
+		        	
+		        		
+		        	
+
 		        	<div class="row my-pad" >
+		        		<a href="<?php echo site_url('users'); ?>">
+			        		<div class="col-sm-4">
+			        			<div class="my-blk">
+			        				 <i class="fa fa-users big "></i>
+			        				 <div class="my-info">User Roles</div>
+
+			        			</div>
+			        		   
+			        		</div>
+		        		</a>
+
 		        		<a href="<?php echo site_url('email/email_view'); ?>">
 			        		<div class="col-sm-4">
 			        			<div class="my-blk">

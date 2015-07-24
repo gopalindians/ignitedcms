@@ -103,7 +103,7 @@ CREATE TABLE `pages` (
 CREATE TABLE `permissions` (
 `permissionID` int(11) NOT NULL,
   `permission` varchar(200) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `permissions`
@@ -129,9 +129,10 @@ INSERT INTO `permissions` (`permissionID`, `permission`) VALUES
 CREATE TABLE `permission_groups` (
 `groupID` int(11) NOT NULL,
   `groupName` varchar(200) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-
+INSERT INTO `permission_groups`(`groupID`, `groupName`) VALUES 
+(1,'Administrators')
 
 --
 -- Table structure for table `permission_map`
@@ -215,7 +216,7 @@ CREATE TABLE `user` (
   `credits` int(11) NOT NULL,
   `permissiongroup` int(11) NOT NULL,
   `fullname` varchar(200) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
 
