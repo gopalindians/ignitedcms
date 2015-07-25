@@ -236,6 +236,77 @@ class Permissions extends CI_Controller {
 	}
 
 
+	public function search_permissions_or_delete()
+	{
+		//check if search or delete
+		if($this->input->post('sbm') == "search") 
+		{
+
+			$search_term = $this->input->post('search_term');
+
+			$this->db->select('*');
+			$this->db->from('permission_groups');
+			$this->db->like('groupName', $search_term);
+
+			$query = $this->db->get();
+			
+
+			$data['query'] = $query;
+			
+
+
+			$this->load->view('header');
+			$this->load->view('body');
+			$this->load->view('permissions/group-perm',$data);
+			$this->load->view('footer');
+		}
+
+		if($this->input->post('sbm') == "delete") 
+		{
+			$error_msg = "";
+
+			//iterate over selected items and delete
+			if (isset($_POST['chosen']))
+			{
+				$arrayName = $_POST['chosen'];
+
+				foreach ($arrayName as $key => $value) {
+					//echo $value;
+
+					//make sure not to delete the administrators!! = id '1'
+					//make sure not to delete a group that is already
+					//linked to a user account
+
+					$this->load->model('Stuff_permissions');
+					$error_msg = $this->Stuff_permissions->delete_group($value);
+					
+
+				}
+				
+			}
+			//success
+			if($error_msg == "*")
+			{
+				$this->session->set_flashdata('type', '1');
+				$this->session->set_flashdata('msg', '<strong>Success</strong> Permission Group Deleted!');
+
+			}
+			else
+			{
+				$this->session->set_flashdata('type', '0');
+				$this->session->set_flashdata('msg', "<strong>Failed!</strong> $error_msg");
+			}
+			
+
+			//return to page view
+			redirect("permissions","refresh");
+		
+		}
+
+
+	}
+
+
 
 }
 

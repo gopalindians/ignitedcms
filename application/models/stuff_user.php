@@ -111,6 +111,41 @@ class Stuff_user extends CI_Model {
 			}
       }
 
+       /**
+        *  @Description: delete user except admin!!
+        *       @Params: userid
+        *
+        *  	 @returns: nothing
+        */
+      public function delete_user($userid)
+      {
+
+      	 $this->db->select('isadmin');
+      	 $this->db->from('user');
+      	 $this->db->where('id', $userid);
+      	 $this->db->limit(1);
+
+      	 $query = $this->db->get();
+      	 
+      	 $is_admin = 0;
+      	 foreach ($query->result() as $row) 
+      	 {
+      	 	$is_admin = $row->isadmin;
+      	 }
+
+      	 //if not admin then proceed to delete user
+      	 if ($is_admin != 1)
+      	 {
+      	 	$this->db->where('id', $userid);
+      	 	$this->db->delete('user');
+
+
+      	 }
+      	 
+
+
+      }
+
 
 }
 

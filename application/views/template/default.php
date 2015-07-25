@@ -75,26 +75,35 @@
                     <div class="line"></div>
 
 
-
+              <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('pages/search_pages_or_delete',$atts); ?>
 	           	<!-- search and sort -->
 	           	<div class="row" >
 	           		<div class="col-sm-2">
-	           		<button type="submit" class="btn  btn-white " ><strong>Delete Selected</strong></button>
+                  <div class="btn  btn-white" data-toggle="popover" data-html="true" data-placement="top" data-content='
+                   Are you sure? You can not can not get this back if you click yes ;)<br/><br/>
+                   
+                  <button type="submit" class="btn btn-purplet btn-s-xs" name="sbm" value="delete" ><strong>Yes</strong></button>
+                  
+
+                  ' title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Warning!!!'>  
+                    <strong>Delete Selected</strong> 
+                  </div>
+	           		
 	           		
 		           	</div>
-		           	<?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('pages/search_pages',$atts); ?>
+		           	
 		           	<div class="col-sm-8">
 		           		<div class="input-group">
 		           		  
 		           		  		
 	                      <input type="text" name="search_term" class="input-sm form-control" placeholder="Search">
 	                      <span class="input-group-btn">
-	                        <button class="btn btn-sm btn-white" type="submit"> <i class="fa fa-search"> </i></button>
+	                        <button class="btn btn-sm btn-white" type="submit" name="sbm" value="search"> <i class="fa fa-search"> </i></button>
 	                      </span>
 	                      
                     	</div>
 		           	</div>
-		           	<?php echo form_close(); ?>
+		           	
 		           	<div class="col-sm-2">
 		           		<div class="input-group-btn">
                             <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by Title</strong></i> <span class="caret"></span></button>
@@ -129,7 +138,7 @@
                     	<?php foreach ($query->result() as $row): ?>
                     		<?php $id = $row->id; ?>
                     		<tr>
-		                        <td><input type="checkbox" name="post[]" value="<?php echo $id; ?>"></td>
+		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
 		                        	<a href="<?php echo site_url("pages/detail_view/$id"); ?>"><?php echo $row->name; ?></a>
 		                        </td>
@@ -142,7 +151,7 @@
                     </tbody>
                   </table>
                 </div>
-
+                <?php echo form_close(); ?>
 	           </div>
 	       </section>
 	   </div>

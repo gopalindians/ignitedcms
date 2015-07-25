@@ -87,6 +87,64 @@ class Users extends CI_Controller {
 	}
 
 	 /**
+	  *  @Description: search the database for users or delete cannot delete admin!
+	  *       @Params: _post search_term
+	  *
+	  *  	 @returns: returns
+	  */
+	public function search_users_or_delete()
+	{
+		//check if search or delete
+		if($this->input->post('sbm') == "search") 
+		{
+
+			$search_term = $this->input->post('search_term');
+
+			$this->db->select('*');
+			$this->db->from('user');
+			$this->db->join('permission_groups', 'permission_groups.groupID = user.permissiongroup');
+			$this->db->like('name', $search_term);
+
+			$query = $this->db->get();
+			
+
+			$data['query'] = $query;
+			
+
+
+			$this->load->view('header');
+			$this->load->view('body');
+			$this->load->view('users/user-view',$data);
+			$this->load->view('footer');
+		}
+
+		if($this->input->post('sbm') == "delete") 
+		{
+			//iterate over selected items and delete
+			if (isset($_POST['chosen']))
+			{
+				$arrayName = $_POST['chosen'];
+
+				foreach ($arrayName as $key => $value) {
+					//echo $value;
+
+					//delete the users in the db
+					//but don't delete admin account!!!
+					
+					$this->load->model('Stuff_user');
+					$this->Stuff_user->delete_user($value);
+
+				}
+				
+			}
+			
+			//return to page view
+			redirect("users","refresh");
+		
+		}
+	}
+
+	 /**
 	  *  @Description: Save user, make sure duplicate username and email is not used!
 	  *       @Params: _POST 
 	  *

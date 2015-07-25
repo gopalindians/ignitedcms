@@ -85,6 +85,61 @@ class Blog extends CI_Controller {
 
 	}
 
+	/**
+	  *  @Description: search the database for posts or delete
+	  *       @Params: _post search_term
+	  *
+	  *  	 @returns: returns
+	  */
+	public function search_posts_or_delete()
+	{
+		//check if search or delete
+		if($this->input->post('sbm') == "search") 
+		{
+
+			$search_term = $this->input->post('search_term');
+
+			$this->db->select('*');
+			$this->db->from('blog');
+			$this->db->like('title', $search_term);
+
+			$query = $this->db->get();
+			
+
+			$data['query'] = $query;
+			
+
+
+			$this->load->view('header');
+			$this->load->view('body');
+			$this->load->view('blog/default',$data); 
+			$this->load->view('footer');
+		}
+
+		if($this->input->post('sbm') == "delete") 
+		{
+			//iterate over selected items and delete
+			if (isset($_POST['chosen']))
+			{
+				$arrayName = $_POST['chosen'];
+
+				foreach ($arrayName as $key => $value) {
+					//echo $value;
+
+					//delete the pages in the db
+					$this->db->where('id', $value);
+					$this->db->delete('blog');
+
+				}
+				
+			}
+			
+			//return to page view
+			redirect("blog","refresh");
+		
+		}
+	}
+
 	public function search_blog()
 	{
 

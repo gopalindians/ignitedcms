@@ -48,6 +48,44 @@ class Stuff_permissions extends CI_Model {
 	}
 
 	 /**
+	  *  @Description: deletes group, checks if any users are assigned to group 
+	  *                if so displays an error message, same with admin group
+	  *       @Params: groupID
+	  *
+	  *  	 @returns: string * if successful or error message
+	  */
+	public function delete_group($groupID)
+	{
+		$pass = "*";
+		//first check if groupID is linked with any users
+
+		$this->db->select('*');
+		$this->db->from('permission_groups');
+		$this->db->join('user', 'user.permissiongroup = permission_groups.groupID');
+		$this->db->where('permission_groups.groupID', $groupID);
+
+		$query = $this->db->get();
+		
+		if($query->num_rows() > 0)
+		{
+			$pass = "<br/> Cannot delete group, A user is assigned to this group!
+					 <br/> Please assign the user to another group and then try to delete.";
+		}
+		else
+		{
+			//check if trying to delete admin
+			if($groupID != '1')
+			{
+				$this->db->where('groupID', $groupID);
+				$this->db->delete('permission_groups');
+			}
+		}
+		return $pass;
+
+	}
+
+
+	 /**
 	  *  @Description: see if user has permission to controller
 	  *       @Params: controller name
 	  *
@@ -60,7 +98,8 @@ class Stuff_permissions extends CI_Model {
 		$array = explode(",", $perms);
 
 		$pass = false;
-		foreach ($array as $key) {
+		foreach ($array as $key) 
+		{
 			if($name_of_controller == $key)
 			{
 				$pass = true;
@@ -122,9 +161,6 @@ class Stuff_permissions extends CI_Model {
 		{
 			return "fa fa-question big";
 		}
-		
-
-
 	}
 
 }

@@ -99,23 +99,6 @@ class Pages extends CI_Controller {
 
 	 
 
-	
-
-	 /**
-	  *  @Description: description
-	  *       @Params: params
-	  *
-	  *  	 @returns: returns
-	  */
-	public function delete_page($id)
-	{
-		
-		$this->db->where('id', $id);
-		$this->db->delete('pages');
-
-
-		redirect('pages','refresh');
-	}
 
 	 /**
 	  *  @Description: page view
@@ -233,32 +216,53 @@ class Pages extends CI_Controller {
 	  *
 	  *  	 @returns: returns
 	  */
-	public function search_pages()
+	public function search_pages_or_delete()
 	{
-		$search_term = $this->input->post('search_term');
+		//check if search or delete
+		if($this->input->post('sbm') == "search") 
+		{
 
-		$this->db->select('*');
-		$this->db->from('pages');
-		$this->db->like('name', $search_term);
+			$search_term = $this->input->post('search_term');
 
-		$query = $this->db->get();
+			$this->db->select('*');
+			$this->db->from('pages');
+			$this->db->like('name', $search_term);
+
+			$query = $this->db->get();
+			
+
+			$data['query'] = $query;
+			
+
+
+			$this->load->view('header');
+			$this->load->view('body');
+			$this->load->view('template/default',$data);
+			$this->load->view('footer');
+		}
+
+		if($this->input->post('sbm') == "delete") 
+		{
+			//iterate over selected items and delete
+			if (isset($_POST['chosen']))
+			{
+				$arrayName = $_POST['chosen'];
+
+				foreach ($arrayName as $key => $value) {
+					//echo $value;
+
+					//delete the pages in the db
+					$this->db->where('id', $value);
+					$this->db->delete('pages');
+
+				}
+				
+			}
+			
+			//return to page view
+			redirect("pages","refresh");
 		
-		// foreach ($query->result() as $row) 
-		// {
-		// 	echo $row->name;
-		// }
-
-		$data['query'] = $query;
-		
-
-
-		$this->load->view('header');
-		$this->load->view('body');
-		$this->load->view('template/default',$data);
-		$this->load->view('footer');
-		
-
-
+		}
 	}
 
 }
