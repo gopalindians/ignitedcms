@@ -104,6 +104,52 @@ class Email extends CI_Controller {
 
 	}
 
+	 /**
+	  *  @Description: test using php's mail function
+	  *       @Params: params
+	  *
+	  *  	 @returns: returns
+	  */
+	public function php_mail_test()
+	{
+	  //use php's mail function
+	  $config['protocol']  = "mail"; 
+      
+
+	  $from = "admin@ignitedcms.com";
+	  $to   = "";
+	  $body = "test";
+	  $subject = "test";
+	  $message = "test";
+
+
+      $this->load->library('email');
+      $this->email->initialize($config);
+      $this->email->set_mailtype("html");
+
+      $this->email->set_newline("\r\n");
+
+      $this->email->from($from, 'Name');
+      $this->email->to($to);   
+      $this->email->subject($subject);   
+      $this->email->message($body);
+
+      
+      // $this->email->attach($file);
+
+      if($this->email->send())
+      {
+        //echo('Activation code has been successfully sent to your Email Address');
+      }
+
+      else
+      {
+        show_error($this->email->print_debugger());
+      }    
+
+
+	}
+
 
 
 }

@@ -39,10 +39,19 @@ class Menu extends CI_Controller {
 
 		$query = $this->db->get();
 
+		
 		$html = "";
 		foreach ($query->result() as $row) {
 			$html = $row->html;
 		}
+
+		//get all the pages
+		$this->db->select('*');
+		$this->db->from('pages');
+
+		$query2 = $this->db->get();
+		
+		$data['query2'] = $query2;
 
 		$data['html'] = $html;
 		$data['title'] = 'Menu Builder';
@@ -53,13 +62,78 @@ class Menu extends CI_Controller {
 		$this->load->view('menu/menu-footer');	
 	}
 
+
 	 /**
-	  *  @Description: pull all the pages from the db
+	  *  @Description: Add page to menu
+	  *       @Params: _POST page ids
+	  *
+	  *  	 @returns: 
+	  */
+	 public function add_page_to_menu()
+	 {
+	 	//loop through all pages and check if page id is passed
+	 	$this->db->select('*');
+		$this->db->from('pages');
+
+		$query = $this->db->get();
+		
+
+		//get the existing menu
+		$this->db->select('*');
+		$this->db->from('menu');
+		$this->db->where('id', "1");
+		$this->db->limit(1);
+
+		$html_string = "";
+
+		$query2 = $this->db->get();
+		
+		foreach ($query2->result() as $row) 
+		{
+			$html_string = $row->html;
+		}
+		
+		
+		foreach ($query->result() as $row) 
+		{
+			$id = $row->id;
+
+			if (isset($_POST[$id]))
+			{
+				$unique_id = random_string('alnum', 16);
+
+				$name = $row->name;
+				$url = $row->id;
+				$object = array('father' => 'null', 'innerhtml' => "$name|$url" );
+				$this->db->insert('menu2', $object);
+
+				$html_string = $html_string . 
+				"<li class='dd-item dd3-item' id='id$unique_id'>
+				<div class='dd-handle dd3-handle'></div>
+				<div class='dd3-content'>$name</div>
+				<div class='url' style='display:none;'>$url</div>
+				<div class='dd-edit' ><i id='remove' u_id='id$unique_id'class='fa fa-trash-o'></i></div>
+				</li>";
+
+			}
+		}
+		$object2 = array('html' => $html_string );
+		$this->db->where('id', '1');
+		$this->db->update('menu', $object2);
+
+		redirect('menu','refresh');
+	 }
+
+
+
+
+	 /**
+	  *  @Description: DEPRECATED  pull all the pages from the db
 	  *       @Params: params
 	  *
 	  *  	 @returns: returns
 	  */
-	public function pull_all_pages()
+	public function deprecated_pull_all_pages()
 	{	
 		
 		//first empty menu2
@@ -135,27 +209,7 @@ class Menu extends CI_Controller {
         $this->Stuff_menu->save_parent_child($html);
 		
 	}
-	 /**
-	  *  @Description: OBSOLETED take array create parent child and store in database
-	  *       @Params: none
-	  *
-	  *  	 @returns: none
-	  */
-	public function display_list()
-	{
-		$this->db->select('*');
-		$this->db->from('menu2');
-		$this->db->order_by('id', 'asc');
-
-		$query = $this->db->get();
-
-		//convert query result to an array
-		$query_array = $query->result_array();
-
-		echo $this->make_tree($query_array,"null");		
-
-
-	}
+	 
 
 
      /**

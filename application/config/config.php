@@ -15,6 +15,10 @@ if( ! ini_get('date.timezone') )
 {
    date_default_timezone_set('Europe/London');
 }
+else
+{
+	date_default_timezone_set('Europe/London');
+}
 
 
 
@@ -37,18 +41,6 @@ if( ! ini_get('date.timezone') )
 $config['base_url']	= 'http://localhost/ignitedcms/';
 
 
-
-/*
-|--------------------------------------------------------------------------
-| Email settings (added by me)
-|--------------------------------------------------------------------------
-|
-|
-| If this is not set then CodeIgniter will guess the protocol, domain and
-| path to your installation.
-|
-|
-|*/
 
 
 
