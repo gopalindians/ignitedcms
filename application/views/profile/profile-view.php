@@ -56,7 +56,7 @@
 				        	</div>
 				        	<div class="form-group">
 				        	    <label>Email</label>
-				        	    <input name="email" type="text"  data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $row->email; ?>">
+				        	    <input name="email" type="text" data-type="email"  data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $row->email; ?>">
 				        	</div>
 
 				        	<div class="form-group">

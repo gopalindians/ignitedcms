@@ -26,8 +26,8 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('Dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
-	          <li ><a href="<?php echo site_url('Permissions'); ?>"><i class="fa fa-list-ul"></i> <?php echo('Permissions');?></a></li>
+	          <li><a href="<?php echo site_url('dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+	          <li ><a href="<?php echo site_url('permissions'); ?>"><i class="fa fa-list-ul"></i> <?php echo('Permissions');?></a></li>
 	          <li class='active'><a href="#"><i class="fa fa-lock"></i> <?php echo(my_role($this->uri->segment(3, 0)));?></a></li>
 	        </ul>
 	              

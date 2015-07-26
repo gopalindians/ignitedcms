@@ -26,7 +26,7 @@
 	      <div class="col-sm-12">
 	        <!-- .breadcrumb -->
 	        <ul class="breadcrumb">
-	          <li><a href="<?php echo site_url('Dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('Dashboard'); ?></a></li>
+	          <li><a href="<?php echo site_url('Dashboard'); ?>"><i class="fa fa-home"></i> <?php echo ('dashboard'); ?></a></li>
 	          <li class='active'><a href="#"><i class="fa fa-list-ul"></i> <?php echo('Set Permissions to Group');?></a></li>
 	          
 	        </ul>

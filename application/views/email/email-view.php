@@ -57,7 +57,7 @@
 		        	</div>
 		        	<div class="form-group">
 		        	    <label>Email</label>
-		        	    <input name="smtp_user" type="text" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $row->smtp_user; ?>">
+		        	    <input name="smtp_user" type="text" data-type="email" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $row->smtp_user; ?>">
 		        	</div>
 		        	<div class="form-group">
 		        	    <label>Password</label>

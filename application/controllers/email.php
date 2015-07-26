@@ -99,7 +99,7 @@ class Email extends CI_Controller {
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Please check your email.</strong>');
 
-		redirect("dashboard/site_settings", "refresh");
+		redirect("dashboard", "refresh");
 
 
 	}
