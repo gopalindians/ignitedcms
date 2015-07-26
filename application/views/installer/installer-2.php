@@ -23,7 +23,6 @@
                         communicate with your database. If you're ready
                         it is time to run the install and begin the 
                         fun.
-
                     </div>
                     <button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>I'm Ready!</strong></button>
                     <?php echo form_close(); ?>

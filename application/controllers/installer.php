@@ -79,6 +79,7 @@ class Installer extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$database = $this->input->post('database');
+		$prefix   = $this->input->post('prefix');
 
 		$this->form_validation->set_rules('database', 'Database', 'trim|required|alpha');
 		
@@ -153,7 +154,7 @@ class Installer extends CI_Controller {
 		\$db['default']['password'] = '$password';
 		\$db['default']['database'] = '$database';
 		\$db['default']['dbdriver'] = 'mysql';
-		\$db['default']['dbprefix'] = '';
+		\$db['default']['dbprefix'] = '$prefix';
 		\$db['default']['pconnect'] = TRUE;
 		\$db['default']['db_debug'] = TRUE;
 		\$db['default']['cache_on'] = FALSE;
@@ -241,29 +242,64 @@ class Installer extends CI_Controller {
 		//explode it into an array
 		$file_array = explode(';', $file);
 
+		$prefix = $this->db->dbprefix;
+
 		//execute the exploded text content 
 		foreach($file_array as $query) 
 		{
+			//this allows us to set the table prefix
+			$query = str_replace("TABLE `", "TABLE `$prefix", $query);
 			$this->db->query($query);
 			
 		}
 
 		$sql1 = "
-		INSERT INTO `menu` (`id`, `html`, `array`) VALUES
+		INSERT INTO `".$prefix."menu` (`id`, `html`, `array`) VALUES
 		(1, '', '');";
 
 		$sql2 = "
-		INSERT INTO `site` (`id`, `site`, `logo`,`color`) VALUES
+		INSERT INTO `".$prefix."site` (`id`, `site`, `logo`,`color`) VALUES
 		(1, '', 'ig2.png','');";
 		
 		$sql3 = "
-		INSERT INTO `email`(`id`, `protocol`, `smtp_host`, `smtp_port`, `smtp_user`, `smtp_pass`) VALUES (1,'','','','','');";
+		INSERT INTO `".$prefix."email`(`id`, `protocol`, `smtp_host`, `smtp_port`, `smtp_user`, `smtp_pass`) VALUES 
+		(1,'','','','','');";
 
+		$sql4 = "
+		INSERT INTO `".$prefix."permissions` (`permissionID`, `permission`) VALUES
+		(1, 'pages'),
+		(2, 'blog'),
+		(3, 'email'),
+		(4, 'menu'),
+		(5, 'permissions'),
+		(6, 'profile'),
+		(7,'assets'),
+		(8,'site_settings'),
+		(9,'users');";
+
+		$sql5 = "
+		INSERT INTO `".$prefix."permission_map`(`groupID`, `permissionID`) VALUES 
+		(1,1),
+		(1,2),
+		(1,3),
+		(1,4),
+		(1,5),
+		(1,6),
+		(1,7),
+		(1,8),
+		(1,9);";
+
+		$sql6 = "
+		INSERT INTO `".$prefix."permission_groups`(`groupID`, `groupName`) VALUES 
+		(1,'Administrators');";
 
 
 		$this->db->query($sql1);
 		$this->db->query($sql2);
 		$this->db->query($sql3);
+		$this->db->query($sql4);
+		$this->db->query($sql5);
+		$this->db->query($sql6);
 
 		$this->load->view('header');
 		$this->load->view('body');

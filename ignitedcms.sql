@@ -109,16 +109,6 @@ CREATE TABLE `permissions` (
 -- Dumping data for table `permissions`
 --
 
-INSERT INTO `permissions` (`permissionID`, `permission`) VALUES
-(1, 'pages'),
-(2, 'blog'),
-(3, 'email'),
-(4, 'menu'),
-(5, 'permissions'),
-(6, 'profile'),
-(7,'assets'),
-(8,'site_settings'),
-(9,'users');
 
 
 -- --------------------------------------------------------
@@ -132,8 +122,6 @@ CREATE TABLE `permission_groups` (
   `groupName` varchar(200) DEFAULT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-INSERT INTO `permission_groups`(`groupID`, `groupName`) VALUES 
-(1,'Administrators');
 
 --
 -- Table structure for table `permission_map`
@@ -144,16 +132,6 @@ CREATE TABLE `permission_map` (
   `permissionID` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-INSERT INTO `permission_map`(`groupID`, `permissionID`) VALUES 
-(1,1),
-(1,2),
-(1,3),
-(1,4),
-(1,5),
-(1,6),
-(1,7),
-(1,8),
-(1,9);
 
 -- --------------------------------------------------------
 

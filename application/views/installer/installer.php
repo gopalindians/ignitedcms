@@ -39,6 +39,10 @@
 
                         <input name="database" type="text" data-required="true" data-maxlength="20" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="database name" value="ignitedcms">
                     </div>
+                    <div class="form-group">
+                        <label>Table prefix</label>
+                        <input name="prefix" type="text" data-required="true" data-maxlength="5" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="prefix" value="IGS_">
+                    </div>
                     <button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Save</strong></button>
                     <?php echo form_close(); ?>
 
