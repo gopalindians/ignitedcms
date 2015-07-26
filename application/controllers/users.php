@@ -15,6 +15,10 @@ class Users extends CI_Controller {
 	{
 		parent::__construct();
 		{
+		  	//inlcude a better hashing library
+            include('./resources/password/password.php');
+
+
 		  	if($this->session->userdata('isloggedin')=='1')
 		  	{
 		  		$this->load->model('Stuff_permissions');
@@ -165,8 +169,8 @@ class Users extends CI_Controller {
 		if ($this->Stuff_user->add_user($name,$email,$password,$roles) == "*")
 		{
 			//success
-
-			$hashed_password = crypt($password);
+			$hashed_password = password_hash($password, PASSWORD_BCRYPT);
+			
 
 			$object = array(
 				'name' => $name, 

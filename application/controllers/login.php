@@ -7,6 +7,9 @@ class Login extends CI_Controller {
           parent::__construct();
           {
             //this is where the magic happens
+
+            //inlcude a better hashing library
+            include('./resources/password/password.php');
           }
       }
 
@@ -20,6 +23,7 @@ class Login extends CI_Controller {
       
       public function validate_login()
       {
+            
 
             $data['errors'] = '';
 
@@ -43,14 +47,12 @@ class Login extends CI_Controller {
               $userid = "";
               foreach ($query->result() as $row)
               {
-                  $hashed_password = crypt($password,$row->password);
+
+                  $hashed_password = $row->password;
                   $userid = $row->id;
               }
 
-              $query = $this->db->get_where('user', array('name' => $name, 'password' => $hashed_password));
-              
-              //if passwords match then check actvation status
-              if($query->num_rows() == 1)
+              if (password_verify($password, $hashed_password))
               {
                       //set the user's permissions
                       $this->load->model('Stuff_permissions');
@@ -165,8 +167,8 @@ class Login extends CI_Controller {
             }
             else{
 
-            
-            $hashed_password = crypt($password); 
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+             
 
             $data = array(
                'name' => 'admin' ,

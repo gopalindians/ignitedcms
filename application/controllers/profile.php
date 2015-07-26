@@ -5,6 +5,10 @@ class Profile extends CI_Controller {
 	{
 		  parent::__construct();
 		  {
+			  	//inlcude a better hashing library
+            	include('./resources/password/password.php');
+
+
 			  	if($this->session->userdata('isloggedin')=='1')
 			  	{
 			  		$this->load->model('Stuff_permissions');
@@ -49,12 +53,7 @@ class Profile extends CI_Controller {
 		$this->load->view('footer');
 	}
 	 
-	public function my_profile_view()
-	{
-
-		
-
-	}
+	
 
 	public function save_profile()
 	{
@@ -85,7 +84,8 @@ class Profile extends CI_Controller {
 			if($this->check_password($password) == true)
 			{
 				//password is ok
-				$hashed_password = crypt($password);
+				$hashed_password = password_hash($password, PASSWORD_BCRYPT);
+				
 
 				$object2 = array('password' => $hashed_password,'fullname' => $fullname, 'email' => $email );
 				$this->db->where('id', $id);
@@ -113,11 +113,6 @@ class Profile extends CI_Controller {
 	               redirect("profile","refresh");
 			}
 		}
-
-
-
-		
-		$hashed_password = crypt($password);
 
 	}
 
