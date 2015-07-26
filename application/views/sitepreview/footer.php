@@ -34,11 +34,6 @@
    
     $(document).ready(function (event) {
 
-      
-
-       
-
-        $('#results ul:first').addClass('sf-menu');
 
          $('.menu').superfish({
        

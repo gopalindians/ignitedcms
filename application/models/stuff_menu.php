@@ -283,6 +283,11 @@ class Stuff_menu extends CI_Model {
 
 		$brap =  $this->make_tree($query_array,"null");	
         
+        //to remove the menu bug
+		//remove first <ul> and replace with <ul class="sf-menu">
+		$brap =  preg_replace('/<ul>/', '<ul class="sf-menu">', $brap, 1);
+
+
         $menu4 = $menu2 . $brap . $menu3;
 
         return $menu4;

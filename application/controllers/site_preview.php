@@ -7,6 +7,8 @@ class Site_preview extends CI_Controller {
 			
 	}
 
+
+
 	 /**
 	  *  @Description: this previews and renders the page you have built
 	  *       @Params: page id
