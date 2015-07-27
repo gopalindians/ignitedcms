@@ -114,6 +114,78 @@ class Users extends CI_Controller {
 
 	}
 
+
+	 /**
+	  *  @Description: update user settings
+	  *       @Params: userid
+	  *
+	  *  	 @returns: nothing
+	  */
+	public function user_update_view($userid)
+	{
+
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->join('permission_groups', 'permission_groups.groupID = user.permissiongroup');
+		$this->db->where('id', $userid);
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+
+
+		$this->db->select('*');
+		$this->db->from('permission_groups');
+		$query2 = $this->db->get();
+		
+		$data['query'] = $query;
+		
+		$data['query2'] = $query2;
+
+		$data['userid'] = $userid;
+		
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('users/update-user',$data); 
+		$this->load->view('footer');
+
+
+	}
+
+	 /**
+	  *  @Description: update user details
+	  *       @Params: _POST email,password,role
+	  *
+	  *  	 @returns: returns
+	  */
+	public function update_user($userid)
+	{
+		
+		$permissiongroup = $this->input->post('roles');
+
+
+		$this->load->model('Stuff_user');
+		$pass = $this->Stuff_user->update_user($permissiongroup);
+
+		if($pass === "*")
+		{
+
+			$object = array(
+			'permissiongroup' => $permissiongroup
+		 	);
+
+			$this->db->where('id', $userid);
+			$this->db->update('user', $object);
+
+		}
+
+		
+
+		redirect("users","refresh");
+
+	}
+
+
 	 /**
 	  *  @Description: search the database for users or delete cannot delete admin!
 	  *       @Params: _post search_term

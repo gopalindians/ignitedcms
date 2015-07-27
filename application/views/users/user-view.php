@@ -140,7 +140,7 @@
                     		<tr>
 		                        <td><input type="checkbox" name="chosen[]" value="<?php echo $id; ?>"></td>
 		                        <td>
-		                        	<a href="<?php echo site_url("#"); ?>"><?php echo $row->name; ?></a>
+		                        	<a href="<?php echo site_url("users/user_update_view/$id"); ?>"><?php echo $row->name; ?></a>
 		                        </td>
 		                        <td> <?php echo $row->email; ?></td>
 		                        <td><?php echo $row->groupName; ?></td>

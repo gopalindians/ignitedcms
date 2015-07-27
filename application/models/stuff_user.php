@@ -72,6 +72,37 @@ class Stuff_user extends CI_Model {
 
 	}
 
+
+	/**
+	  *  @Description: add new user 
+	  *       @Params: permissiongroup id
+	  *
+	  *  	 @returns: string ("*" or "Fail message") * indicates success
+	  */
+	public function update_user($permissiongroup)
+	{
+		$pass = "*";
+
+
+		//check if valid permission group
+		$this->db->select('groupID');
+		$this->db->from('permission_groups');
+		$this->db->where('groupID', $permissiongroup);
+
+		$query3 = $this->db->get();
+		
+		//important use equal here!!!!
+		if ($query3->num_rows() == 0)
+		{
+			$pass = $pass . "<br/>You have not selected a valid role!";
+		}
+		
+
+		return $pass;
+
+
+	}
+
 	 /**
         *  @Description: make sure password is secure
         *                One number and Upper case letter

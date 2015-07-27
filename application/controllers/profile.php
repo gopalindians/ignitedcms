@@ -62,6 +62,8 @@ class Profile extends CI_Controller {
 
 		//save the details to the database
 		$fullname = $this->input->post('fullname');
+		
+		//to check email is not duplicated
 		$email    = $this->input->post('email');
 
 		$password = $this->input->post('password');
