@@ -99,8 +99,8 @@ class Login extends CI_Controller {
 
        /**
         *  @Description: make sure password is secure
-        *                One number and Upper case letter
-        *       @Params: params
+        *                One number and at least 6 characters long
+        *       @Params: string password
         *
         *     @returns: returns
         */
@@ -155,7 +155,7 @@ class Login extends CI_Controller {
             if($this->check_password($password)==false)
             {
               $data['errors'] =
-              'Password is too simple <br/> 
+                  'Password is too simple <br/> 
                    Password must contain a number and Uppercase letter!<br/>
                    Password must be at least 6 characters long';
 

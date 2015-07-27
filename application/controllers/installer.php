@@ -266,16 +266,17 @@ class Installer extends CI_Controller {
 		(1,'','','','','');";
 
 		$sql4 = "
-		INSERT INTO `".$prefix."permissions` (`permissionID`, `permission`) VALUES
-		(1, 'pages'),
-		(2, 'blog'),
-		(3, 'email'),
-		(4, 'menu'),
-		(5, 'permissions'),
-		(6, 'profile'),
-		(7,'assets'),
-		(8,'site_settings'),
-		(9,'users');";
+		INSERT INTO `".$prefix."permissions` (`permissionID`, `permission`,`order_position`) VALUES
+		(1, 'pages',3),
+		(2, 'blog',5),
+		(3, 'email',6),
+		(4, 'menu',4),
+		(5, 'permissions',8),
+		(6, 'profile',1),
+		(7,'assets',7),
+		(8,'site_settings',2),
+		(9,'users',9),
+		(10,'database',10);";
 
 		$sql5 = "
 		INSERT INTO `".$prefix."permission_map`(`groupID`, `permissionID`) VALUES 
@@ -287,7 +288,8 @@ class Installer extends CI_Controller {
 		(1,6),
 		(1,7),
 		(1,8),
-		(1,9);";
+		(1,9),
+		(1,10);";
 
 		$sql6 = "
 		INSERT INTO `".$prefix."permission_groups`(`groupID`, `groupName`) VALUES 

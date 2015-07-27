@@ -102,7 +102,8 @@ CREATE TABLE `pages` (
 
 CREATE TABLE `permissions` (
 `permissionID` int(11) NOT NULL,
-  `permission` varchar(200) DEFAULT NULL
+  `permission` varchar(200) DEFAULT NULL,
+  `order_position` int(11) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 --

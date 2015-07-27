@@ -32,6 +32,7 @@ class Stuff_permissions extends CI_Model {
 		$this->db->from('permissions');
 		$this->db->join('permission_map', 'permission_map.permissionID = permissions.permissionID');
 		$this->db->where('permission_map.groupID', $groupID);
+		$this->db->order_by('permissions.order_position', 'asc');
 
 		$query2 = $this->db->get();
 		
@@ -160,6 +161,10 @@ class Stuff_permissions extends CI_Model {
 		if($controller == "help")
 		{
 			return "fa fa-question big";
+		}
+		if($controller == "database")
+		{
+			return "fa fa-random big";
 		}
 	}
 
