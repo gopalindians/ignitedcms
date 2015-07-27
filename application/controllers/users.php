@@ -63,6 +63,30 @@ class Users extends CI_Controller {
 		
 	}
 
+
+	 /**
+	  *  @Description: description
+	  *       @Params: column
+	  *
+	  *  	 @returns: redirect to main page
+	  */
+	public function sort_by($column)
+	{
+		$this->load->model('Stuff_user');
+		$query = $this->Stuff_user->sort_by($column);
+
+		$data['query'] = $query;
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('users/user-view',$data); 
+		$this->load->view('footer');
+
+
+	}
+
+
+
 	 /**
 	  *  @Description: Add user view, assign username password and role
 	  *       @Params: params

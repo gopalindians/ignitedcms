@@ -79,7 +79,7 @@
 	<div class="row" style="margin-left:30px; margin-right:30px;">
 			<div class="col-sm-12">
 			    <header class="panel-heading ">
-                <div class="inline font-bold">Test Email Settings</div>
+                <div class="inline font-bold">Test SMTP Email Settings</div>
                 <div class="pull-right btn btn-sm  btn-info btn-rounded" data-toggle="popover" data-html="true" data-placement="bottom" data-content="After you have filled in your email settings send a test email." title="" data-original-title='<button type="button" class="close pull-right" data-dismiss="popover">&times;</button>Info'> <i class="fa fa-question"></i> <strong></strong> 
                 </div>
             </header>
@@ -88,7 +88,7 @@
 			        
 			        <div class="panel-body">
 			        	<div class="form-group">
-			        	    <label>Email Test Account</label>
+			        	    <label>Email </label>
 			        	    <input name="email" type="text" data-required="true" data-maxlength="50" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="">
 			        	</div>
 			        	<button type="submit" class="btn btn-purplet btn-s-xs " id=""><strong>Send test Email</strong></button>
@@ -100,5 +100,27 @@
 			</div>
 			
 		</div>
+
+		<div class="row" style="margin-left:30px; margin-right:30px;">
+		  <div class="col-sm-12">
+		      <header class="panel-heading font-bold">Email Test with phpmail</header>
+		      <section class="panel">
+		          <?php $atts= array( 'data-validate'=>'parsley'); echo form_open_multipart('email/php_mail_test',$atts); ?>
+		          
+		          <div class="panel-body">
+		          	 <div class="form-group">
+		          	     <label>Email</label>
+		          	     <input name="email2" type="text" data-type="email" data-required="true" data-maxlength="100" class="form-control" placeholder="Type here" data-toggle="tooltip" data-placement="top" title="Email" value="">
+		          	 </div>
+		          </div>
+		          <button type="submit" class="btn btn-purplet btn-s-xs " ><strong>Send test Email</strong></button>
+		          <?php echo form_close(); ?>
+
+		      </section>
+		  </div>
+		  
+		</div>
+
+
 		<div class="gap"></div>
 </div>

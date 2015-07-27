@@ -108,7 +108,7 @@
 		           		<div class="input-group-btn">
                             <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by Title</strong></i> <span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right">
-                              <li><a href="#">Title</a></li>
+                              <li><a href=" <?php echo site_url('pages/sort_by/name'); ?> ">Title</a></li>
                               <li><a href="#">URI</a></li>
                               <li><a href="#">Post Date</a></li>
                               <li class="divider"></li>

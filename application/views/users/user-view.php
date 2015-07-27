@@ -108,9 +108,9 @@
 		           		<div class="input-group-btn">
                             <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sort-amount-desc"> <strong>Sort by User</strong></i> <span class="caret"></span></button>
                             <ul class="dropdown-menu pull-right">
-                              <li><a href="#">Username</a></li>
-                              <li><a href="#">Email</a></li>
-                              <li><a href="#">Roles</a></li>
+                              <li><a href="<?php echo site_url('users/sort_by/name'); ?> ">Username</a></li>
+                              <li><a href="<?php echo site_url('users/sort_by/email'); ?>">Email</a></li>
+                              <li><a href="<?php echo site_url('users/sort_by/groupID'); ?>">Roles</a></li>
                               <li class="divider"></li>
                               <li><a href="#">Ascending</a></li>
                               <li><a href="#">Descending</a></li>

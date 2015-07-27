@@ -97,6 +97,31 @@ class Pages extends CI_Controller {
 
 	}
 
+	 /**
+	  *  @Description: sort pages by column name
+	  *       @Params: column name
+	  *
+	  *  	 @returns: nothing
+	  */
+	public function sort_by($column)
+	{
+		$this->db->select('*');
+		$this->db->from('pages');
+		$this->db->order_by($column, 'asc');
+		$query = $this->db->get();
+		
+		$data['query'] = $query;
+		
+
+
+		$this->load->view('header');
+		$this->load->view('body');
+		$this->load->view('template/default',$data);
+		$this->load->view('footer');
+
+
+	}
+
 	 
 
 

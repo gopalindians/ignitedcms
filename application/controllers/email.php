@@ -94,19 +94,19 @@ class Email extends CI_Controller {
 
 		$email  = $this->input->post('email');
 
-		$this->Stuff_email->my_email($email,'To','Test from IgnitedCMS',"Congratulations");
+		$this->Stuff_email->my_email($email,'admin@ignitedcms.com','Test from IgnitedCMS',"Congratulations,your email works");
 
 		$this->session->set_flashdata('type', '1');
 		$this->session->set_flashdata('msg', '<strong>Please check your email.</strong>');
 
-		redirect("dashboard", "refresh");
+		redirect("email", "refresh");
 
 
 	}
 
 	 /**
 	  *  @Description: test using php's mail function
-	  *       @Params: params
+	  *       @Params: _POST email2
 	  *
 	  *  	 @returns: returns
 	  */
@@ -115,12 +115,15 @@ class Email extends CI_Controller {
 	  //use php's mail function
 	  $config['protocol']  = "mail"; 
       
+      $to = $this->input->post('email2');
+
+
 
 	  $from = "admin@ignitedcms.com";
-	  $to   = "";
-	  $body = "test";
-	  $subject = "test";
-	  $message = "test";
+	  $to   = $to;
+	  $body = "Congratulations, your email works";
+	  $subject = "Test from IgnitedCMS";
+	  
 
 
       $this->load->library('email');
@@ -146,7 +149,7 @@ class Email extends CI_Controller {
       {
         show_error($this->email->print_debugger());
       }    
-
+      redirect("email", "refresh");
 
 	}
 

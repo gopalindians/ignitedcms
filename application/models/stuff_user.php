@@ -112,6 +112,30 @@ class Stuff_user extends CI_Model {
       }
 
        /**
+        *  @Description: sorts the user by either username, email, or role
+        *       @Params: string username,email,or role
+        *
+        *  	 @returns: returns query object
+        */
+
+      public function sort_by($column)
+      {
+			$this->db->select('*');
+			$this->db->from('user');
+			$this->db->join('permission_groups', 'permission_groups.groupID = user.permissiongroup');
+			$this->db->order_by($column, 'asc');
+
+			$query = $this->db->get();
+			
+			return $query;
+			
+
+
+      }
+
+
+
+       /**
         *  @Description: delete user except admin!!
         *       @Params: userid
         *
